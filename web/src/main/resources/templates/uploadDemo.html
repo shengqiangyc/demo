@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/mvc">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.serializejson.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+       /* $("#up").addEventListener('change',function(){
+            var reader = new FileReader();
+            var preview = document.querySelector('#ImgPr');
+            var file = document.querySelector('#up').files[0];
+            reader.addEventListener("load",function(){
+                preview.src = reader.result;
+            },false);
+            reader.readAsDataURL(file);
+        },false);*/
+
+    function uploadPic(){
+        var files = $("#up").get(0).files[0];
+        var form = new FormData();
+        form.append("file",files);
+        $.ajax({
+            url: "/upload",
+            type: "POST",
+            contentType:false,
+            data: form ,
+            dataType: "json",
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            success: function (data) {
+                alert(data);
+                // setTimeout(function () {
+                //     window.location.href = 'index.html';
+                // },200)
+            }
+        });
+       }
+
+    </script>
+</head>
+<body>
+<div>
+    <input type="file" id="up" name = "url"/>
+    <img id="ImgPr" width="120" height="120" /></div>
+     <button onclick="uploadPic()">上传</button>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GuoGe'Blog其它
+    </title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/volunteerJs/login.js"></script>
+    <!--For images carousel-->
+</head>
+<body id="loginBody">
+<!-- Header Start-->
+
+<!-- Middle Part Start-->
+<div id = "loginDemo" >
+    <div id="login" >
+        <div style="margin-bottom: 40px;margin-left: 40px">
+        <img src="images/logo7.png" style="margin-bottom: -10px" width="60px">
+        <strong style="font-size: 26px;margin-left: 12px">志愿者工作站</strong>
+        </div>
+    <ul class="loginUl" style="margin-top: 10px">
+        <input type="text" name="userName" id="userName" placeholder="请输入用户名" style="background: url(images/user88.png) no-repeat 10px"/>
+        <span style="margin-left: 12px;color: red;font-size: 14px" id="notFound"></span>
+    </ul>
+<ul class="loginUl">
+    <input type="password" name="password" id="password" placeholder="请输入密码" style="margin-top: 10px;background: url(images/password.png) no-repeat 10px"/>
+    <span style="margin-left: 12px;color: red;font-size: 14px" id="pwError"></span>
+</ul>
+    <ul>
+    <input type="button" value="登录" class="loginButton" onclick="checkUser()">
+    </ul>
+    <ul>
+    <input type="button" onclick="window.location.href='register.html'" value="注册" class="loginButton" >
+    </ul>
+    </div>
+</div>
+    <!-- Right Section Start-->
+</body>
+</html>

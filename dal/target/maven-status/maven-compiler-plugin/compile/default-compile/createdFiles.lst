@@ -1,0 +1,15 @@
+com/volunteer/demo/mapper/YcGroupMapper.class
+com/volunteer/demo/mapper/YcUserMapper.class
+com/volunteer/demo/DTO/ImageDTO.class
+com/volunteer/demo/DO/YcUser.class
+com/volunteer/demo/DO/YcGroupActivity.class
+com/volunteer/demo/DO/YcGroupApply.class
+com/volunteer/demo/mapper/YcGroupActivityMapper.class
+com/volunteer/demo/mapper/YcActivityMapper.class
+com/volunteer/demo/DTO/RegisterDTO.class
+com/volunteer/demo/DTO/UserGroupDTO.class
+com/volunteer/demo/DO/YcUserGroup.class
+com/volunteer/demo/DO/YcActivity.class
+com/volunteer/demo/mapper/YcGroupApplyMapper.class
+com/volunteer/demo/DO/YcGroup.class
+com/volunteer/demo/mapper/YcUserGroupMapper.class

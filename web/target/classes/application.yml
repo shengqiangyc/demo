@@ -1,0 +1,18 @@
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    mode: LEGACYHTML5
+  resources:
+    static-locations: classpath:/templates/
+  datasource:
+        url: jdbc:mysql://localhost:3306/volunteer?useUnicode=true&characterEncoding=utf-8&useSSL=true&allowMultiQueries=true
+        username: root
+        password: 123
+        driver-class-name: com.mysql.jdbc.Driver
+
+# mybatis
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.volunteer.demo.DO
+  config-location: classpath:Mybatis.xml

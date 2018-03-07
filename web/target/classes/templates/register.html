@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GuoGe'Blog</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!--For Asyncslider-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/volunteerJs/Register.js"></script>
+    <!--For images carousel-->
+</head>
+<body id="loginBody">
+<!-- Header Start-->
+<!-- Middle Part Start-->
+<div id = "registerDemo">
+    <div id="login">
+        <input type="hidden" style="color: red" id="test">
+        <ul class="registerUl" style="margin-top: 20px">
+           <strong style="font-size: 15px">用户名:</strong>
+            <input type="text"  style="margin-left: 21px" id="userName" onblur="checkUser()"/>
+            <span style="margin-left: 10px" id="userTip">*长度不得超过10个字符</span>
+        </ul>
+        <ul class="registerUl">
+            <strong style="font-size: 15px">密码:</strong>
+            <input type="password" id="password" style="margin-top: 15px;margin-left: 36px"/>
+            <span style="margin-left: 10px" id="passwordTip">*密码不要过于简单</span>
+       </ul>
+        <ul class="registerUl">
+            <strong style="font-size: 15px">确认密码:</strong>
+            <input type="password" id="rePassword" style="margin-top: 15px;margin-left: 5px" onblur="checkRePassword()"/>
+            <span style="margin-left: 10px" id="rePasswordTip">*两次密码必须一致</span>
+        </ul>
+        <ul class="registerUl" style="margin-top: 20px">
+            <strong style="font-size: 15px">手机号:</strong>
+            <input type="text"  style="margin-left: 21px" id="mobile" onblur="checkMobile()"/>
+            <span style="margin-left: 10px" id="mobileTip">*用户手机号</span>
+        </ul>
+        <ul class="registerUl">
+            <strong style="font-size: 15px">上传照片:</strong>
+            <input type="file" id="userImage" style="margin-top: 15px;margin-left: 5px;font-size: 10px" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onblur="checkFile()">
+            <span style="margin-left: 10px" id="imageTip">*格式为jpg,png,jpeg</span>
+        </ul>
+        <ul class="registerUl">
+            <strong style="font-size: 15px">真实姓名:</strong>
+            <input type="text" id="realName" style="margin-top: 15px;margin-left: 5px" onblur="checkRealName()">
+            <span style="margin-left: 10px" id="realNameTip">*请填写你的真实姓名</span>
+        </ul>
+        <ul >
+            <strong style="font-size: 15px">性别:</strong>
+            <input type="radio" class="sex" value="0" style="margin-top: 16px;margin-left: 38px"/>
+            <strong style="font-size: 15px">男</strong>
+            <input type="radio" class="sex" value="1" style="margin-top: 15px;margin-left: 38px"/>
+            <strong style="font-size: 15px">女</strong>
+        </ul>
+        <ul class="registerUl">
+            <strong style="font-size: 15px">身份证号:</strong>
+            <input type="text" id="identity" style="margin-top: 15px;margin-left: 5px" onblur="checkIdentity()">
+            <span style="margin-left: 10px" id="identityTip">*填写符合格式的身份证号</span>
+        </ul>
+        <ul class="registerUl">
+            <strong style="font-size: 15px">所在地址:</strong>
+            <input type="text" id="address" style="margin-top: 15px;margin-left: 5px" onblur="checkAddress()">
+            <span style="margin-left: 10px" id="addressTip">*填写你的真实地址</span>
+        </ul>
+        <ul class="registerUl">
+            <div style="margin-top: 15px">
+            <strong style="font-size: 15px">用户简介:</strong>
+            </div>
+            <textarea rows="5" id="introduction" cols="57" onblur="checkIntro()"></textarea>
+            <span style="margin-left: 10px" id="introductionTip">*简单描述你的性格和特长（100字以内）</span>
+        </ul>
+
+    <ul>
+        <ul>
+    <input type="button" value="提交" class="registerButton" onclick="uploadImage()" >
+        </ul>
+        <ul>
+        <input type="button" value="返回登录" onclick="window.location.href='login.html'" class="registerButton" >
+        </ul>
+    </ul>
+    </div>
+    <!-- Right Section Start-->
+
+</div>
+<!-- Footer Part Start-->
+
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+</div>
+</body>
+</html>

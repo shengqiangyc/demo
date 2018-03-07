@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>GuoGe'Blog</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/blackcss?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/volunteerJs/createGroup.js"></script>
+
+</head>
+<body>
+<!-- Header Start-->
+<div class="header-wrapper1">
+    <div id="header">
+        <a href="index.html" id="logo">
+            <img src="images/logo7.png" alt="" /></a>
+        <a href="index.html" id="logo2">
+          <span>志愿者工作站
+          </span>
+        </a>
+        <!-- Top Menu Start-->
+        <div id="primary-nav">
+            <ul id="menu-primary-menu" class="sf-menu">
+                <li>
+                    <a href="index.html">
+              <span>首页
+              </span></a>
+                </li>
+                <li>
+                    <a href="" class="sf-with-ul">志愿者之家</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="groupList.html">
+                <span>志愿者团队
+                </span></a>
+                        </li>
+                        <li>
+                            <a href="activityList.html">
+                <span>志愿者项目
+                </span></a>
+                        </li>
+                        <li>
+                            <a href="myApplyList.html">
+                <span>我的入队申请
+                </span></a>
+                        </li>
+                        <li>
+                            <a href="createGroup.html">
+                <span>申请创建团队
+                </span></a>
+                        </li>
+                    </ul>
+                <li>
+                    <a href="">我的团队</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="groupVolunteers.html"><span>团队1</span></a>
+                        </li>
+                        <li>
+                            <a href="groupVolunteers.html"><span>团队2</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="login.html" >
+            <span>退出登录
+            </span>
+                    </a>
+                </li>
+            </ul>
+            <!-- END #primary-nav -->
+        </div>
+    </div>
+    <div class="title">
+    <span style="font-size: 20px;">创建团队</span>
+</div>
+</div>
+<!-- Middle Part Start-->
+<div id = "groupDemo">
+    <div id="login">
+        <ul class="registerUl" style="margin-top: 20px">
+            <input type="hidden" id="groupCountStatus" th:value="${groupCount.countGroup}">
+           <strong>团队名:</strong>
+            <input type="text"  style="margin-left: 21px" id="groupName" onblur="checkGroupName()"/>
+            <span style="margin-left: 10px" id="nameTip">*长度不得超过10个字符</span>
+        </ul>
+        <ul class="registerUl">
+            <strong>所在城市:</strong>
+            <input type="text"  style="margin-top: 15px;margin-left: 5px" id="city" onblur="checkCity()"/>
+            <span style="margin-left: 10px" id="cityTip">*例：浙江杭州</span>
+       </ul>
+        <ul class="registerUl">
+            <strong>qq群:</strong>
+            <input type="text"  style="margin-top: 15px;margin-left: 34px" id="qqGroup" onblur="checkQQ()"/>
+            <span style="margin-left: 10px" id="qqTip">*您的团队qq群</span>
+        </ul>
+        <ul class="registerUl">
+            <strong>上传照片:</strong>
+            <input type="file" style="margin-top: 15px;margin-left: 5px" id="GroupImage"  accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onblur="checkImage()" multiple>
+            <span style="margin-left: 10px" id="imageTip">*格式为jpg,png,jpeg</span>
+        </ul>
+            <ul class="registerUl">
+            <div style="margin-top: 15px">
+                <strong>团队简介:</strong>
+            </div>
+            <textarea rows="4" cols="58" id="GroupIntroduction" onblur="checkIntro()"></textarea>
+            <span style="margin-left: 10px" id="introTip">*您的团队简介</span>
+        </ul>
+        <ul class="registerUl">
+            <div style="margin-top: 15px">
+                <strong>团队招募条件:</strong>
+            </div>
+            <textarea rows="4" cols="58" id="require" onblur="checkRequire()"></textarea>
+            <span style="margin-left: 10px" id="requireTip">*您的团队招募条件</span>
+        </ul>
+
+    <ul>
+    <input type="button" value="提交" class="registerButton" onclick="createGroup()" >
+    </ul>
+    </div>
+    <div class="rightsec">    <h3>联系我们</h3>
+        <div class="contact">
+            <div class="cont-detail">
+                <img src="images/address1.png" alt="" /> <strong>地址</strong>杭州市余杭区
+            </div>
+            <div class="cont-detail">
+                <img src="images/phone1.png" alt="" width="14" height="18" /> <strong style="margin-left: -2px">手机号</strong>
+                <a href="#">13771397394</a>
+            </div>
+            <div class="cont-detail">
+                <img src="images/mail1.png" alt="" width="15" height="12" /> <strong>邮箱</strong>
+                <a href="#">1055494598@qq.com</a>
+            </div>
+        </div>
+        <h3>更多</h3>
+        <ul class="touch">
+            <li>
+                <a href="#">
+                    <img src="images/facebook.png" alt="" /> </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/twitter.png" alt="" border="0" /></a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/rss.png" alt="" border="0" /></a>
+            </li>
+        </ul>
+    </div>
+</div>
+    <!-- Right Section Start-->
+
+</div>
+<!-- Footer Part Start-->
+
+<div style="display:none">
+    <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
+</div>
+</body>
+</html>
