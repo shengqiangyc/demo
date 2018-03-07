@@ -94,3 +94,13 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+common/src/main/resources/
+common/src/test/
+common/target/generated-sources/
+core/src/main/resources/
+core/src/test/
+core/target/generated-sources/
+dal/src/test/
+dal/target/generated-sources/
+web/src/test/
+web/target/generated-sources/
