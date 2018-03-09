@@ -33,7 +33,7 @@ function applyToGroup(){
             success: function (data) {
                 if (data === "申请成功") {
                     alert("申请成功！");
-                    window.location.href = "/index.html";
+
                 }
                 else {
                     alert("申请失败");
