@@ -79,6 +79,13 @@ public class PageSkipController {
         return "createGroup";
     }
 
+    @RequestMapping(value = "/groupList.html")
+    public String groupList(Model model){
+        Integer countGroup = groupManager.countGroup();
+        model.addAttribute("groupCount",countGroup);
+        return "groupList";
+    }
+
 
 
 

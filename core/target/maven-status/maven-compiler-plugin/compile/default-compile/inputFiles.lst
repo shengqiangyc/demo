@@ -9,10 +9,12 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/ActivityManager.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/IndexGroupVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/RegisterForm.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/PageForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/LoginManager.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/GroupRoleEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/GroupManager.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupListVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ActivityEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/impl/LoginManagerImpl.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/GroupStatusEnum.java
@@ -25,4 +27,5 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/NetWorkUtil.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/SessionHelper.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/ApplyEntryGroupForm.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/GroupForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/LoginForm.java

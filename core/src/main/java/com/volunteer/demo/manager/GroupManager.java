@@ -9,10 +9,10 @@
 package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcGroup;
-import com.volunteer.demo.form.ApplyEntryGroupForm;
-import com.volunteer.demo.form.CreateGroupForm;
-import com.volunteer.demo.form.UserGroupMapForm;
+import com.volunteer.demo.DTO.PageDTO;
+import com.volunteer.demo.form.*;
 import com.volunteer.demo.vo.GroupDetailVO;
+import com.volunteer.demo.vo.GroupListVO;
 import com.volunteer.demo.vo.IndexGroupVO;
 
 import java.util.List;
@@ -61,6 +61,17 @@ public interface GroupManager {
      * 判断用户团队是否达到三个
      */
     int checkGroupCount(Long userId);
+
+    /**
+     * 分页获取所有团队列表
+     */
+    List<GroupListVO> getGroupListByPage(GroupForm form);
+
+    /**
+     * 获取所有团队数量
+     */
+    Integer countGroup();
+
 
 
 }

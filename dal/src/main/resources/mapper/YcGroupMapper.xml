@@ -93,6 +93,19 @@
     where group_name = #{groupName}
   </select>
 
+  <select id="getGroupListByPage" parameterType="com.volunteer.demo.DTO.GroupDTO" resultMap="BaseResultMap">
+    select * from yc_group
+    <if test="groupName != null and groupName != ''">
+      where group_name = #{groupName}
+    </if>
+    order by create_time desc
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="countGroupList" resultType="java.lang.Integer">
+    select count(*) from yc_group
+  </select>
+
 
 
 

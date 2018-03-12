@@ -14,10 +14,12 @@ import com.volunteer.demo.common.ResultCode;
 import com.volunteer.demo.enums.GroupRoleEnum;
 import com.volunteer.demo.form.ApplyEntryGroupForm;
 import com.volunteer.demo.form.CreateGroupForm;
+import com.volunteer.demo.form.GroupForm;
 import com.volunteer.demo.form.UserGroupMapForm;
 import com.volunteer.demo.manager.GroupManager;
 import com.volunteer.demo.manager.ImageManager;
 import com.volunteer.demo.session.SessionHelper;
+import com.volunteer.demo.vo.GroupListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Description: 团队接口
@@ -104,5 +107,13 @@ public class GroupController {
         }
 
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/getGroupList.json", method = RequestMethod.POST)
+    public List<GroupListVO> getGroupList(@RequestBody GroupForm form){
+        return groupManager.getGroupListByPage(form);
+    }
+
+
 
 }

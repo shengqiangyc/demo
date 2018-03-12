@@ -12,23 +12,26 @@ import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcGroupApply;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DO.YcUserGroup;
+import com.volunteer.demo.DTO.GroupDTO;
+import com.volunteer.demo.DTO.PageDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.common.DateUtils;
 import com.volunteer.demo.enums.ApplyStatusEnum;
 import com.volunteer.demo.enums.GroupStatusEnum;
 import com.volunteer.demo.enums.RecordStatusEnum;
-import com.volunteer.demo.form.ApplyEntryGroupForm;
-import com.volunteer.demo.form.CreateGroupForm;
-import com.volunteer.demo.form.UserGroupMapForm;
+import com.volunteer.demo.form.*;
 import com.volunteer.demo.manager.GroupManager;
 import com.volunteer.demo.mapper.YcGroupApplyMapper;
 import com.volunteer.demo.mapper.YcGroupMapper;
 import com.volunteer.demo.mapper.YcUserGroupMapper;
 import com.volunteer.demo.mapper.YcUserMapper;
 import com.volunteer.demo.vo.GroupDetailVO;
+import com.volunteer.demo.vo.GroupListVO;
 import com.volunteer.demo.vo.IndexGroupVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -186,5 +189,35 @@ public class GroupManagerImpl implements GroupManager{
         } else {
             return 0;
         }
+    }
+
+    @Override
+    public List<GroupListVO> getGroupListByPage(GroupForm form) {
+        List<GroupListVO> groupListVOS = new ArrayList<>();
+        GroupDTO dto = new GroupDTO();
+        if(!StringUtils.isBlank(form.getGroupName())){
+            dto.setGroupName(form.getGroupName());
+        }
+        dto.setStart((form.getPageNo()-1)*9);
+        dto.setPageSize(9);
+        List<YcGroup> ycGroupList = ycGroupMapper.getGroupListByPage(dto);
+        if(CollectionUtils.isEmpty(ycGroupList)){
+            return groupListVOS;
+        }
+        for(YcGroup ycGroup : ycGroupList){
+            GroupListVO listVO = new GroupListVO();
+            listVO.setCreateTime(DateUtils.convertDateToYMDHMS(ycGroup.getCreateTime()));
+            listVO.setGroupId(ycGroup.getGroupId());
+            listVO.setGroupImage(ycGroup.getGroupImage());
+            listVO.setGroupName(ycGroup.getGroupName());
+            listVO.setGroupStatus(GroupStatusEnum.getMsgByCode(ycGroup.getGroupStatus()));
+            groupListVOS.add(listVO);
+        }
+        return groupListVOS;
+    }
+
+    @Override
+    public Integer countGroup() {
+        return ycGroupMapper.countGroupList()/9+1;
     }
 }

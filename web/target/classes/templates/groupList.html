@@ -1,5 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!--suppress ALL -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>GuoGe'Blog推荐
@@ -24,18 +26,7 @@
   <link rel="stylesheet" href="css/jquery.pagination.css" type="text/css">
   <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
   <script type="text/javascript" src="js/jquery.pagination.min.js"></script>
-  <script>
-      $(function() {
-          $("#pagination1").pagination({
-              currentPage: 1,
-              totalPage: 4,
-              callback: function (current) {
-                  $("#current1").html(current)
-              }
-          });
-      })
-  </script>
-
+  <script type="text/javascript" src="js/volunteerJs/groupList.js"></script>
 </head>
   <body>
     <!-- Header Start-->
@@ -102,18 +93,20 @@
       </div>  
       <div class="title">
         <span style="font-size: 15px">团队名称：</span>
-        <input type="text" id="select" style="width: 200px;height: 15px;" />
-        <input type="button" value="搜索"class="submitButton" />
+        <input type="text" id="select" style="width: 200px;height: 15px;font-size: 13px"/>
+        <input type="button" value="搜索" id="search" class="submitButton" onclick="getGroupListByName()"/>
       </div>
     </div>
     <!-- Middle Part Start-->
     <div id="middle-wrapper">  
       <!-- Left Section Start-->  
       <div class="leftsec">
-        <div class="team">      <h3>全部团队</h3>
-          <li data-id="id-1" data-type="interface" class="main" >
-            <a href="images/big-img.jpg" rel="prettyPhoto[gallery2]">
-              <img src="images/port1.jpg" alt="" /> Graphic River
+        <input type="hidden" id="groupCount" th:value="${groupCount}">
+        <div class="team" id="groupList">      <h3>全部团队</h3>
+          <li  class="main" >
+            <a href="images/big-img.jpg">
+              <img src="images/port1.jpg" alt="" />
+              Graphic River
               <span>Website / Interface Design
               </span></a>
           </li>
@@ -169,7 +162,6 @@
         <div class="box" style="margin-top: -20px;float: right;margin-right: 10px">
           <div id="pagination1" class="page fl"></div>
           <div class="info fl">
-            <p>当前页数：<span id="current1">1</span></p>
           </div>
 
         </div>
