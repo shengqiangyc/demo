@@ -18,9 +18,7 @@ import java.io.*;
 import java.util.Map;
 import java.util.UUID;
 
-/**
- * Created by yida on 16/1/18.
- */
+
 @Component
 public class ImageManagerImpl implements ImageManager,InitializingBean {
 

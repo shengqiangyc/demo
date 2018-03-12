@@ -2,9 +2,6 @@ package com.volunteer.demo.manager;
 
 import org.apache.commons.fileupload.FileItem;
 
-/**
- * Created by pyshift on 15/9/23.
- */
 
 public interface ImageManager {
 
