@@ -4,6 +4,7 @@
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/GroupDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DO/YcUserGroup.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java
+/Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/GroupMembersDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/mapper/YcGroupActivityMapper.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/UserGroupDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DO/YcGroupApply.java

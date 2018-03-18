@@ -13,14 +13,12 @@ import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.RegisterDTO;
 import com.volunteer.demo.common.ResultCode;
 import com.volunteer.demo.enums.GroupRoleEnum;
-import com.volunteer.demo.form.ApplyEntryGroupForm;
-import com.volunteer.demo.form.CreateGroupForm;
-import com.volunteer.demo.form.GroupForm;
-import com.volunteer.demo.form.UserGroupMapForm;
+import com.volunteer.demo.form.*;
 import com.volunteer.demo.manager.GroupManager;
 import com.volunteer.demo.manager.ImageManager;
 import com.volunteer.demo.session.SessionHelper;
 import com.volunteer.demo.vo.GroupListVO;
+import com.volunteer.demo.vo.GroupMemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -129,7 +127,13 @@ public class GroupController {
         return ycGroups;
     }
 
-
-
+    /**
+     * 获取团队所有成员
+     */
+    @RequestMapping(value = "/getAllGroupMembers.json",method = RequestMethod.POST)
+    @ResponseBody
+    public List<GroupMemberVO> getGroupVolunteers(@RequestBody GroupMembersForm form){
+        return groupManager.getGroupMembers(form);
+    }
 
 }

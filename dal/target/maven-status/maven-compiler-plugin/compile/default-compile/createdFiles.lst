@@ -6,6 +6,7 @@ com/volunteer/demo/mapper/YcActivityMapper.class
 com/volunteer/demo/DO/YcUserGroup.class
 com/volunteer/demo/DO/YcActivity.class
 com/volunteer/demo/mapper/YcGroupApplyMapper.class
+com/volunteer/demo/DTO/GroupMembersDTO.class
 com/volunteer/demo/DO/YcUser.class
 com/volunteer/demo/DO/YcGroupActivity.class
 com/volunteer/demo/DO/YcGroupApply.class

@@ -1,6 +1,7 @@
 package com.volunteer.demo.mapper;
 
 import com.volunteer.demo.DO.YcUserGroup;
+import com.volunteer.demo.DTO.GroupMembersDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -66,4 +67,14 @@ public interface YcUserGroupMapper {
      * 获取用户所有团队Id
      */
     List<Long> getMyGroupList(Long userId);
+
+    /**
+     * 获取团队下的所有用户id
+     */
+    List<Long> getGroupMembers(GroupMembersDTO dto);
+
+    /**
+     * 获取用户和团队的关系
+     */
+    YcUserGroup getYcUserGroup(UserGroupDTO dto);
 }

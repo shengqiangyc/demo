@@ -10,6 +10,7 @@ package com.volunteer.demo.controller;
 
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
+import com.volunteer.demo.DTO.UserGroupDTO;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.manager.GroupManager;
 import com.volunteer.demo.session.SessionHelper;
@@ -84,6 +85,22 @@ public class PageSkipController {
         Integer countGroup = groupManager.countGroup();
         model.addAttribute("groupCount",countGroup);
         return "groupList";
+    }
+
+    /**
+     * 跳转团队成员页
+     */
+    @RequestMapping(value = "/groupVolunteers.html",method = RequestMethod.GET)
+    public String groupList(Model model,String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setUserId(user.getUserId());
+        dto.setGroupId(Long.parseLong(groupId));
+        model.addAttribute("membersVO",groupManager.getGroupVolunteerVO(dto));
+        return "groupVolunteers";
     }
 
 

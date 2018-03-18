@@ -13,21 +13,18 @@ import com.volunteer.demo.DO.YcGroupApply;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DO.YcUserGroup;
 import com.volunteer.demo.DTO.GroupDTO;
+import com.volunteer.demo.DTO.GroupMembersDTO;
 import com.volunteer.demo.DTO.PageDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import com.volunteer.demo.common.DateUtils;
-import com.volunteer.demo.enums.ApplyStatusEnum;
-import com.volunteer.demo.enums.GroupStatusEnum;
-import com.volunteer.demo.enums.RecordStatusEnum;
+import com.volunteer.demo.enums.*;
 import com.volunteer.demo.form.*;
 import com.volunteer.demo.manager.GroupManager;
 import com.volunteer.demo.mapper.YcGroupApplyMapper;
 import com.volunteer.demo.mapper.YcGroupMapper;
 import com.volunteer.demo.mapper.YcUserGroupMapper;
 import com.volunteer.demo.mapper.YcUserMapper;
-import com.volunteer.demo.vo.GroupDetailVO;
-import com.volunteer.demo.vo.GroupListVO;
-import com.volunteer.demo.vo.IndexGroupVO;
+import com.volunteer.demo.vo.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -238,6 +235,63 @@ public class GroupManagerImpl implements GroupManager{
             }
         }
         return ycGroupList;
+    }
+
+    @Override
+    public List<GroupMemberVO> getGroupMembers(GroupMembersForm form) {
+        List<GroupMemberVO> groupMemberVOS = new ArrayList<>();
+        if(form.getGroupId() == null){
+            return  groupMemberVOS;
+        }
+        if(form.getPageNo() == null){
+            return groupMemberVOS;
+        }
+        GroupMembersDTO dto = new GroupMembersDTO();
+        dto.setGroupId(form.getGroupId());
+        dto.setStart((form.getPageNo()-1)*6);
+        List<Long> userIds = userGroupMapper.getGroupMembers(dto);
+        if(CollectionUtils.isEmpty(userIds)){
+            return groupMemberVOS;
+        }
+        for(Long userId : userIds){
+            YcUser user = userMapper.selectByPrimaryKey(userId);
+            UserGroupDTO userGroupDTO = new UserGroupDTO();
+            GroupMemberVO vo = new GroupMemberVO();
+            if(user != null){
+                userGroupDTO.setGroupId(form.getGroupId());
+                userGroupDTO.setUserId(userId);
+                YcUserGroup ycUserGroup = userGroupMapper.getYcUserGroup(userGroupDTO);
+                vo.setAddress(user.getUserAddress());
+                vo.setRealName(user.getRealName());
+                vo.setUserLogo(user.getUserLogo());
+                vo.setUserName(user.getUserName());
+                vo.setSex(SexEnum.getMsgByCode(user.getSex()));
+                vo.setRole(GroupRoleEnum.getMsgByCode(ycUserGroup.getGroupRole()));
+                vo.setEntryDate(DateUtils.convertDateToYMDHMS(ycUserGroup.getEntryDate()));
+                groupMemberVOS.add(vo);
+            }
+        }
+        return groupMemberVOS;
+    }
+
+    @Override
+    public GroupVolunteersVO getGroupVolunteerVO(UserGroupDTO dto) {
+        GroupVolunteersVO groupVolunteersVO = new GroupVolunteersVO();
+        if(dto.getGroupId() == null){
+            return  groupVolunteersVO;
+        }
+        if(dto.getUserId() == null){
+            return groupVolunteersVO;
+        }
+        YcUserGroup userGroup = userGroupMapper.getYcUserGroup(dto);
+        if(userGroup == null){
+            return groupVolunteersVO;
+        }
+        Integer count = userGroupMapper.countGroupUser(dto.getGroupId());
+        groupVolunteersVO.setCount(count/6+1);
+        groupVolunteersVO.setGroupId(dto.getGroupId());
+        groupVolunteersVO.setRole(userGroup.getGroupRole());
+        return groupVolunteersVO;
     }
 
 

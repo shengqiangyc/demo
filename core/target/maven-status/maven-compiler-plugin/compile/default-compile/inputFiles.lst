@@ -12,13 +12,17 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/PageForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/LoginManager.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupVolunteersVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/GroupRoleEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/GroupManager.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/GroupMembersForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupListVO.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/SexEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ActivityEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/impl/LoginManagerImpl.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/GroupStatusEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/RegisterManager.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/impl/ActivityManagerImpl.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/UrlVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupDetailVO.java

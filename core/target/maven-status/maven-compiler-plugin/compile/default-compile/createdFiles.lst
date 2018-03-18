@@ -1,3 +1,4 @@
+com/volunteer/demo/enums/SexEnum.class
 com/volunteer/demo/manager/impl/ActivityManagerImpl.class
 com/volunteer/demo/form/UserGroupMapForm.class
 com/volunteer/demo/enums/GroupStatusEnum.class
@@ -5,11 +6,14 @@ com/volunteer/demo/enums/GroupRoleEnum.class
 com/volunteer/demo/form/PageForm.class
 com/volunteer/demo/form/ApplyEntryGroupForm.class
 com/volunteer/demo/form/RegisterForm.class
+com/volunteer/demo/form/GroupMembersForm.class
 com/volunteer/demo/vo/GroupListVO.class
 com/volunteer/demo/vo/CreateGroupVO.class
 com/volunteer/demo/vo/IndexGroupVO.class
+com/volunteer/demo/vo/GroupMemberVO.class
 com/volunteer/demo/session/SessionHelper.class
 com/volunteer/demo/vo/GroupDetailVO.class
+com/volunteer/demo/vo/GroupVolunteersVO.class
 com/volunteer/demo/session/UUIDUtils.class
 com/volunteer/demo/enums/ApplyStatusEnum.class
 com/volunteer/demo/session/NetWorkUtil.class

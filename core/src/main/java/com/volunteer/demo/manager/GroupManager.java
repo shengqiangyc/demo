@@ -9,11 +9,11 @@
 package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcGroup;
+import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.PageDTO;
+import com.volunteer.demo.DTO.UserGroupDTO;
 import com.volunteer.demo.form.*;
-import com.volunteer.demo.vo.GroupDetailVO;
-import com.volunteer.demo.vo.GroupListVO;
-import com.volunteer.demo.vo.IndexGroupVO;
+import com.volunteer.demo.vo.*;
 
 import java.util.List;
 
@@ -76,6 +76,16 @@ public interface GroupManager {
      * 获取用户的所有团队列表
      */
     List<YcGroup> getMyGroupList(Long userId);
+
+    /**
+     * 分页获取团队下的所有用户
+     */
+    List<GroupMemberVO> getGroupMembers(GroupMembersForm form);
+
+    /**
+     * 团队成员管理页面相关参数
+     */
+    GroupVolunteersVO getGroupVolunteerVO(UserGroupDTO dto);
 
 
 

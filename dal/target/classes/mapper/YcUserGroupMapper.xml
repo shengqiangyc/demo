@@ -85,4 +85,16 @@
     where user_id = #{userId}
   </select>
 
+  <select id="getGroupMembers" parameterType="com.volunteer.demo.DTO.GroupMembersDTO" resultType="java.lang.Long">
+    select user_id
+    from yc_user_group
+    where group_id = #{groupId}
+    limit #{start},6
+  </select>
+
+  <select id="getYcUserGroup" parameterType="com.volunteer.demo.DTO.UserGroupDTO" resultMap="BaseResultMap">
+    select * from yc_user_group
+    where user_id = #{userId} and group_id = #{groupId}
+  </select>
+
 </mapper>
