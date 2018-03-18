@@ -19,7 +19,10 @@ import lombok.Data;
 @Data
 public class UserGroupMapForm {
 
+    private Long groupId;
     private String groupName;
     private Long userId;
     private Integer userRole;
+    //操作类型
+    private Integer performType;
 }

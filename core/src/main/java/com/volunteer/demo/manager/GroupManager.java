@@ -87,6 +87,16 @@ public interface GroupManager {
      */
     GroupVolunteersVO getGroupVolunteerVO(UserGroupDTO dto);
 
+    /**
+     * 改变用户角色
+     */
+    int updateUserRole(UserGroupMapForm form);
+
+    /**
+     * 解散团队
+     */
+    int disbandGroup(GroupForm form);
+
 
 
 }

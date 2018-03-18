@@ -77,4 +77,19 @@ public interface YcUserGroupMapper {
      * 获取用户和团队的关系
      */
     YcUserGroup getYcUserGroup(UserGroupDTO dto);
+
+    /**
+     * 开除一名成员
+     */
+    int deleteOne(UserGroupDTO dto);
+
+    /**
+     * 将一位成员设为管理员
+     */
+    int setAdmin(UserGroupDTO dto);
+
+    /**
+     * 取消管理员
+     */
+    int cancelAdmin(UserGroupDTO dto);
 }

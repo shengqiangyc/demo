@@ -7,11 +7,11 @@ function menum(){
     var s = "<ul id=\"menu-primary-menu\" class=\"sf-menu\">\n" +
         "            <li>\n" +
         "              <a href=\"index.html\">\n" +
-        "              <span>首页\n" +
+        "              <span>首页&nbsp&nbsp\n"+
         "              </span></a>\n" +
         "            </li>\n" +
         "            <li>\n" +
-        "              <a href=\"\" class=\"sf-with-ul\">志愿者之家 ▾</a>\n" +
+        "              <a href=\"\" class=\"sf-with-ul\"><span>志愿者之家 ▾</span></a>\n" +
         "              <ul class=\"sub-menu\">\n" +
         "                <li>\n" +
         "                  <a href=\"groupList.html\">\n" +
@@ -35,7 +35,7 @@ function menum(){
         "                </li>\n" +
         "              </ul>\n" +
         "            <li>\n" +
-        "            <a href=\"\" class=\"sf-with-ul\">我的团队 ▾</a>\n" +
+        "            <a href=\"\" class=\"sf-with-ul\"><span>我的团队 ▾</span></a>\n" +
         "              <ul class=\"sub-menu\" id=\"myGroupList\">\n" +
         "                <li>\n" +
         "                  <a href=\"groupVolunteers.html\"><span>团队1</span></a>\n" +

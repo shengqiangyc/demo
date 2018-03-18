@@ -136,4 +136,32 @@ public class GroupController {
         return groupManager.getGroupMembers(form);
     }
 
+    /**
+     * 改变用户角色
+     */
+    @RequestMapping(value = "/updateUserRole.json",method = RequestMethod.POST)
+    @ResponseBody
+    public String getGroupVolunteers(@RequestBody UserGroupMapForm form){
+        Integer result = groupManager.updateUserRole(form);
+        if(result > 0){
+            return ResultCode.SUCCESS;
+        } else {
+            return ResultCode.FAIL;
+        }
+    }
+
+    /**
+     * 解散团队
+     */
+    @RequestMapping(value = "/disbandGroup.json",method = RequestMethod.POST)
+    @ResponseBody
+    public String disBandGroup(@RequestBody GroupForm form){
+        Integer result = groupManager.disbandGroup(form);
+        if(result > 0){
+            return ResultCode.SUCCESS;
+        } else {
+            return ResultCode.FAIL;
+        }
+    }
+
 }

@@ -230,7 +230,7 @@ public class GroupManagerImpl implements GroupManager{
         }
         for(Long groupId : groupIdList){
             YcGroup ycGroup = ycGroupMapper.selectByPrimaryKey(groupId);
-            if(ycGroup != null){
+            if(ycGroup != null && ycGroup.getGroupStatus() != 3){
                 ycGroupList.add(ycGroup);
             }
         }
@@ -261,6 +261,7 @@ public class GroupManagerImpl implements GroupManager{
                 userGroupDTO.setGroupId(form.getGroupId());
                 userGroupDTO.setUserId(userId);
                 YcUserGroup ycUserGroup = userGroupMapper.getYcUserGroup(userGroupDTO);
+                vo.setUserId(userId);
                 vo.setAddress(user.getUserAddress());
                 vo.setRealName(user.getRealName());
                 vo.setUserLogo(user.getUserLogo());
@@ -288,10 +289,35 @@ public class GroupManagerImpl implements GroupManager{
             return groupVolunteersVO;
         }
         Integer count = userGroupMapper.countGroupUser(dto.getGroupId());
-        groupVolunteersVO.setCount(count/6+1);
+        groupVolunteersVO.setCount((count-1)/6+1);
         groupVolunteersVO.setGroupId(dto.getGroupId());
         groupVolunteersVO.setRole(userGroup.getGroupRole());
         return groupVolunteersVO;
+    }
+
+    @Override
+    public int updateUserRole(UserGroupMapForm form) {
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setGroupId(form.getGroupId());
+        dto.setUserId(form.getUserId());
+        Integer result = 0;
+        if(form.getPerformType() == 1){
+            result = userGroupMapper.setAdmin(dto);
+        } else if(form.getPerformType() == 2){
+            result = userGroupMapper.cancelAdmin(dto);
+        } else if(form.getPerformType() == 3){
+            result = userGroupMapper.deleteOne(dto);
+        }
+        return result;
+    }
+
+    @Override
+    public int disbandGroup(GroupForm form) {
+        if(form.getGroupId() == null){
+            return 0;
+        }
+        Integer result = ycGroupMapper.disbandGroup(form.getGroupId());
+        return result;
     }
 
 

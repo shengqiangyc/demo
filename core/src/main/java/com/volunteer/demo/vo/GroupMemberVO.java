@@ -26,4 +26,5 @@ public class GroupMemberVO {
     private String role;
     private String entryDate;
     private String sex;
+    private Long userId;
 }

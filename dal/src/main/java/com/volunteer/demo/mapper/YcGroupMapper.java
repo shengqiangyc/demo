@@ -77,6 +77,11 @@ public interface YcGroupMapper {
      */
     Integer countGroupList();
 
+    /**
+     * 解散团队
+     */
+    Integer disbandGroup(Long groupId);
+
 
 
 

@@ -2,53 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8c91330-b860-422b-8a95-b3eb831c83ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/enums/SexEnum.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupMembersForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupVolunteersVO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/DTO/GroupMembersDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/target/classes/com/volunteer/demo/common/ResultCode.class" afterPath="$PROJECT_DIR$/common/target/classes/com/volunteer/demo/common/ResultCode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/form/GroupForm.class" afterPath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/form/GroupForm.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/form/UserGroupMapForm.class" afterPath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/form/UserGroupMapForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/manager/GroupManager.class" afterPath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/manager/GroupManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/manager/impl/GroupManagerImpl.class" afterPath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/manager/impl/GroupManagerImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/vo/GroupMemberVO.class" afterPath="$PROJECT_DIR$/core/target/classes/com/volunteer/demo/vo/GroupMemberVO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/target/classes/com/volunteer/demo/mapper/YcGroupMapper.class" afterPath="$PROJECT_DIR$/dal/target/classes/com/volunteer/demo/mapper/YcGroupMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/target/classes/com/volunteer/demo/mapper/YcUserGroupMapper.class" afterPath="$PROJECT_DIR$/dal/target/classes/com/volunteer/demo/mapper/YcUserGroupMapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/volunteer/demo/controller/GroupController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/volunteer/demo/controller/GroupController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/com/volunteer/demo/controller/PageSkipController.class" afterPath="$PROJECT_DIR$/web/target/classes/com/volunteer/demo/controller/PageSkipController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/src/main/java/com/volunteer/demo/common/ResultCode.java" afterPath="$PROJECT_DIR$/common/src/main/java/com/volunteer/demo/common/ResultCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupForm.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/UserGroupMapForm.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/UserGroupMapForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java" afterPath="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcGroupMapper.java" afterPath="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcGroupMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java" afterPath="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml" afterPath="$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/src/main/resources/mapper/YcUserGroupMapper.xml" afterPath="$PROJECT_DIR$/dal/src/main/resources/mapper/YcUserGroupMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/target/classes/mapper/YcGroupMapper.xml" afterPath="$PROJECT_DIR$/dal/target/classes/mapper/YcGroupMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/target/classes/mapper/YcUserGroupMapper.xml" afterPath="$PROJECT_DIR$/dal/target/classes/mapper/YcUserGroupMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/dal/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dal/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/dal/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/PageSkipController.java" afterPath="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/PageSkipController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/activityList.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/activityList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/applyList.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/applyList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/createActivity.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/createActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/createGroup.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/createGroup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/css/style.css" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/groupDetails.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/groupDetails.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/groupList.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/groupList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/groupVolunteers.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/groupVolunteers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/myGroupList.js" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/myGroupList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/myActivityList.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/myActivityList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/myApplyList.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/myApplyList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/activityList.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/activityList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/applyList.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/applyList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/createActivity.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/createActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/createGroup.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/createGroup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/css/style.css" afterPath="$PROJECT_DIR$/web/target/classes/templates/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/groupDetails.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/groupDetails.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/groupList.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/groupList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/groupVolunteers.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/groupVolunteers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/js/volunteerJs/groupVolunteer.js" afterPath="$PROJECT_DIR$/web/target/classes/templates/js/volunteerJs/groupVolunteer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/js/volunteerJs/myGroupList.js" afterPath="$PROJECT_DIR$/web/target/classes/templates/js/volunteerJs/myGroupList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/myActivityList.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/myActivityList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/target/classes/templates/myApplyList.html" afterPath="$PROJECT_DIR$/web/target/classes/templates/myApplyList.html" />
     </list>
     <ignored path="$PROJECT_DIR$/common/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,58 +46,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activityDetails.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/activityDetails.html">
+      <file leaf-file-name="GroupController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="48" column="45" lean-forward="false" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+            <state relative-caret-position="97">
+              <caret line="155" column="34" lean-forward="false" selection-start-line="155" selection-start-column="34" selection-end-line="155" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myGroupList.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/myGroupList.js">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+            <state relative-caret-position="-20133">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applyList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/applyList.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createActivity.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/createActivity.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="groupDetails.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/groupDetails.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/login.html">
+      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -124,41 +76,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myActivityList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/myActivityList.html">
+      <file leaf-file-name="uiDesigner.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myApplyList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/myApplyList.html">
+      <file leaf-file-name="groupVolunteer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+            <state relative-caret-position="335">
+              <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
+              <folding>
+                <marker date="1521372177270" expanded="true" signature="357:368" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="406:417" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="454:465" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="504:515" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="553:564" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="1212:1236" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="1931:1949" ph="..." />
+                <marker date="1521372177270" expanded="true" signature="2269:2287" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupManagerImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-851">
+              <caret line="231" column="9" lean-forward="false" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/register.html">
+      <file leaf-file-name="GroupManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+            <state relative-caret-position="400">
+              <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createGroup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/createGroup.html">
+      <file leaf-file-name="YcGroupMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+            <state relative-caret-position="239">
+              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+              <folding>
+                <marker date="1521372413595" expanded="true" signature="1403:1471" ph="delete from " />
+                <marker date="1521372413595" expanded="true" signature="1687:2141" ph="insert into yc_group... " />
+                <marker date="1521372413595" expanded="true" signature="2369:2922" ph="update yc_gr... " />
+                <marker date="1521372413595" expanded="true" signature="3161:3374" ph="select group... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="3573:3738" ph="select group... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="3847:3916" ph="select count... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="3990:4056" ph="select * fro... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="4158:4216" ph="select * fro... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="4343:4536" ph="select * fro... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="4343:4557" ph="select * fro... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="4637:4666" ph="select count... yc_group" />
+                <marker date="1521372413595" expanded="true" signature="4744:4816" ph="update yc_gr... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserGroupMapForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/UserGroupMapForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupStatusEnum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/enums/GroupStatusEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -190,30 +194,19 @@
         <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/DTO/pageDTO.java" />
         <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/DTO/PageDTO.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/PageForm.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupForm.java" />
         <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/DTO/GroupDTO.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/volunteer/demo/common/DateUtils.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupListVO.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/ImageManagerImpl.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/ImageManager.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupList.js" />
-        <option value="$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml" />
-        <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcGroupMapper.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/css/style.css" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupMembersForm.java" />
-        <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/enums/SexEnum.java" />
         <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/DTO/GroupMembersDTO.java" />
-        <option value="$PROJECT_DIR$/dal/src/main/resources/mapper/YcUserGroupMapper.xml" />
         <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupVolunteersVO.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/PageSkipController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js" />
-        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/templates/groupVolunteers.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/groupList.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/activityDetails.html" />
@@ -225,6 +218,19 @@
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/myActivityList.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/myApplyList.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/myGroupList.js" />
+        <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java" />
+        <option value="$PROJECT_DIR$/dal/src/main/resources/mapper/YcUserGroupMapper.xml" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/UserGroupMapForm.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/volunteer/demo/common/ResultCode.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupForm.java" />
+        <option value="$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcGroupMapper.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/groupVolunteers.html" />
+        <option value="$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java" />
+        <option value="$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java" />
       </list>
     </option>
   </component>
@@ -300,6 +306,11 @@
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
               <item name="demo1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -389,7 +400,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -399,7 +410,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -435,16 +446,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo1" type="462c0819:PsiDirectoryNode" />
-              <item name="dal" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="DTO" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="demo" type="b2602c69:ProjectViewProjectNode" />
@@ -526,27 +527,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo1" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="demo1" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="volunteerJs" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -568,6 +548,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.idea/workspace.xml&#10;/Users/shengqiang/demo1/.idea/vcs.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -693,12 +674,12 @@
       <workItem from="1520683323953" duration="528000" />
       <workItem from="1520736044134" duration="712000" />
       <workItem from="1520739066409" duration="12116000" />
-      <workItem from="1521348746552" duration="13938000" />
+      <workItem from="1521348746552" duration="20875000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36395000" />
+    <option name="totallyTimeSpent" value="43332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -774,106 +755,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/PageForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/session/SessionHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-487">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/LoginManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/ImageManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/ImageManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/ActivityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/RegisterManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/group.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="41" column="10" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="41" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="548" column="17" lean-forward="true" selection-start-line="548" selection-start-column="17" selection-end-line="548" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -886,14 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupMembersForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -922,26 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/enums/GroupStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="47" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/enums/SexEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -954,34 +816,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="78" column="49" lean-forward="false" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcGroupMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="72" column="43" lean-forward="false" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1002,26 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="104" column="2" lean-forward="false" selection-start-line="104" selection-start-column="2" selection-end-line="104" selection-end-column="2" />
-          <folding>
-            <marker date="1521354639615" expanded="true" signature="1403:1471" ph="delete from " />
-            <marker date="1521354639615" expanded="true" signature="1687:2141" ph="insert into yc_group... " />
-            <marker date="1521354639615" expanded="true" signature="2369:2922" ph="update yc_gr... " />
-            <marker date="1521354639615" expanded="true" signature="3161:3374" ph="select group... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="3573:3738" ph="select group... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="3847:3916" ph="select count... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="3990:4056" ph="select * fro... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="4158:4216" ph="select * fro... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="4343:4507" ph="select * fro... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="4343:4528" ph="select * fro... yc_group" />
-            <marker date="1521354639615" expanded="true" signature="4608:4637" ph="select count... yc_group" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/DTO/GroupMembersDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1030,106 +848,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dal/src/main/resources/mapper/YcUserGroupMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="87" column="72" lean-forward="false" selection-start-line="87" selection-start-column="72" selection-end-line="87" selection-end-column="72" />
-          <folding>
-            <marker date="1521361908486" expanded="true" signature="996:1078" ph="delete from " />
-            <marker date="1521361908486" expanded="true" signature="1816:2084" ph="update yc_us... " />
-            <marker date="1521361908486" expanded="true" signature="2323:2466" ph="select user_... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="2665:2751" ph="select user_... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="2862:2932" ph="select count... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="3064:3158" ph="select count... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="3269:3337" ph="select count... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="3445:3513" ph="select group... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="3646:3736" ph="select user_... yc_user_group" />
-            <marker date="1521361908486" expanded="true" signature="3863:3946" ph="select * fro... yc_user_group" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupVolunteersVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/PageSkipController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="84" column="49" lean-forward="false" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="72" column="12" lean-forward="false" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="290" column="44" lean-forward="false" selection-start-line="290" selection-start-column="44" selection-end-line="290" selection-end-column="44" />
-          <folding>
-            <element signature="e#7741#7742#0" expanded="true" />
-            <element signature="e#7798#7799#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/groupVolunteers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="36" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-          <folding>
-            <marker date="1521363118965" expanded="true" signature="357:368" ph="..." />
-            <marker date="1521363118965" expanded="true" signature="406:417" ph="..." />
-            <marker date="1521363118965" expanded="true" signature="454:465" ph="..." />
-            <marker date="1521363118965" expanded="true" signature="504:515" ph="..." />
-            <marker date="1521363118965" expanded="true" signature="553:564" ph="..." />
-            <marker date="1521363118965" expanded="true" signature="1130:1154" ph="..." />
-            <marker date="1521363118965" expanded="true" signature="1580:1598" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <marker date="1521354639626" expanded="true" signature="1490:1502" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/groupList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1193,15 +915,7 @@
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1214,10 +928,280 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="131" column="17" lean-forward="false" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/groupList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/volunteer/demo/common/ResultCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-39">
+          <caret line="17" column="43" lean-forward="false" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+          <folding>
+            <marker date="1521354639626" expanded="true" signature="1490:1502" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/group.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/vo/GroupMemberVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/src/main/resources/mapper/YcUserGroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="104" column="2" lean-forward="false" selection-start-line="104" selection-start-column="2" selection-end-line="104" selection-end-column="2" />
+          <folding>
+            <marker date="1521367917537" expanded="true" signature="996:1078" ph="delete from " />
+            <marker date="1521367917537" expanded="true" signature="1816:2084" ph="update yc_us... " />
+            <marker date="1521367917537" expanded="true" signature="2323:2466" ph="select user_... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="2665:2751" ph="select user_... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="2862:2932" ph="select count... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="3064:3158" ph="select count... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="3269:3337" ph="select count... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="3445:3513" ph="select group... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="3646:3736" ph="select user_... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="3863:3946" ph="select * fro... yc_user_group" />
+            <marker date="1521367917537" expanded="true" signature="4042:4123" ph="delete from " />
+            <marker date="1521367917537" expanded="true" signature="4218:4317" ph="update yc_us... " />
+            <marker date="1521367917537" expanded="true" signature="4415:4514" ph="update yc_us... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/PageSkipController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="101" column="56" lean-forward="false" selection-start-line="101" selection-start-column="56" selection-end-line="101" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/RegisterForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/PageForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/LoginForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupMembersForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/GroupForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcUserGroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/myGroupList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="13" column="64" lean-forward="true" selection-start-line="13" selection-start-column="64" selection-end-line="13" selection-end-column="64" />
+        <state relative-caret-position="17">
+          <caret line="9" column="41" lean-forward="false" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/groupVolunteers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="124" column="30" lean-forward="false" selection-start-line="124" selection-start-column="30" selection-end-line="124" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/src/main/java/com/volunteer/demo/mapper/YcGroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/enums/GroupStatusEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/form/UserGroupMapForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/GroupManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/com/volunteer/demo/manager/impl/GroupManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-851">
+          <caret line="231" column="9" lean-forward="false" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dal/src/main/resources/mapper/YcGroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding>
+            <marker date="1521372413595" expanded="true" signature="1403:1471" ph="delete from " />
+            <marker date="1521372413595" expanded="true" signature="1687:2141" ph="insert into yc_group... " />
+            <marker date="1521372413595" expanded="true" signature="2369:2922" ph="update yc_gr... " />
+            <marker date="1521372413595" expanded="true" signature="3161:3374" ph="select group... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="3573:3738" ph="select group... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="3847:3916" ph="select count... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="3990:4056" ph="select * fro... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="4158:4216" ph="select * fro... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="4343:4536" ph="select * fro... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="4343:4557" ph="select * fro... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="4637:4666" ph="select count... yc_group" />
+            <marker date="1521372413595" expanded="true" signature="4744:4816" ph="update yc_gr... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/js/volunteerJs/groupVolunteer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="113" column="42" lean-forward="false" selection-start-line="113" selection-start-column="42" selection-end-line="113" selection-end-column="42" />
+          <folding>
+            <marker date="1521372177270" expanded="true" signature="357:368" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="406:417" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="454:465" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="504:515" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="553:564" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="1212:1236" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="1931:1949" ph="..." />
+            <marker date="1521372177270" expanded="true" signature="2269:2287" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/volunteer/demo/controller/GroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="155" column="34" lean-forward="false" selection-start-line="155" selection-start-column="34" selection-end-line="155" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20133">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

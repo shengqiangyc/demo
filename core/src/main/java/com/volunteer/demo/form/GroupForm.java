@@ -19,5 +19,6 @@ import lombok.Data;
 @Data
 public class GroupForm extends PageForm{
 
+    private Long groupId;
     private String groupName;
 }

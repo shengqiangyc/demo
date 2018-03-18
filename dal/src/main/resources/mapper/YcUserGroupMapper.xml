@@ -97,4 +97,21 @@
     where user_id = #{userId} and group_id = #{groupId}
   </select>
 
+  <delete id="deleteOne" parameterType="com.volunteer.demo.DTO.UserGroupDTO">
+    delete from yc_user_group
+    where user_id = #{userId} and group_id = #{groupId}
+  </delete>
+
+  <update id="setAdmin" parameterType="com.volunteer.demo.DTO.UserGroupDTO">
+    update yc_user_group
+    set group_role = 2
+    where user_id = #{userId} and group_id = #{groupId}
+  </update>
+
+  <update id="cancelAdmin" parameterType="com.volunteer.demo.DTO.UserGroupDTO">
+    update yc_user_group
+    set group_role = 1
+    where user_id = #{userId} and group_id = #{groupId}
+  </update>
+
 </mapper>

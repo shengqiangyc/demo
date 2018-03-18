@@ -95,8 +95,9 @@
 
   <select id="getGroupListByPage" parameterType="com.volunteer.demo.DTO.GroupDTO" resultMap="BaseResultMap">
     select * from yc_group
+    where group_status in (1,2)
     <if test="groupName != null and groupName != ''">
-      where group_name = #{groupName}
+     and group_name = #{groupName}
     </if>
     order by create_time desc
     limit #{start},#{pageSize}
@@ -105,6 +106,12 @@
   <select id="countGroupList" resultType="java.lang.Integer">
     select count(*) from yc_group
   </select>
+
+  <update id="disbandGroup" parameterType="java.lang.Long">
+    update yc_group
+    set group_status = 3
+    where group_id = #{groupId}
+  </update>
 
 
 
