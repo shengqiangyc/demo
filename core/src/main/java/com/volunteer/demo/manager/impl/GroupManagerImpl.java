@@ -220,4 +220,25 @@ public class GroupManagerImpl implements GroupManager{
     public Integer countGroup() {
         return ycGroupMapper.countGroupList()/9+1;
     }
+
+    @Override
+    public List<YcGroup> getMyGroupList(Long userId) {
+        List<YcGroup> ycGroupList = new ArrayList<>();
+        if(userId == null){
+            return ycGroupList;
+        }
+        List<Long> groupIdList = userGroupMapper.getMyGroupList(userId);
+        if(CollectionUtils.isEmpty(groupIdList)){
+            return  ycGroupList;
+        }
+        for(Long groupId : groupIdList){
+            YcGroup ycGroup = ycGroupMapper.selectByPrimaryKey(groupId);
+            if(ycGroup != null){
+                ycGroupList.add(ycGroup);
+            }
+        }
+        return ycGroupList;
+    }
+
+
 }

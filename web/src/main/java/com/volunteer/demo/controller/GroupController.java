@@ -8,6 +8,7 @@
  */
 package com.volunteer.demo.controller;
 
+import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.RegisterDTO;
 import com.volunteer.demo.common.ResultCode;
@@ -113,6 +114,21 @@ public class GroupController {
     public List<GroupListVO> getGroupList(@RequestBody GroupForm form){
         return groupManager.getGroupListByPage(form);
     }
+
+    /**
+     * 获取当前用户的所有团队
+     */
+    @RequestMapping(value="/getMyGroupList.json",method = RequestMethod.POST)
+    @ResponseBody
+    public List<YcGroup> getMyGroupList(HttpServletRequest request){
+         YcUser user = sessionHelper.getUser(request);
+         if(user == null){
+             return null;
+         }
+         List<YcGroup> ycGroups = groupManager.getMyGroupList(user.getUserId());
+        return ycGroups;
+    }
+
 
 
 

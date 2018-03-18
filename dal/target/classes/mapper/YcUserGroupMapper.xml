@@ -79,4 +79,10 @@
     where user_id = #{userId}
   </select>
 
+  <select id="getMyGroupList" parameterType="java.lang.Long" resultType="java.lang.Long">
+    select group_id
+    from yc_user_group
+    where user_id = #{userId}
+  </select>
+
 </mapper>

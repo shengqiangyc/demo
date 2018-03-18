@@ -61,4 +61,9 @@ public interface YcUserGroupMapper {
      * 判断用户团队是否达到三个
      */
     int countUserGroup(Long userId);
+
+    /**
+     * 获取用户所有团队Id
+     */
+    List<Long> getMyGroupList(Long userId);
 }

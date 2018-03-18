@@ -5,8 +5,6 @@ import org.apache.commons.fileupload.FileItem;
 
 public interface ImageManager {
 
-
-
     /**
      * 七牛上传图片
      * @param fileItem

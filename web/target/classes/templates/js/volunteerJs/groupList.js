@@ -28,6 +28,10 @@ function getGroupListByName(){
 }
 
 function getGroupList(current){
+    var s = "<h3>全部团队</h3>";
+    s += "<span>未找到结果</span>"
+    $("#groupList").html(s);
+
     var data ={
         groupName : $("#select").val(),
         pageNo : current
@@ -41,14 +45,14 @@ function getGroupList(current){
         success: function (data) {
            var s="";
             s+="<h3>全部团队</h3>";
-           for(var i in data){
-             s += "<li  class='main' >";
-             s += "<a href='groupDetail.json?groupId="+data[i].groupId+"'>";
-             s += "<img src='"+data[i].groupImage+"' width='212' height='129'/>";
-             s += data[i].groupName;
-             s +="<span>"+data[i].groupStatus+"</span></li></a>" ;
-             $("#groupList").html(s);
+           for(var i in data) {
+               s += "<li  class='main' >";
+               s += "<a href='groupDetail.json?groupId=" + data[i].groupId + "'>";
+               s += "<img src='" + data[i].groupImage + "' width='212' height='129'/>";
+               s += data[i].groupName;
+               s += "<span style='color: green'>" + data[i].groupStatus + "</span></li></a>";
+               $("#groupList").html(s);
            }
-        }
+           }
     })
 }

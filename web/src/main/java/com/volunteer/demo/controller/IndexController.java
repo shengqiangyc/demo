@@ -8,14 +8,19 @@
  */
 package com.volunteer.demo.controller;
 
+import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.manager.ActivityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Description: 首页接口

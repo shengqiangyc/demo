@@ -72,6 +72,11 @@ public interface GroupManager {
      */
     Integer countGroup();
 
+    /**
+     * 获取用户的所有团队列表
+     */
+    List<YcGroup> getMyGroupList(Long userId);
+
 
 
 }
