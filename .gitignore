@@ -5,6 +5,7 @@
 # IntelliJ project files
 .idea
 *.iml
+workspace.xml
 out
 gen### Unity template
 [Ll]ibrary/
