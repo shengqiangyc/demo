@@ -1,8 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!--suppress ALL -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-    <title>GuoGe'Blog推荐
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GuoGe'Blog鎺ㄨ崘
     </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -20,7 +22,11 @@
     <!--For prettyPhoto-->
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="css/jquery.pagination.css" type="text/css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/jquery.pagination.min.js"></script>
     <script src="js/volunteerJs/myGroupList.js"></script>
+    <script src="js/volunteerJs/groupApply.js"></script>
 
   </head>
   <body>
@@ -31,7 +37,7 @@
           <img src="images/logo7.png" alt="" /></a>
         </a>
         <a href="index.html" id="logo2">
-          <span>志愿者工作站
+          <span>蹇楁効鑰呭伐浣滅珯
           </span>
         </a>
         <!-- Top Menu Start-->
@@ -40,7 +46,7 @@
         </div>
       </div>  
       <div class="title">
-        <span>团队管理
+        <span>鍥㈤槦绠＄悊
         </span>
 
       </div>
@@ -48,62 +54,52 @@
     <!-- Middle Part Start-->
     <div id="middle-wrapper">  
       <!-- Left Section Start-->  
-      <div class="portleft">    <h3>菜单列表</h3>
+      <div class="portleft">    <h3>鑿滃崟鍒楄〃</h3>
 
         <ul class="caidan">
           <li>
             <span>&rarr;
             </span>
-            <a href="groupVolunteers.html" >团队成员</a>
+            <a th:href="@{/groupVolunteers.html(groupId=${applyList.groupId})}" >鍥㈤槦鎴愬憳</a>
           </li>
           <li>
           <span>&rarr;
           </span>
-            <a href="myActivityList.html" >团队项目</a>
+            <a href="myActivityList.html" >鍥㈤槦椤圭洰</a>
           </li>
           <li>
           <span>&rarr;
           </span>
-            <a href="applyList.html" style="color: #729700">入队申请</a>
+            <a th:href="@{/applyList.html(groupId=${applyList.groupId})}" style="color: #729700">鍏ラ槦鐢宠</a>
           </li>
         </ul>
       </div>  
       <!-- Right Section Start-->  
-      <div class="portright">    <h3>申请列表
-        <a href="groupDetails.html" style="color: gray;font-size: 13px;margin-left: 20px">查看团队详情</a>
+      <div class="portright">    <h3>鐢宠鍒楄〃
+        <a th:href="@{/groupDetail.json(groupId=${applyList.groupId})}" style="color: gray;font-size: 13px;margin-left: 20px">鏌ョ湅鍥㈤槦璇︽儏</a>
+        <input type="hidden" id="userRole" th:value="${applyList.role}">
+        <input type="hidden" id="groupId" th:value="${applyList.groupId}">
+        <input type="hidden" id="countPage" th:value="${applyList.countPage}">
       </h3>
-
-        <table class="teamTable">
+        <div>
+        <table class="teamTable" id="groupApplys">
           <tr>
-            <th>头像</th>
-            <th style="width: 50px">姓名</th>
-            <th style="width: 50px">性别</th>
-            <th style="width: 50px">年龄</th>
-            <th style="width: 80px">所在地</th>
-            <th style="width: 110px">申请时间</th>
-            <th style="width: 120px">操作</th>
-          </tr>
-          <tr>
-            <td><img src="images/touxiang2.jpeg" style="width: 70px;height: 50px"></td>
-            <td>圣枪</td>
-            <td>男</td>
-            <td>18</td>
-            <td>江苏无锡</td>
-            <td>2018年2月7日</td>
-            <td><input type="button" value="同意">
-                <input type="button" value="拒绝" style="margin-left: 10px;"></td>
-          </tr>
-          <tr>
-            <td><img src="images/touxiang.jpeg" style="width: 70px;height: 50px"></td>
-            <td>张三</td>
-            <td>男</td>
-            <td>19</td>
-            <td>浙江杭州</td>
-            <td>2018年2月7日</td>
-            <td><input type="button" value="同意">
-              <input type="button" value="拒绝" style="margin-left: 10px;"></td>
+            <th>澶村儚</th>
+            <th style="width: 50px">濮撳悕</th>
+            <th style="width: 50px">鎬у埆</th>
+            <th style="width: 50px">骞撮緞</th>
+            <th style="width: 80px">鎵�鍦ㄥ湴</th>
+            <th style="width: 110px">鐢宠鏃堕棿</th>
+            <th style="width: 120px">鎿嶄綔</th>
           </tr>
         </table>
+        </div>
+        <div class="box" style="float: right;margin-right: 10px;margin-top: 15px">
+          <div id="pagination1" class="page fl"></div>
+          <div class="info fl">
+          </div>
+      </div>
+
       </div>
     </div>
     <!-- Footer Part Start-->

@@ -13,11 +13,8 @@ function getGroupListByName(){
     getGroupList(1);
     var pageSize;
     var searchParam = $("#select").val();
-    if(searchParam === null || searchParam === ""){
-        pageSize = $("#groupCount").val();
-    } else {
-        pageSize = 1;
-    }
+    getCountByName(searchParam);
+    pageSize = $("#groupCountByName").val();
     $("#pagination1").pagination({
         currentPage: 1,
         totalPage: pageSize,
@@ -54,5 +51,18 @@ function getGroupList(current){
                $("#groupList").html(s);
            }
            }
+    })
+}
+
+function getCountByName(name){
+    $.ajax({
+        url: '/group/countGroupByName.json',
+        type: 'GET',
+        contentType: 'application/text;charset=utf-8',
+        data: name,
+        dataType: 'json',
+        success: function(data){
+            $("#groupCountByName").val(data);
+        }
     })
 }

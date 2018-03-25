@@ -41,54 +41,6 @@
         </a>
         <!-- Top Menu Start-->
         <div id="primary-nav">
-          <ul id="menu-primary-menu" class="sf-menu">
-            <li>
-              <a href="index.html">
-              <span>首页
-              </span></a>
-            </li>
-            <li>
-              <a href="" class="sf-with-ul">志愿者之家</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="groupList.html">
-                <span>志愿者团队
-                </span></a>
-                </li>
-                <li>
-                  <a href="activityList.html">
-                <span>志愿者项目
-                </span></a>
-                </li>
-                <li>
-                  <a href="myApplyList.html">
-                <span>我的入队申请
-                </span></a>
-                </li>
-                <li>
-                  <a href="createGroup.html">
-                <span>申请创建团队
-                </span></a>
-                </li>
-              </ul>
-            <li>
-              <a href="">我的团队</a>
-              <ul class="sub-menu" id="myGroupList">
-                <li>
-                  <a href="groupVolunteers.html"><span>团队1</span></a>
-                </li>
-                <li>
-                  <a href="groupVolunteers.html"><span>团队2</span></a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="login.html" >
-            <span>退出登录
-            </span>
-              </a>
-            </li>
-          </ul>
           <!-- END #primary-nav -->
         </div>
       </div>  
@@ -105,7 +57,7 @@
           <li>
             <span>&rarr;
             </span>
-            <a href="groupVolunteers.html" style="color: #729700">团队成员</a>
+            <a th:href="@{/groupVolunteers.html(groupId=${membersVO.groupId})}" style="color: #729700">团队成员</a>
           </li>
           <li>
           <span>&rarr;
@@ -115,17 +67,20 @@
           <li>
           <span>&rarr;
           </span>
-            <a href="applyList.html" >入队申请</a>
+            <a th:href="@{/applyList.html(groupId=${membersVO.groupId})}" >入队申请</a>
           </li>
         </ul>
       </div>  
       <!-- Right Section Start-->  
-      <div class="portright">    <h3>团队成员
+      <div class="portright" th:switch="${membersVO.role}">    <h3>团队成员
         <a th:href="@{/groupDetail.json(groupId=${membersVO.groupId})}" style="color: gray;font-size: 13px;margin-left: 20px">查看团队详情</a>
-        <a onclick="disband()" style="color: grey;font-size: 13px;float: right;margin-right: 20px">解散团队</a>
+        <a onclick="disband()" th:case="3" style="color: grey;font-size: 13px;float: right">解散团队</a>
+        <a onclick="exitGroup()" th:case="2" style="color: grey;font-size: 13px;float: right">退出团队</a>
+        <a onclick="exitGroup()" th:case="1" style="color: grey;font-size: 13px;float: right">退出团队</a>
         <input type="hidden" id="groupId" th:value="${membersVO.groupId}">
         <input type="hidden" id="count" th:value="${membersVO.count}">
         <input type="hidden" id="userRole" th:value="${membersVO.role}">
+        <input type="hidden" id="userId" th:value="${membersVO.userId}">
       </h3>
         <div>
         <table class="teamTable" id="groupMembers">

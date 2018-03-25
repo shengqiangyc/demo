@@ -92,4 +92,9 @@ public interface YcUserGroupMapper {
      * 取消管理员
      */
     int cancelAdmin(UserGroupDTO dto);
+
+    /**
+     * 删除该团队下所有成员的映射关系
+     */
+    int deleteAllMembers(Long groupId);
 }

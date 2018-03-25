@@ -9,8 +9,10 @@
 package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcGroup;
+import com.volunteer.demo.DO.YcGroupApply;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.PageDTO;
+import com.volunteer.demo.DTO.UpdateApplyDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import com.volunteer.demo.form.*;
 import com.volunteer.demo.vo.*;
@@ -73,9 +75,10 @@ public interface GroupManager {
     Integer countGroup();
 
     /**
-     * 获取用户的所有团队列表
+     * 获取查询后的团队数量
      */
-    List<YcGroup> getMyGroupList(Long userId);
+    Integer countGroupByName(String groupName);
+
 
     /**
      * 分页获取团队下的所有用户
@@ -88,7 +91,7 @@ public interface GroupManager {
     GroupVolunteersVO getGroupVolunteerVO(UserGroupDTO dto);
 
     /**
-     * 改变用户角色
+     * 改变用户角色或从团队中移除一名用户
      */
     int updateUserRole(UserGroupMapForm form);
 
@@ -96,6 +99,21 @@ public interface GroupManager {
      * 解散团队
      */
     int disbandGroup(GroupForm form);
+
+    /**
+     * 团队入队申请页面相关参数
+     */
+    ApplyListHtmlVO getApplyList(UserGroupDTO dto);
+
+    /**
+     * 查看团队的待审核申请列表
+     */
+    List<ApplyInfoVO> getApplyInfoVO(GroupMembersForm form);
+
+    /**
+     * 对入队申请的操作
+     */
+    int updateApply(UpdateApplyDTO dto);
 
 
 

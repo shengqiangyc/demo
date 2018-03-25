@@ -12,10 +12,7 @@ import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcGroupApply;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DO.YcUserGroup;
-import com.volunteer.demo.DTO.GroupDTO;
-import com.volunteer.demo.DTO.GroupMembersDTO;
-import com.volunteer.demo.DTO.PageDTO;
-import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.DTO.*;
 import com.volunteer.demo.common.DateUtils;
 import com.volunteer.demo.enums.*;
 import com.volunteer.demo.form.*;
@@ -215,26 +212,12 @@ public class GroupManagerImpl implements GroupManager{
 
     @Override
     public Integer countGroup() {
-        return ycGroupMapper.countGroupList()/9+1;
+        return (ycGroupMapper.countGroupList()-1)/9+1;
     }
 
     @Override
-    public List<YcGroup> getMyGroupList(Long userId) {
-        List<YcGroup> ycGroupList = new ArrayList<>();
-        if(userId == null){
-            return ycGroupList;
-        }
-        List<Long> groupIdList = userGroupMapper.getMyGroupList(userId);
-        if(CollectionUtils.isEmpty(groupIdList)){
-            return  ycGroupList;
-        }
-        for(Long groupId : groupIdList){
-            YcGroup ycGroup = ycGroupMapper.selectByPrimaryKey(groupId);
-            if(ycGroup != null && ycGroup.getGroupStatus() != 3){
-                ycGroupList.add(ycGroup);
-            }
-        }
-        return ycGroupList;
+    public Integer countGroupByName(String groupName) {
+        return (ycGroupMapper.countGroupByName(groupName)-1)/9+1;
     }
 
     @Override
@@ -292,6 +275,7 @@ public class GroupManagerImpl implements GroupManager{
         groupVolunteersVO.setCount((count-1)/6+1);
         groupVolunteersVO.setGroupId(dto.getGroupId());
         groupVolunteersVO.setRole(userGroup.getGroupRole());
+        groupVolunteersVO.setUserId(dto.getUserId());
         return groupVolunteersVO;
     }
 
@@ -317,6 +301,73 @@ public class GroupManagerImpl implements GroupManager{
             return 0;
         }
         Integer result = ycGroupMapper.disbandGroup(form.getGroupId());
+        if(result >0){
+            userGroupMapper.deleteAllMembers(form.getGroupId());
+        }
+        return result;
+    }
+
+    @Override
+    public ApplyListHtmlVO getApplyList(UserGroupDTO dto) {
+        ApplyListHtmlVO applyListHtmlVO = new ApplyListHtmlVO();
+        if(dto.getUserId() == null){
+            return applyListHtmlVO;
+        }
+        if(dto.getGroupId() == null){
+            return applyListHtmlVO;
+        }
+        YcUserGroup userGroup = userGroupMapper.getYcUserGroup(dto);
+        if(userGroup == null){
+            return applyListHtmlVO;
+        }
+        Integer countPage = applyMapper.countApplyByGroup(dto.getGroupId());
+        applyListHtmlVO.setCountPage((countPage-1)/6+1);
+        applyListHtmlVO.setGroupId(dto.getGroupId());
+        applyListHtmlVO.setRole(userGroup.getGroupRole());
+        return applyListHtmlVO;
+    }
+
+    @Override
+    public List<ApplyInfoVO> getApplyInfoVO(GroupMembersForm form) {
+        List<ApplyInfoVO> infoVOs = new ArrayList<>();
+        GroupMembersDTO dto = new GroupMembersDTO();
+        dto.setGroupId(form.getGroupId());
+        dto.setStart((form.getPageNo()-1)*6);
+        List<YcGroupApply> groupApplys = applyMapper.getGroupApply(dto);
+        if(CollectionUtils.isEmpty(groupApplys)){
+            return infoVOs;
+        }
+        for(YcGroupApply groupApply : groupApplys){
+            ApplyInfoVO infoVO = new ApplyInfoVO();
+            infoVO.setApplyDate(DateUtils.convertDateToYMDHM(groupApply.getApplyTime()));
+            YcUser user = userMapper.selectByPrimaryKey(groupApply.getApplyUserId());
+            if(user != null){
+                infoVO.setUserId(user.getUserId());
+                infoVO.setAddress(user.getUserAddress());
+                infoVO.setLogo(user.getUserLogo());
+                infoVO.setRealName(user.getRealName());
+                infoVO.setSex(SexEnum.getMsgByCode(user.getSex()));
+                infoVO.setUserName(user.getUserName());
+            }
+            infoVOs.add(infoVO);
+        }
+        return infoVOs;
+    }
+
+    @Override
+    public int updateApply(UpdateApplyDTO dto) {
+        if(dto.getGroupId() == null || dto.getUserId() == null || dto.getStatus() == null){
+            return 0;
+        }
+        int row = applyMapper.updateApply(dto);
+        int result = 0;
+        if(row > 0 && ApplyStatusEnum.AGREED.getCode().equals(dto.getStatus())){
+            YcUserGroup userGroup = new YcUserGroup();
+            userGroup.setUserId(dto.getUserId());
+            userGroup.setGroupId(dto.getGroupId());
+            userGroup.setGroupRole(GroupRoleEnum.NORMAL_MEMBER.getCode());
+            result = userGroupMapper.insert(userGroup);
+        }
         return result;
     }
 

@@ -17,11 +17,12 @@ function getGroupMembers(current){
         "<th style=\"width: 50px\">真实姓名</th>\n" +
         "<th style=\"width: 90px\">所在地</th>\n" +
         "<th style=\"width: 60px\">角色</th>\n" +
-        "<th>入队时间</th>\n" +
-        "<th>操作</th>\n" +
+        "<th style='width: 90px'>入队时间</th>\n" +
+        "<th style='width: 160px'>操作</th>\n" +
         "</tr>";
     $("#groupMembers").html(s);
     var role = $("#userRole").val();
+    var nowUserId = $("#userId").val();
     var data ={
         groupId : $("#groupId").val(),
         pageNo : current
@@ -44,7 +45,9 @@ function getGroupMembers(current){
                 s += "<td>"+data[i].role+"</td>";
                 s += "<td>"+data[i].entryDate+"</td>";
                 if(data[i].role === "创建者"){
-                    s += "<td></td></tr>";
+                    s += "<td>——</td></tr>";
+                } else if(nowUserId === userId.toString()){
+                    s += "<td>——</td></tr>";
                 } else if(role === "3" && data[i].role === "管理员"){
                     s += "<td><input type='button' onclick='removeMember("+userId+",3)' value='开除成员'>" +
                         "<input type='button' value='取消管理' onclick='removeMember("+data[i].userId+",2)' style='margin-left: 10px;'></td>";
@@ -54,10 +57,14 @@ function getGroupMembers(current){
                         "<input type='button' value='设为管理' onclick='removeMember("+userId+",1)' style='margin-left: 10px;'></td>";
                     s += "</tr>";
                 } else if(role ==="2"){
-                    s += "<td><input type='button' onclick='removeMember("+userId+",3)' value='开除成员'></td>";
-                    s += "</tr>";
+                    if(data[i].role === "管理员"){
+                        s += "<td>——</td></tr>";
+                    } else {
+                        s += "<td><input type='button' onclick='removeMember(" + userId + ",3)' value='开除成员'></td>";
+                        s += "</tr>";
+                    }
                 } else if(role === "1"){
-                    s += "<td></td></tr>";
+                    s += "<td>——</td></tr>";
                 }
                 $("#groupMembers").html(s);
             }
@@ -97,12 +104,38 @@ function removeMember(userId,type){
 
 function disband(){
     var groupId = $("#groupId").val();
+    var role = $("#userRole").val();
     var data = {
         groupId : groupId
     };
-    if(confirm('你确定要解散团队吗')) {
+    if(role !== "3"){
+        alert("您不是团队创建人，无法解散团队");
+    } else {
+        if (confirm('你确定要解散团队吗')) {
+            $.ajax({
+                url: '/group/disbandGroup.json',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (data) {
+                }
+            });
+            alert("已解散该团队");
+            window.location.href = "index.html";
+        }
+    }
+}
+
+function exitGroup(){
+    var data = {
+        userId : $("#userId").val(),
+        groupId : $("#groupId").val(),
+        performType : 3
+    };
+    if(confirm('确定退出该团队吗')){
         $.ajax({
-            url: '/group/disbandGroup.json',
+            url: '/group/exitGroup.json',
             type: 'POST',
             contentType: 'application/json;charset=utf-8',
             data: JSON.stringify(data),
@@ -110,8 +143,8 @@ function disband(){
             success: function (data) {
             }
         });
-        alert("已解散该团队");
-        window.location.href="index.html";
+        alert("已退出团队");
+        window.location.href = "index.html";
     }
 
 }

@@ -114,4 +114,10 @@
     where user_id = #{userId} and group_id = #{groupId}
   </update>
 
+  <delete id="deleteAllMembers" parameterType="java.lang.Long">
+    delete from yc_user_group
+    where group_id = #{groupId}
+  </delete>
+
+
 </mapper>

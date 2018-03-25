@@ -82,6 +82,11 @@ public interface YcGroupMapper {
      */
     Integer disbandGroup(Long groupId);
 
+    /**
+     * 获取分页结果的团队数量
+     */
+    Integer countGroupByName(String groupName);
+
 
 
 

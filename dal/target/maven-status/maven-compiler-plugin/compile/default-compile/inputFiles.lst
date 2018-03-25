@@ -1,3 +1,4 @@
+/Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/UpdateApplyDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/ImageDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/PageDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/RegisterDTO.java
@@ -11,6 +12,7 @@
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/mapper/YcUserMapper.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DO/YcUser.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DO/YcGroup.java
+/Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DTO/UserDTO.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/mapper/YcGroupApplyMapper.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DO/YcActivity.java
 /Users/shengqiang/demo1/dal/src/main/java/com/volunteer/demo/DO/YcGroupActivity.java

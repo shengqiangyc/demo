@@ -27,4 +27,12 @@ public class DateUtils {
         return f.format(date);
     }
 
+    public static String convertDateToYMDHM(Date date) {
+        if (date == null) {
+            return null;
+        }
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        return f.format(date);
+    }
+
 }

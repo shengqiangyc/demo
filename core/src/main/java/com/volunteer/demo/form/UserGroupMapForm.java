@@ -23,6 +23,6 @@ public class UserGroupMapForm {
     private String groupName;
     private Long userId;
     private Integer userRole;
-    //操作类型
+    //操作类型(1为设为管理员，2为取消管理员，3为移除用户)
     private Integer performType;
 }

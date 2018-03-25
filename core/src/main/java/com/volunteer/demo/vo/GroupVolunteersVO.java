@@ -33,4 +33,9 @@ public class GroupVolunteersVO {
      * 团队成员数量
      */
     private Integer count;
+
+    /**
+     * 用户id
+     */
+    private Long userId;
 }

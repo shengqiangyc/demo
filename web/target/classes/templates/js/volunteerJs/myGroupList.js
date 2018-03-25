@@ -56,17 +56,19 @@ function menum(){
 }
 
 function getMyGroupList(){
-    $("#myGroupList").html("");
     $.ajax({
-        url: '/group/getMyGroupList.json',
+        url: '/user/getMyGroupList.json',
         type: 'POST',
         contentType: 'application/json;charset=utf-8',
         success: function (data) {
-            var s = "";
-            for(var i in data){
-                s += "<li><a href='groupVolunteers.html?groupId="+ data[i].groupId +"'><span>"+ data[i].groupName +"</span></a></li>"
+            $("#myGroupList").html("<li><a href=''><span>暂无团队</span></a></li>");
+            if(data.length !== 0) {
+                var s = "";
+                for (var i in data) {
+                    s += "<li><a href='groupVolunteers.html?groupId=" + data[i].groupId + "'><span>" + data[i].groupName + "</span></a></li>"
+                }
+                $("#myGroupList").html(s);
             }
-            $("#myGroupList").html(s);
         }
     })
 }

@@ -84,6 +84,7 @@
 
   <select id="getIndexGroup" resultMap="BaseResultMap">
     select * from yc_group
+    where group_status in (1,2)
     order by create_time desc
     limit 0,3
   </select>
@@ -97,7 +98,7 @@
     select * from yc_group
     where group_status in (1,2)
     <if test="groupName != null and groupName != ''">
-     and group_name = #{groupName}
+     and group_name like CONCAT(CONCAT('%',#{groupName}),'%')
     </if>
     order by create_time desc
     limit #{start},#{pageSize}
@@ -112,6 +113,13 @@
     set group_status = 3
     where group_id = #{groupId}
   </update>
+
+  <select id="countGroupByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) from yc_group
+    <if test="groupName != null and groupName != ''">
+      where group_name like CONCAT(CONCAT('%',#{groupName}),'%')
+    </if>
+  </select>
 
 
 

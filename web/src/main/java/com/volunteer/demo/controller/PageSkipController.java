@@ -11,8 +11,10 @@ package com.volunteer.demo.controller;
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.form.CountForm;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.manager.GroupManager;
+import com.volunteer.demo.manager.UserManager;
 import com.volunteer.demo.session.SessionHelper;
 import com.volunteer.demo.vo.CreateGroupVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,8 @@ public class PageSkipController {
     private SessionHelper sessionHelper;
     @Autowired
     private GroupManager groupManager;
+    @Autowired
+    private UserManager userManager;
 
     @RequestMapping(value = "/index.html")
     public String showIndex(Model model){
@@ -103,6 +107,36 @@ public class PageSkipController {
         return "groupVolunteers";
     }
 
+    /**
+     * 跳转入队申请页
+     */
+    @RequestMapping(value = "applyList.html",method = RequestMethod.GET)
+    public String applyList(Model model,String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setUserId(user.getUserId());
+        dto.setGroupId(Long.parseLong(groupId));
+        model.addAttribute("applyList",groupManager.getApplyList(dto));
+        return "applyList";
+    }
+
+    /**
+     * 当前用户入队申请
+     */
+    @RequestMapping(value = "myApplyList.html",method = RequestMethod.GET)
+    public String myApplyList(HttpServletRequest request,Model model){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        CountForm form = new CountForm(userManager.getApplyCount(user.getUserId()));
+        model.addAttribute("count",form);
+        model.addAttribute("user",user);
+        return "myApplyList";
+    }
 
 
 
