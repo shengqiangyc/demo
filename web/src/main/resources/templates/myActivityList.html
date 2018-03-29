@@ -1,8 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!--suppress ALL -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-    <title>GuoGe'Blog�Ƽ�
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>GuoGe'Blog推荐
     </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -31,7 +33,7 @@
           <img src="images/logo7.png" alt="" /></a>
         </a>
         <a href="index.html" id="logo2">
-          <span>־Ը�߹���վ
+          <span>志愿者工作站
           </span>
         </a>
         <!-- Top Menu Start-->
@@ -40,67 +42,68 @@
         </div>
       </div>  
       <div class="title">
-        <span>�Ŷӹ���
+        <span>团队管理
         </span>
       </div>
     </div>
     <!-- Middle Part Start-->
     <div id="middle-wrapper">  
       <!-- Left Section Start-->  
-      <div class="portleft">    <h3>�˵��б�</h3>
+      <div class="portleft">    <h3>菜单列表</h3>
         <ul class="caidan">
           <li>
             <span>&rarr;
-            </span> 
-            <a href="groupVolunteers.html" >�Ŷӳ�Ա</a>
-          </li>      
-          <li>
-          <span>&rarr;
-          </span> 
-          <a href="myActivityList.html" style="color: #729700">�Ŷ���Ŀ</a>
+            </span>
+            <a th:href="@{/groupVolunteers.html(groupId=${htmlVO.groupId})}" >团队成员</a>
           </li>
           <li>
           <span>&rarr;
           </span>
-            <a href="applyList.html" >�������</a>
+            <a th:href="@{/myActivityList.html(groupId=${htmlVO.groupId})}" style="color: #729700">团队项目</a>
+          </li>
+          <li>
+          <span>&rarr;
+          </span>
+            <a th:href="@{/applyList.html(groupId=${htmlVO.groupId})}" >入队申请</a>
           </li>
         </ul>  
       </div>  
       <!-- Right Section Start-->  
-      <div class="portright">    <h3>��Ŀ�б�
-        <a href="groupDetails.html" style="color: gray;font-size: 13px;margin-left: 20px">�鿴�Ŷ�����</a>
-        <a href="createActivity.html" style="color: grey;font-size: 13px;float: right;margin-right: 20px">�����Ŷ�</a>
+      <div class="portright">    <h3>项目列表
+        <a href="groupDetails.html" style="color: gray;font-size: 13px;margin-left: 20px">查看团队详情</a>
+        <input type="hidden" id="groupId" th:value="${htmlVO.groupId}">
+        <a th:href="@{/createActivity.html(groupId=${htmlVO.groupId})}" style="color: grey;font-size: 13px;float: right;margin-right: 20px">创建项目</a>
       </h3>
         <table class="teamTable">
           <tr>
-            <th>��Ŀ����</th>
-            <th>��Ŀ����</th>
-            <th>���ڳ���</th>
-            <th>��Ŀ����</th>
-            <th>��ʼʱ��</th>
-            <th>������</th>
-            <th>��Ŀ״̬</th>
-            <th>����</th>
+            <th>项目名称</th>
+            <th>项目描述</th>
+            <th>所在城市</th>
+            <th>项目类型</th>
+            <th>开始时间</th>
+            <th>负责人</th>
+            <th>项目状态</th>
+            <th>操作</th>
           </tr>
           <tr>
-            <td><a href="">����֧��</a></td>
-            <td>ȥ����֧�̣����������Ͽ�</td>
-            <td>����</td>
-            <td>֧��</td>
-            <td>2018��1��31��</td>
-            <td>ʥǹ</td>
-            <td>������</td>
-            <td><input type="button" value="������Ŀ"></td>
+            <td><a href="">西部支教</a></td>
+            <td>去西部支教，给孩子们上课</td>
+            <td>贵州</td>
+            <td>支教</td>
+            <td>2018年1月31日</td>
+            <td>圣枪</td>
+            <td>进行中</td>
+            <td><input type="button" value="结束项目"></td>
           </tr>
           <tr>
-            <td><a href="">����Ժ</a></td>
-            <td>ȥ����Ժ�������ˣ�����������ů</td>
-            <td>����</td>
-            <td>����</td>
-            <td>2018��1��1��</td>
-            <td>ʥǹ</td>
-            <td>�ѽ���</td>
-            <td><input type="button" value="������Ŀ"></td>
+            <td><a href="">敬老院</a></td>
+            <td>去敬老院服侍老人，给老人送温暖</td>
+            <td>杭州</td>
+            <td>敬老</td>
+            <td>2018年1月1日</td>
+            <td>圣枪</td>
+            <td>已结束</td>
+            <td><input type="button" value="结束项目"></td>
           </tr>
         </table>
       </div>

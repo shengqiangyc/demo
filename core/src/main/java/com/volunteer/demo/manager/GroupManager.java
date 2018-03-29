@@ -115,6 +115,11 @@ public interface GroupManager {
      */
     int updateApply(UpdateApplyDTO dto);
 
+    /**
+     * 获取团队下所有成员的信息
+     */
+    List<UserVO> getUserVOs(Long groupId);
+
 
 
 }

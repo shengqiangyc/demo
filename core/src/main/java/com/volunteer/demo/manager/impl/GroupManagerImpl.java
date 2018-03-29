@@ -27,6 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import javax.xml.crypto.Data;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -102,6 +103,7 @@ public class GroupManagerImpl implements GroupManager{
        detailVO.setStatus(GroupStatusEnum.getMsgByCode(group.getGroupStatus()));
        detailVO.setIntroduction(group.getGroupIntroduction());
        detailVO.setRequire(group.getGroupRequirement());
+       detailVO.setCreateTime(DateUtils.convertDateToYMDHMS(group.getCreateTime()));
        detailVO.setImage(group.getGroupImage());
        YcUser user = userMapper.selectByPrimaryKey(group.getGroupLeader());
        if(user != null){
@@ -369,6 +371,24 @@ public class GroupManagerImpl implements GroupManager{
             result = userGroupMapper.insert(userGroup);
         }
         return result;
+    }
+
+    @Override
+    public List<UserVO> getUserVOs(Long groupId) {
+        List<UserVO> userVOS = new ArrayList<>();
+        GroupMembersDTO dto = new GroupMembersDTO();
+        dto.setGroupId(groupId);
+        List<Long> userIdList = userGroupMapper.getGroupMembers(dto);
+        if(!CollectionUtils.isEmpty(userIdList)){
+            for(Long userId : userIdList){
+                UserVO vo = new UserVO();
+                YcUser user = userMapper.selectByPrimaryKey(userId);
+                vo.setUserId(userId);
+                vo.setUserName(user.getUserName());
+                userVOS.add(vo);
+            }
+        }
+        return userVOS;
     }
 
 

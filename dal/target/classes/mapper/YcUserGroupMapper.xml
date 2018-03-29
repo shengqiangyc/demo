@@ -89,7 +89,9 @@
     select user_id
     from yc_user_group
     where group_id = #{groupId}
+    <if test="start != null and start != ''">
     limit #{start},6
+    </if>
   </select>
 
   <select id="getYcUserGroup" parameterType="com.volunteer.demo.DTO.UserGroupDTO" resultMap="BaseResultMap">

@@ -11,12 +11,14 @@ package com.volunteer.demo.controller;
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.enums.ActivityTypeEnum;
 import com.volunteer.demo.form.CountForm;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.manager.GroupManager;
 import com.volunteer.demo.manager.UserManager;
 import com.volunteer.demo.session.SessionHelper;
 import com.volunteer.demo.vo.CreateGroupVO;
+import com.volunteer.demo.vo.MyActivityHtmlVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -136,6 +138,35 @@ public class PageSkipController {
         model.addAttribute("count",form);
         model.addAttribute("user",user);
         return "myApplyList";
+    }
+
+    /**
+     * 团队项目页面
+     */
+    @RequestMapping(value = "myActivityList.html",method = RequestMethod.GET)
+    public String myActivityList(HttpServletRequest request,Model model,String groupId){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        MyActivityHtmlVO htmlVO = activityManager.getHtmlVO(user.getUserId(),Long.parseLong(groupId));
+        model.addAttribute("htmlVO",htmlVO);
+        return "myActivityList";
+    }
+
+    /**
+     * 创建项目页面
+     */
+    @RequestMapping(value = "createActivity.html",method = RequestMethod.GET)
+    public String createActivity(HttpServletRequest request,Model model,String groupId){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        model.addAttribute("group",groupId);
+        model.addAttribute("activityTypes", ActivityTypeEnum.values());
+        model.addAttribute("groupMembers",groupManager.getUserVOs(Long.parseLong(groupId)));
+        return "createActivity";
     }
 
 

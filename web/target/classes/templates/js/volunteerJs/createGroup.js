@@ -34,7 +34,6 @@ function createGroup (){
         alert(qqTip.html());
     }else {
         var form = new FormData();
-        form.enctype="multipart/form-data";
         form.append("file", files);
         $.ajax({
             url: "/group/uploadGroupImage.json",

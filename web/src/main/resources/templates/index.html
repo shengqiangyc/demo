@@ -112,10 +112,12 @@
           <ul class="imgSize" >
             <li th:each="activity:${activityList}">
               <a href="activityDetails.html">
+                <input type="hidden" id="activityId" th:value="${activity.activityId}">
                 <img th:src="${activity.activityImage}" alt="" border="0"/>
                 <span th:text="${activity.activityName}"></span>
                 <span style="color:green;" th:text="${activity.status}"></span></a>
             </li>
+            <li>
           </ul>
         </div>      
       </div>
@@ -125,7 +127,9 @@
         <h3 class="green" style="color: black">志愿团队</h3>
         <div class="blogPost" th:each="group:${groupList}">
           <div class="thumb-img">
+            <a th:href="@{/groupDetail.json(groupId=${group.groupId})}">
               <img width="80" height="70" th:src="${group.image}" alt="" border="0" />
+            </a>
           </div>
           <div class="post-cont">
             <p>

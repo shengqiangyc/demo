@@ -35,11 +35,11 @@
     </selectKey>
     insert into yc_activity (activity_name, activity_introduction, 
       activity_group, activity_city, activity_status, 
-      activity_type, create_time, activity_leader, 
+      activity_type,  activity_leader,
       activity_image)
     values (#{activityName,jdbcType=VARCHAR}, #{activityIntroduction,jdbcType=VARCHAR}, 
       #{activityGroup,jdbcType=BIGINT}, #{activityCity,jdbcType=VARCHAR}, #{activityStatus,jdbcType=INTEGER}, 
-      #{activityType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{activityLeader,jdbcType=BIGINT}, 
+      #{activityType,jdbcType=INTEGER}, #{activityLeader,jdbcType=BIGINT},
       #{activityImage,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.volunteer.demo.DO.YcActivity">
@@ -81,6 +81,8 @@
 
   <select id="selectIndexActivity" resultMap="BaseResultMap">
     select * from yc_activity
+    order by create_time desc
     limit 0,9
+
   </select>
 </mapper>

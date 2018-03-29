@@ -9,10 +9,17 @@
 package com.volunteer.demo.manager.impl;
 
 import com.volunteer.demo.DO.YcActivity;
+import com.volunteer.demo.DO.YcUserGroup;
+import com.volunteer.demo.DTO.UserGroupDTO;
 import com.volunteer.demo.enums.ActivityEnum;
+import com.volunteer.demo.enums.GroupRoleEnum;
+import com.volunteer.demo.form.CreateActivityForm;
+import com.volunteer.demo.form.CreateGroupForm;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.mapper.YcActivityMapper;
+import com.volunteer.demo.mapper.YcUserGroupMapper;
 import com.volunteer.demo.vo.IndexActivityVO;
+import com.volunteer.demo.vo.MyActivityHtmlVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +37,8 @@ public class ActivityManagerImpl implements ActivityManager{
 
     @Autowired
     private YcActivityMapper ycActivityMapper;
+    @Autowired
+    private YcUserGroupMapper userGroupMapper;
 
     @Override
     public List<IndexActivityVO> getIndexActivity(){
@@ -45,5 +54,33 @@ public class ActivityManagerImpl implements ActivityManager{
         }
         return voList;
 
+    }
+
+    @Override
+    public MyActivityHtmlVO getHtmlVO(Long userId, Long groupId) {
+        MyActivityHtmlVO activityHtmlVO = new MyActivityHtmlVO();
+        activityHtmlVO.setGroupId(groupId);
+        activityHtmlVO.setUserId(userId);
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setGroupId(groupId);
+        dto.setUserId(userId);
+        YcUserGroup userGroup = userGroupMapper.getYcUserGroup(dto);
+        activityHtmlVO.setUserRole(userGroup.getGroupRole());
+        return activityHtmlVO;
+    }
+
+    @Override
+    public int createActivity(CreateActivityForm form) {
+        YcActivity activity = new YcActivity();
+        activity.setActivityCity(form.getCity());
+        activity.setActivityImage(form.getImage());
+        activity.setActivityIntroduction(form.getDescription());
+        activity.setActivityType(form.getType());
+        activity.setActivityLeader(form.getLeader());
+        activity.setActivityGroup(form.getGroupId());
+        activity.setActivityName(form.getActivityName());
+        activity.setActivityStatus(ActivityEnum.NOT_STARTED.getCode());
+        int result = ycActivityMapper.insert(activity);
+        return result;
     }
 }

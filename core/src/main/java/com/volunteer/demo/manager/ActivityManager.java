@@ -9,7 +9,11 @@
 package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcActivity;
+import com.volunteer.demo.DO.YcUserGroup;
+import com.volunteer.demo.form.CreateActivityForm;
+import com.volunteer.demo.form.CreateGroupForm;
 import com.volunteer.demo.vo.IndexActivityVO;
+import com.volunteer.demo.vo.MyActivityHtmlVO;
 
 import java.util.List;
 
@@ -21,5 +25,19 @@ import java.util.List;
  */
 public interface ActivityManager {
 
+    /**
+     * 获取首页的项目
+     * @return
+     */
     List<IndexActivityVO> getIndexActivity();
+
+    /**
+     * 获取当前用户的相关信息
+     */
+    MyActivityHtmlVO getHtmlVO(Long userId,Long groupId);
+
+    /**
+     * 创建项目
+     */
+    int createActivity(CreateActivityForm form);
 }

@@ -1,11 +1,14 @@
 com/volunteer/demo/enums/SexEnum.class
 com/volunteer/demo/manager/impl/ActivityManagerImpl.class
+com/volunteer/demo/vo/ActivityDetailVO.class
 com/volunteer/demo/form/UserGroupMapForm.class
+com/volunteer/demo/vo/MyActivityHtmlVO.class
 com/volunteer/demo/enums/GroupStatusEnum.class
 com/volunteer/demo/enums/GroupRoleEnum.class
 com/volunteer/demo/form/UserForm.class
 com/volunteer/demo/vo/ApplyListHtmlVO.class
 com/volunteer/demo/form/PageForm.class
+com/volunteer/demo/vo/UserVO.class
 com/volunteer/demo/form/ApplyEntryGroupForm.class
 com/volunteer/demo/form/RegisterForm.class
 com/volunteer/demo/form/GroupMembersForm.class
@@ -25,7 +28,9 @@ com/volunteer/demo/vo/MyApplyListVO.class
 com/volunteer/demo/session/NetWorkUtil.class
 com/volunteer/demo/form/GroupForm.class
 com/volunteer/demo/manager/impl/UserManagerImpl.class
+com/volunteer/demo/form/CreateActivityForm.class
 com/volunteer/demo/manager/ActivityManager.class
+com/volunteer/demo/enums/ActivityTypeEnum.class
 com/volunteer/demo/manager/GroupManager.class
 com/volunteer/demo/manager/impl/GroupManagerImpl.class
 com/volunteer/demo/manager/LoginManager.class

@@ -578,7 +578,7 @@ li.main a{display:block; float:left;   color:#434853; font-family:'Droid Sans',s
 li.main a span{  color:#84878C;  display:block; font-family:tahoma,Arial; font-size:12px; font-weight:normal; line-height:22px}
 li.main a:hover{color:#779E00}
 .groupDetail{margin-top: 0px;float: left;margin-left: 25px}
-.groupDetail li{margin-top: 20px;list-style-type: none}
+.groupDetail li{margin-top: 16px;list-style-type: none}
 .groupDetail li strong{font-size: 14px;}
 .groupDetail li span{font-size: 14px;color: #729700}
 .teamTable{font-family: verdana,arial,sans-serif;
