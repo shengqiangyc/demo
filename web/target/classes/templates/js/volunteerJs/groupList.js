@@ -44,7 +44,7 @@ function getGroupList(current){
             s+="<h3>全部团队</h3>";
            for(var i in data) {
                s += "<li  class='main' >";
-               s += "<a href='groupDetail.json?groupId=" + data[i].groupId + "'>";
+               s += "<a href='groupDetail.json?groupId=" + data[i].groupId + "' title='点击查看详情'>";
                s += "<img src='" + data[i].groupImage + "' width='212' height='129'/>";
                s += data[i].groupName;
                s += "<span style='color: green'>" + data[i].groupStatus + "</span></li></a>";
@@ -54,15 +54,29 @@ function getGroupList(current){
     })
 }
 
-function getCountByName(name){
+function getCountByName(){
+    getGroupList(1);
+    var pageSize;
+    var searchParam = $("#select").val();
+    var data = {
+        groupName:searchParam
+    }
     $.ajax({
         url: '/group/countGroupByName.json',
         type: 'GET',
         contentType: 'application/text;charset=utf-8',
-        data: name,
+        data: data,
         dataType: 'json',
         success: function(data){
             $("#groupCountByName").val(data);
+            pageSize = $("#groupCountByName").val();
+            $("#pagination1").pagination({
+                currentPage: 1,
+                totalPage: pageSize,
+                callback: function (current) {
+                    getGroupList(current);
+                }
+            });
         }
     })
 }

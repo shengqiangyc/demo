@@ -9,9 +9,12 @@
 package com.volunteer.demo.controller;
 
 import com.volunteer.demo.common.ResultCode;
+import com.volunteer.demo.form.ActivityListForm;
 import com.volunteer.demo.form.CreateActivityForm;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.manager.ImageManager;
+import com.volunteer.demo.vo.ActivityDetailVO;
+import com.volunteer.demo.vo.ActivityListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Description: 项目相关接口
@@ -55,7 +59,7 @@ public class ActivityController {
     }
 
     /**
-     * 创建团队
+     * 创建项目
      * @param form
      * @return
      */
@@ -68,6 +72,24 @@ public class ActivityController {
         } else {
             return ResultCode.FAIL;
         }
+    }
+
+    /**
+     * 获取项目列表
+     */
+    @ResponseBody
+    @RequestMapping(value = "/getActivityList.json",method = RequestMethod.POST)
+    public List<ActivityListVO> getActivityList(@RequestBody ActivityListForm form){
+        return activityManager.getActivityList(form);
+    }
+
+    /**
+     * 获取查询后的页数
+     */
+    @RequestMapping(value = "/countActivityByParam.json",method = RequestMethod.POST)
+    @ResponseBody
+    public Integer getCountByName(@RequestBody ActivityListForm form){
+        return activityManager.countSelectActivity(form);
     }
 
 }

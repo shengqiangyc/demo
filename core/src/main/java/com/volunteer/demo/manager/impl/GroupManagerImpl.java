@@ -160,6 +160,7 @@ public class GroupManagerImpl implements GroupManager{
     @Override
     public int applyEntryGroup(ApplyEntryGroupForm form) {
         YcGroupApply apply = new YcGroupApply();
+        //将申请状态默认设为待审核
         apply.setApplyStatus(ApplyStatusEnum.CHECKING.getCode());
         if(form.getGroupId() == null){
             return 0;
@@ -194,6 +195,7 @@ public class GroupManagerImpl implements GroupManager{
         if(!StringUtils.isBlank(form.getGroupName())){
             dto.setGroupName(form.getGroupName());
         }
+        //设置分页参数
         dto.setStart((form.getPageNo()-1)*9);
         dto.setPageSize(9);
         List<YcGroup> ycGroupList = ycGroupMapper.getGroupListByPage(dto);
@@ -273,9 +275,11 @@ public class GroupManagerImpl implements GroupManager{
         if(userGroup == null){
             return groupVolunteersVO;
         }
+        //查看团队成员总数
         Integer count = userGroupMapper.countGroupUser(dto.getGroupId());
         groupVolunteersVO.setCount((count-1)/6+1);
         groupVolunteersVO.setGroupId(dto.getGroupId());
+        //查看当前成员的角色，判断执行的操作
         groupVolunteersVO.setRole(userGroup.getGroupRole());
         groupVolunteersVO.setUserId(dto.getUserId());
         return groupVolunteersVO;
@@ -287,6 +291,7 @@ public class GroupManagerImpl implements GroupManager{
         dto.setGroupId(form.getGroupId());
         dto.setUserId(form.getUserId());
         Integer result = 0;
+        //操作1为设为管理员，2为取消管理员，3为踢出成员
         if(form.getPerformType() == 1){
             result = userGroupMapper.setAdmin(dto);
         } else if(form.getPerformType() == 2){
@@ -323,6 +328,7 @@ public class GroupManagerImpl implements GroupManager{
             return applyListHtmlVO;
         }
         Integer countPage = applyMapper.countApplyByGroup(dto.getGroupId());
+        //总页数
         applyListHtmlVO.setCountPage((countPage-1)/6+1);
         applyListHtmlVO.setGroupId(dto.getGroupId());
         applyListHtmlVO.setRole(userGroup.getGroupRole());
@@ -343,6 +349,7 @@ public class GroupManagerImpl implements GroupManager{
             ApplyInfoVO infoVO = new ApplyInfoVO();
             infoVO.setApplyDate(DateUtils.convertDateToYMDHM(groupApply.getApplyTime()));
             YcUser user = userMapper.selectByPrimaryKey(groupApply.getApplyUserId());
+            //组装申请信息
             if(user != null){
                 infoVO.setUserId(user.getUserId());
                 infoVO.setAddress(user.getUserAddress());
@@ -363,6 +370,7 @@ public class GroupManagerImpl implements GroupManager{
         }
         int row = applyMapper.updateApply(dto);
         int result = 0;
+        //若申请状态更改成功则在团队用户关系表中插入一条记录
         if(row > 0 && ApplyStatusEnum.AGREED.getCode().equals(dto.getStatus())){
             YcUserGroup userGroup = new YcUserGroup();
             userGroup.setUserId(dto.getUserId());

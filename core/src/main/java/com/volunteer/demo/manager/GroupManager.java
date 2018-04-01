@@ -116,7 +116,7 @@ public interface GroupManager {
     int updateApply(UpdateApplyDTO dto);
 
     /**
-     * 获取团队下所有成员的信息
+     * 获取团队下所有成员的信息（创建项目时用到）
      */
     List<UserVO> getUserVOs(Long groupId);
 

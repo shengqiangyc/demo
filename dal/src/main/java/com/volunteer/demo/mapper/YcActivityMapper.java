@@ -1,6 +1,7 @@
 package com.volunteer.demo.mapper;
 
 import com.volunteer.demo.DO.YcActivity;
+import com.volunteer.demo.DTO.ActivityDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -50,4 +51,10 @@ public interface YcActivityMapper {
     int updateByPrimaryKey(YcActivity record);
 
     List<YcActivity> selectIndexActivity();
+
+    List<YcActivity> selectAllActivity(ActivityDTO dto);
+
+    int countActivity();
+
+    int countSelectActivity(ActivityDTO dto);
 }

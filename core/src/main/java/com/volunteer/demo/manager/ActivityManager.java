@@ -10,8 +10,11 @@ package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcActivity;
 import com.volunteer.demo.DO.YcUserGroup;
+import com.volunteer.demo.form.ActivityListForm;
 import com.volunteer.demo.form.CreateActivityForm;
 import com.volunteer.demo.form.CreateGroupForm;
+import com.volunteer.demo.vo.ActivityDetailVO;
+import com.volunteer.demo.vo.ActivityListVO;
 import com.volunteer.demo.vo.IndexActivityVO;
 import com.volunteer.demo.vo.MyActivityHtmlVO;
 
@@ -27,7 +30,6 @@ public interface ActivityManager {
 
     /**
      * 获取首页的项目
-     * @return
      */
     List<IndexActivityVO> getIndexActivity();
 
@@ -40,4 +42,24 @@ public interface ActivityManager {
      * 创建项目
      */
     int createActivity(CreateActivityForm form);
+
+    /**
+     * 获取项目列表
+     */
+    List<ActivityListVO> getActivityList(ActivityListForm form);
+
+    /**
+     * 获取所有项目数量
+     */
+    int countActivity();
+
+    /**
+     * 获取条件搜索后的项目数量
+     */
+    int countSelectActivity(ActivityListForm form);
+
+    /**
+     * 获取项目详情
+     */
+    ActivityDetailVO getActivityDetail(Long activityId);
 }

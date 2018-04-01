@@ -13,6 +13,7 @@ import com.volunteer.demo.DO.YcGroupApply;
 import com.volunteer.demo.DTO.UserDTO;
 import com.volunteer.demo.common.DateUtils;
 import com.volunteer.demo.enums.ApplyStatusEnum;
+import com.volunteer.demo.enums.GroupStatusEnum;
 import com.volunteer.demo.form.UserForm;
 import com.volunteer.demo.manager.UserManager;
 import com.volunteer.demo.mapper.YcGroupApplyMapper;
@@ -54,6 +55,7 @@ public class UserManagerImpl implements UserManager{
         }
         for(Long groupId : groupIdList){
             YcGroup ycGroup = ycGroupMapper.selectByPrimaryKey(groupId);
+            //获取团队状态不为已解散的团队
             if(ycGroup != null && ycGroup.getGroupStatus() != 3){
                 ycGroupList.add(ycGroup);
             }

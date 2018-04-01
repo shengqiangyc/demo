@@ -169,6 +169,26 @@ public class PageSkipController {
         return "createActivity";
     }
 
+    /**
+     * 项目列表页
+     */
+    @RequestMapping(value = "/activityList.html")
+    public String activityList(Model model){
+        Integer countActivity = activityManager.countActivity();
+        model.addAttribute("activityTypes",ActivityTypeEnum.values());
+        model.addAttribute("activityCount",countActivity);
+        return "activityList";
+    }
+
+    /**
+     * 项目详情页
+     */
+    @RequestMapping(value = "/activityDetails.html",method = RequestMethod.GET)
+    public String activityDetail(Model model, String activityId){
+        model.addAttribute("activity",activityManager.getActivityDetail(Long.parseLong(activityId)));
+        return "activityDetails";
+    }
+
 
 
 

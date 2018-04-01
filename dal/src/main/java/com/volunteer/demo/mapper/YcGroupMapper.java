@@ -5,6 +5,7 @@ import com.volunteer.demo.DTO.GroupDTO;
 import com.volunteer.demo.DTO.PageDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Repository;
 
@@ -85,7 +86,7 @@ public interface YcGroupMapper {
     /**
      * 获取分页结果的团队数量
      */
-    Integer countGroupByName(String groupName);
+    Integer countGroupByName(@Param(value = "groupName") String groupName);
 
 
 

@@ -20,8 +20,4 @@ public interface LoginManager {
 
     YcUser getUserByUserName(String userName);
 
-    /**
-     * 获取用户的所有申请
-     */
-
 }

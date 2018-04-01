@@ -85,4 +85,33 @@
     limit 0,9
 
   </select>
+
+  <select id="selectAllActivity" parameterType="com.volunteer.demo.DTO.ActivityDTO" resultMap="BaseResultMap">
+    select * from yc_activity
+    where activity_status not in (3)
+    <if test="activityName != null and activityName != ''">
+      and activity_name like CONCAT(CONCAT('%',#{activityName}),'%')
+    </if>
+    <if test="type != null and type != 0">
+      and activity_type = #{type}
+    </if>
+    order by create_time desc
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="countActivity" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_status not in (3)
+  </select>
+
+  <select id="countSelectActivity" parameterType="com.volunteer.demo.DTO.ActivityDTO" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_status not in (3)
+    <if test="activityName != null and activityName != ''">
+      and activity_name like CONCAT(CONCAT('%',#{activityName}),'%')
+    </if>
+    <if test="type != null and type != 0">
+      and activity_type = #{type}
+    </if>
+  </select>
 </mapper>
