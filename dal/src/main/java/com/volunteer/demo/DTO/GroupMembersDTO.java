@@ -17,9 +17,10 @@ import lombok.Data;
  * sinceV1.0
  */
 @Data
-public class GroupMembersDTO {
+public class GroupMembersDTO extends PageDTO{
 
     private Long groupId;
-    private Integer start;
+    private String userName;
+    private Integer role;
 
 }

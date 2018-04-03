@@ -97,4 +97,14 @@ public interface YcUserGroupMapper {
      * 删除该团队下所有成员的映射关系
      */
     int deleteAllMembers(Long groupId);
+
+    /**
+     * 获取团队管理页面条件搜索后的成员数量
+     */
+    int countGroupMembers(GroupMembersDTO dto);
+
+    /**
+     * 获取团队下用户id
+     */
+    List<Long> getCreateGroupMembers(GroupMembersDTO dto);
 }

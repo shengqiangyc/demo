@@ -154,6 +154,15 @@ public class GroupController {
     }
 
     /**
+     * 获取条件搜索后的页数
+     */
+    @RequestMapping(value = "/countGroupMembers.json",method = RequestMethod.POST)
+    @ResponseBody
+    public int countGroupMembers(@RequestBody GroupMembersForm form){
+        return groupManager.countSelectedGroupMembers(form);
+    }
+
+    /**
      * 获取查询后的团队数量
      */
     @RequestMapping(value = "/countGroupByName.json",method = RequestMethod.GET)

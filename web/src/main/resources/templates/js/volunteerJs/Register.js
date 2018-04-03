@@ -53,7 +53,7 @@ function uploadImage (){
         alert("请输入地址");
     } else if(introduction.val() === null || introduction.val() === ""){
         alert("请输入简介");
-    } else if(userNameTip.html() === "×用户名已经被注册"
+    } else if(userNameTip.html() === "×用户名无效或已被注册"
         || userNameTip.html() === "×用户名不能包含空格"
         || userNameTip.html() === "×用户名不能超过15个字符"){
         alert(userNameTip.html());
@@ -100,6 +100,9 @@ function uploadImage (){
 function checkUser(){
     var tip = $("#userTip");
     var userName = $("#userName").val();
+    var data = {
+        userName : userName
+    }
     if(userName.indexOf(" ") >= 0){
         tip.html("×用户名不能包含空格");
         tip.css("color","Red");
@@ -112,11 +115,11 @@ function checkUser(){
         url:'/register/checkUser.json',
         type: 'POST',
         contentType: 'application/json;charset=utf-8',
-        data: userName,
+        data: JSON.stringify(data),
         dataType:'text',
         success:function(data){
             if(data === "用户名已经被注册") {
-                tip.html("×用户名已经被注册");
+                tip.html("×用户名无效或已被注册");
                 tip.css("color","Red");
             } else if(data === "用户名可用") {
                 tip.html("√");

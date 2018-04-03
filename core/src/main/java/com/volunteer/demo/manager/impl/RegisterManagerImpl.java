@@ -13,6 +13,7 @@ import com.volunteer.demo.DTO.RegisterDTO;
 import com.volunteer.demo.form.RegisterForm;
 import com.volunteer.demo.manager.RegisterManager;
 import com.volunteer.demo.mapper.YcUserMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -55,6 +56,9 @@ public class RegisterManagerImpl implements RegisterManager {
      */
     @Override
     public int checkUser(String userName) {
+        if (StringUtils.isBlank(userName)){
+            return 1;
+        }
         return userMapper.checkUserName(userName);
     }
 }

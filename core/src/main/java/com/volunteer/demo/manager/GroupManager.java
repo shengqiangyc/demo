@@ -120,6 +120,11 @@ public interface GroupManager {
      */
     List<UserVO> getUserVOs(Long groupId);
 
+    /**
+     * 获取团队管理界面分页后的成员数量
+     */
+    int countSelectedGroupMembers(GroupMembersForm form);
+
 
 
 }

@@ -10,13 +10,8 @@ package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcActivity;
 import com.volunteer.demo.DO.YcUserGroup;
-import com.volunteer.demo.form.ActivityListForm;
-import com.volunteer.demo.form.CreateActivityForm;
-import com.volunteer.demo.form.CreateGroupForm;
-import com.volunteer.demo.vo.ActivityDetailVO;
-import com.volunteer.demo.vo.ActivityListVO;
-import com.volunteer.demo.vo.IndexActivityVO;
-import com.volunteer.demo.vo.MyActivityHtmlVO;
+import com.volunteer.demo.form.*;
+import com.volunteer.demo.vo.*;
 
 import java.util.List;
 
@@ -54,7 +49,7 @@ public interface ActivityManager {
     int countActivity();
 
     /**
-     * 获取条件搜索后的项目数量
+     * 获取条件搜索后的页数
      */
     int countSelectActivity(ActivityListForm form);
 
@@ -62,4 +57,25 @@ public interface ActivityManager {
      * 获取项目详情
      */
     ActivityDetailVO getActivityDetail(Long activityId);
+
+    /**
+     * 获取对应团队的项目
+     */
+    List<GroupActivityVO> getGroupActivityList(GroupActivityForm form);
+
+    /**
+     * 获取对应团队项目数量
+     */
+    int countGroupActivity(Long groupId);
+
+    /**
+     * 获取对应团队条件搜索后的页数
+     */
+    int countGroupSelectedActivity(GroupActivityForm form);
+
+    /**
+     * 修改项目状态
+     */
+    int updateActivityStatus(UpdateActivityStatusForm form);
+
 }

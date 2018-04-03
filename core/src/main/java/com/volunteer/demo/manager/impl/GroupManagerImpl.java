@@ -233,9 +233,13 @@ public class GroupManagerImpl implements GroupManager{
         if(form.getPageNo() == null){
             return groupMemberVOS;
         }
+        //构建搜索条件
         GroupMembersDTO dto = new GroupMembersDTO();
         dto.setGroupId(form.getGroupId());
-        dto.setStart((form.getPageNo()-1)*6);
+        dto.setStart((form.getPageNo()-1)*8);
+        dto.setPageSize(8);
+        dto.setRole(form.getRole());
+        dto.setUserName(form.getUserName());
         List<Long> userIds = userGroupMapper.getGroupMembers(dto);
         if(CollectionUtils.isEmpty(userIds)){
             return groupMemberVOS;
@@ -386,7 +390,7 @@ public class GroupManagerImpl implements GroupManager{
         List<UserVO> userVOS = new ArrayList<>();
         GroupMembersDTO dto = new GroupMembersDTO();
         dto.setGroupId(groupId);
-        List<Long> userIdList = userGroupMapper.getGroupMembers(dto);
+        List<Long> userIdList = userGroupMapper.getCreateGroupMembers(dto);
         if(!CollectionUtils.isEmpty(userIdList)){
             for(Long userId : userIdList){
                 UserVO vo = new UserVO();
@@ -397,6 +401,16 @@ public class GroupManagerImpl implements GroupManager{
             }
         }
         return userVOS;
+    }
+
+    @Override
+    public int countSelectedGroupMembers(GroupMembersForm form) {
+        GroupMembersDTO dto = new GroupMembersDTO();
+        dto.setUserName(form.getUserName());
+        dto.setRole(form.getRole());
+        dto.setGroupId(form.getGroupId());
+        int result = userGroupMapper.countGroupMembers(dto);
+        return (result-1)/8+1;
     }
 
 

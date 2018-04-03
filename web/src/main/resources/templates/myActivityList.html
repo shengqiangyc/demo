@@ -22,6 +22,10 @@
     <!--For prettyPhoto-->
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
 <script src="js/jquery.prettyPhoto.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="css/jquery.pagination.css" type="text/css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/jquery.pagination.min.js"></script>
+    <script type="text/javascript" src="js/volunteerJs/groupActivity.js"></script>
     <script src="js/volunteerJs/myGroupList.js"></script>
 
   </head>
@@ -70,24 +74,36 @@
       </div>  
       <!-- Right Section Start-->  
       <div class="portright">    <h3>项目列表
-        <a href="groupDetails.html" style="color: gray;font-size: 13px;margin-left: 20px">查看团队详情</a>
+          <select style="margin-left: 10px;width: 100px" id="leader">
+            <option value="0">全部</option>
+            <option th:value="${htmlVO.userId}">我负责的</option>
+          </select>
+        <select style="margin-left: 10px;width: 100px" id="activityStatus">
+          <option value="-1">请选择</option>
+          <option th:each="t : ${activityStatus}" th:value="${t.code}" th:text="${t.msg}"></option>
+        </select>
+        <input type="button" value="搜索" style="margin-left: 20px;width: 50px" onclick="getCountByName()">
         <input type="hidden" id="groupId" th:value="${htmlVO.groupId}">
+        <input type="hidden" id="count" th:value="${count}">
+        <input type="hidden" id="countSelected">
+        <input type="hidden" id="userRole" th:value="${htmlVO.userRole}">
         <a th:href="@{/createActivity.html(groupId=${htmlVO.groupId})}" style="color: grey;font-size: 13px;float: right;margin-right: 20px">创建项目</a>
       </h3>
-        <table class="teamTable">
+        <div>
+        <table class="teamTable" id="groupActivityList">
           <tr>
-            <th>项目名称</th>
-            <th>项目描述</th>
-            <th>所在城市</th>
-            <th>项目类型</th>
-            <th>开始时间</th>
-            <th>负责人</th>
-            <th>项目状态</th>
-            <th>操作</th>
+            <th>项目图片</th>
+            <th width="60px">项目名称</th>
+            <th width="50px">所在城市</th>
+            <th width="50px">项目类型</th>
+            <th width="130px">开始时间</th>
+            <th width="60px">负责人</th>
+            <th width="50px">项目状态</th>
+            <th >操作</th>
           </tr>
           <tr>
-            <td><a href="">西部支教</a></td>
-            <td>去西部支教，给孩子们上课</td>
+            <td><a href=""><img style='width: 80px;height: 60px' src="images/志愿者图片.jpg"></a></a></td>
+            <td>fdsdasd</td>
             <td>贵州</td>
             <td>支教</td>
             <td>2018年1月31日</td>
@@ -95,17 +111,13 @@
             <td>进行中</td>
             <td><input type="button" value="结束项目"></td>
           </tr>
-          <tr>
-            <td><a href="">敬老院</a></td>
-            <td>去敬老院服侍老人，给老人送温暖</td>
-            <td>杭州</td>
-            <td>敬老</td>
-            <td>2018年1月1日</td>
-            <td>圣枪</td>
-            <td>已结束</td>
-            <td><input type="button" value="结束项目"></td>
-          </tr>
         </table>
+        </div>
+        <div class="box" style="float: right;margin-top: 15px">
+          <div id="pagination1" class="page fl"></div>
+          <div class="info fl">
+          </div>
+        </div>
       </div>
     </div>
     <!-- Footer Part Start-->

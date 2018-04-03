@@ -13,23 +13,19 @@ import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DO.YcUserGroup;
 import com.volunteer.demo.DTO.ActivityDTO;
+import com.volunteer.demo.DTO.ActivityGroupLeaderDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import com.volunteer.demo.common.DateUtils;
 import com.volunteer.demo.enums.ActivityEnum;
 import com.volunteer.demo.enums.ActivityTypeEnum;
 import com.volunteer.demo.enums.GroupRoleEnum;
-import com.volunteer.demo.form.ActivityListForm;
-import com.volunteer.demo.form.CreateActivityForm;
-import com.volunteer.demo.form.CreateGroupForm;
+import com.volunteer.demo.form.*;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.mapper.YcActivityMapper;
 import com.volunteer.demo.mapper.YcGroupMapper;
 import com.volunteer.demo.mapper.YcUserGroupMapper;
 import com.volunteer.demo.mapper.YcUserMapper;
-import com.volunteer.demo.vo.ActivityDetailVO;
-import com.volunteer.demo.vo.ActivityListVO;
-import com.volunteer.demo.vo.IndexActivityVO;
-import com.volunteer.demo.vo.MyActivityHtmlVO;
+import com.volunteer.demo.vo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -167,5 +163,72 @@ public class ActivityManagerImpl implements ActivityManager{
             }
         }
         return activityDetailVO;
+    }
+
+    @Override
+    public List<GroupActivityVO> getGroupActivityList(GroupActivityForm form) {
+        List<GroupActivityVO> groupActivityVOS = new ArrayList<>();
+        if (form.getGroupId() == null){
+            return groupActivityVOS;
+        }
+        //组装查询条件
+        ActivityGroupLeaderDTO dto = new ActivityGroupLeaderDTO();
+        dto.setGroupId(form.getGroupId());
+        if (form.getLeaderId() != null) {
+            dto.setLeaderId(form.getLeaderId());
+        }
+        dto.setStart((form.getPageNo()-1)*8);
+        dto.setStatus(form.getStatus());
+        dto.setPageSize(8);
+        List<YcActivity> activityList = ycActivityMapper.getGroupActivity(dto);
+        if (!CollectionUtils.isEmpty(activityList)){
+            for (YcActivity activity : activityList) {
+                GroupActivityVO activityVO = new GroupActivityVO();
+                activityVO.setActivityId(activity.getActivityId());
+                activityVO.setActivityName(activity.getActivityName());
+                activityVO.setCity(activity.getActivityCity());
+                activityVO.setCreateTime(DateUtils.convertDateToYMDHMS(activity.getCreateTime()));
+                activityVO.setStatus(ActivityEnum.getMsgByCode(activity.getActivityStatus()));
+                activityVO.setType(ActivityTypeEnum.getMsgByCode(activity.getActivityType()));
+                activityVO.setUrl(activity.getActivityImage());
+                activityVO.setLeaderId(activity.getActivityLeader());
+                activityVO.setStatusInt(activity.getActivityStatus());
+                if (activity.getActivityLeader() != null){
+                    YcUser user = userMapper.selectByPrimaryKey(activity.getActivityLeader());
+                    activityVO.setLeaderName(user.getUserName());
+                }
+                groupActivityVOS.add(activityVO);
+            }
+        }
+        return groupActivityVOS;
+    }
+
+    @Override
+    public int countGroupActivity(Long groupId) {
+        return (ycActivityMapper.countGroupActivity(groupId)-1)/8+1;
+    }
+
+    @Override
+    public int countGroupSelectedActivity(GroupActivityForm form) {
+        ActivityGroupLeaderDTO dto = new ActivityGroupLeaderDTO();
+        dto.setLeaderId(form.getLeaderId());
+        dto.setGroupId(form.getGroupId());
+        dto.setStatus(form.getStatus());
+        int result = (ycActivityMapper.countSelectedGroupActivity(dto)-1)/8+1;
+        return result;
+    }
+
+    @Override
+    public int updateActivityStatus(UpdateActivityStatusForm form) {
+        if (form.getActivityId() == null){
+            return 0;
+        }
+        if (form.getType() == 1){
+            return ycActivityMapper.startActivity(form.getActivityId());
+        } else if (form.getType() == 2){
+            return ycActivityMapper.endActivity(form.getActivityId());
+        } else {
+            return 0;
+        }
     }
 }

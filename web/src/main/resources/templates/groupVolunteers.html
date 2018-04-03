@@ -73,7 +73,14 @@
       </div>  
       <!-- Right Section Start-->  
       <div class="portright" th:switch="${membersVO.role}">    <h3>团队成员
-        <a th:href="@{/groupDetail.json(groupId=${membersVO.groupId})}" style="color: gray;font-size: 13px;margin-left: 20px">查看团队详情</a>
+        <input type="text" id="select" style="width: 120px;height: 8px;margin-left: 20px;font-size: 12px" placeholder="请输入用户名">
+        <select style="margin-left: 15px;width: 100px" id="role">
+          <option value="">请选择角色</option>
+          <option value="3">创建者</option>
+          <option value="2">管理员</option>
+          <option value="1">普通成员</option>
+        </select>
+        <input type="button" value="搜索" style="margin-left: 15px;width: 50px;" onclick="getCountByParam()">
         <a onclick="disband()" th:case="3" style="color: grey;font-size: 13px;float: right">解散团队</a>
         <a onclick="exitGroup()" th:case="2" style="color: grey;font-size: 13px;float: right">退出团队</a>
         <a onclick="exitGroup()" th:case="1" style="color: grey;font-size: 13px;float: right">退出团队</a>
@@ -81,6 +88,7 @@
         <input type="hidden" id="count" th:value="${membersVO.count}">
         <input type="hidden" id="userRole" th:value="${membersVO.role}">
         <input type="hidden" id="userId" th:value="${membersVO.userId}">
+        <input type="hidden" id="countSelected">
       </h3>
         <div>
         <table class="teamTable" id="groupMembers">

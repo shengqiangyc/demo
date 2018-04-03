@@ -11,10 +11,13 @@ package com.volunteer.demo.controller;
 import com.volunteer.demo.common.ResultCode;
 import com.volunteer.demo.form.ActivityListForm;
 import com.volunteer.demo.form.CreateActivityForm;
+import com.volunteer.demo.form.GroupActivityForm;
+import com.volunteer.demo.form.UpdateActivityStatusForm;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.manager.ImageManager;
 import com.volunteer.demo.vo.ActivityDetailVO;
 import com.volunteer.demo.vo.ActivityListVO;
+import com.volunteer.demo.vo.GroupActivityVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -90,6 +93,33 @@ public class ActivityController {
     @ResponseBody
     public Integer getCountByName(@RequestBody ActivityListForm form){
         return activityManager.countSelectActivity(form);
+    }
+
+    /**
+     * 获取团队下的所有项目
+     */
+    @RequestMapping(value = "/getGroupActivity.json",method = RequestMethod.POST)
+    @ResponseBody
+    public List<GroupActivityVO> getCountByName(@RequestBody GroupActivityForm form){
+        return activityManager.getGroupActivityList(form);
+    }
+
+    /**
+     * 获取分页查询后的页数
+     */
+    @RequestMapping(value = "/countGroupActivityByParam.json",method = RequestMethod.POST)
+    @ResponseBody
+    public Integer getCountByParam(@RequestBody GroupActivityForm form){
+        return activityManager.countGroupSelectedActivity(form);
+    }
+
+    /**
+     * 修改项目状态
+     */
+    @RequestMapping(value = "/updateActivityStatus.json",method = RequestMethod.POST)
+    @ResponseBody
+    public Integer updateActivityStatus(@RequestBody UpdateActivityStatusForm form){
+        return activityManager.updateActivityStatus(form);
     }
 
 }

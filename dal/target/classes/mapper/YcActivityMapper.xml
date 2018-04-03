@@ -114,4 +114,45 @@
       and activity_type = #{type}
     </if>
   </select>
+
+  <select id="getGroupActivity" resultType="com.volunteer.demo.DO.YcActivity" parameterType="com.volunteer.demo.DTO.ActivityGroupLeaderDTO">
+    select * from yc_activity
+    where activity_group = #{groupId}
+    <if test="leaderId != null and leaderId != 0">
+      and activity_leader = #{leaderId}
+    </if>
+    <if test="status != null and status != -1">
+      and activity_status = #{status}
+    </if>
+    order by create_time desc
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="countGroupActivity" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_group = #{groupId}
+  </select>
+
+  <select id="countSelectedGroupActivity" parameterType="com.volunteer.demo.DTO.ActivityGroupLeaderDTO" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_group = #{groupId}
+    <if test="leaderId != null and leaderId != 0">
+      and activity_leader = #{leaderId}
+    </if>
+    <if test="status != null and status != -1">
+      and activity_status = #{status}
+    </if>
+  </select>
+
+  <update id="startActivity" parameterType="java.lang.Long">
+    update yc_activity
+    set activity_status = 1
+    where activity_id = #{activityId}
+  </update>
+
+  <update id="endActivity" parameterType="java.lang.Long">
+    update yc_activity
+    set activity_status = 2
+    where activity_id = #{activityId}
+  </update>
 </mapper>

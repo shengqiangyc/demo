@@ -25,6 +25,8 @@ function getGroupMembers(current){
     var nowUserId = $("#userId").val();
     var data ={
         groupId : $("#groupId").val(),
+        userName : $("#select").val(),
+        role : $("#role").val(),
         pageNo : current
     }
     $.ajax({
@@ -42,25 +44,32 @@ function getGroupMembers(current){
                 s += "<td>"+data[i].sex+"</td>";
                 s += "<td>"+data[i].realName+"</td>";
                 s += "<td>"+data[i].address+"</td>";
-                s += "<td>"+data[i].role+"</td>";
+                if (data[i].role === "创建者") {
+                    s += "<td style='color: indianred'>" + data[i].role + "</td>";
+                } else if (data[i].role === "管理员") {
+                    s += "<td style='color: #3c9ccd'>" + data[i].role + "</td>";
+                } else {
+                    s += "<td style='color: #3f7f5f'>" + data[i].role + "</td>";
+
+                }
                 s += "<td>"+data[i].entryDate+"</td>";
                 if(data[i].role === "创建者"){
                     s += "<td>——</td></tr>";
                 } else if(nowUserId === userId.toString()){
                     s += "<td>——</td></tr>";
                 } else if(role === "3" && data[i].role === "管理员"){
-                    s += "<td><input type='button' onclick='removeMember("+userId+",3)' value='开除成员'>" +
+                    s += "<td><input type='button' onclick='removeMember("+userId+",3)' value='开除'>" +
                         "<input type='button' value='取消管理' onclick='removeMember("+data[i].userId+",2)' style='margin-left: 10px;'></td>";
                     s += "</tr>";
                 } else if(role === "3" && data[i].role === "普通成员"){
-                    s += "<td><input type='button' onclick='removeMember("+userId+",3)' value='开除成员'>" +
+                    s += "<td><input type='button' onclick='removeMember("+userId+",3)' value='开除'>" +
                         "<input type='button' value='设为管理' onclick='removeMember("+userId+",1)' style='margin-left: 10px;'></td>";
                     s += "</tr>";
                 } else if(role ==="2"){
                     if(data[i].role === "管理员"){
                         s += "<td>——</td></tr>";
                     } else {
-                        s += "<td><input type='button' onclick='removeMember(" + userId + ",3)' value='开除成员'></td>";
+                        s += "<td><input type='button' onclick='removeMember(" + userId + ",3)' value='开除'></td>";
                         s += "</tr>";
                     }
                 } else if(role === "1"){
@@ -70,6 +79,34 @@ function getGroupMembers(current){
             }
         }
     })
+}
+
+function getCountByParam() {
+    getGroupMembers(1);
+    var pageSize;
+    var data = {
+        groupId : $("#groupId").val(),
+        userName : $("#select").val(),
+        role : $("#role").val()
+    }
+    $.ajax({
+        url: '/group/countGroupMembers.json',
+        type: 'POST',
+        contentType: 'application/json;charset=utf-8',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        success: function (data) {
+            $("#countSelected").val(data);
+            pageSize = $("#countSelected").val();
+            $("#pagination1").pagination({
+                currentPage: 1,
+                totalPage: pageSize,
+                callback: function (current) {
+                    getGroupMembers(current);
+                }
+            });
+        }
+    });
 }
 
 function removeMember(userId,type){

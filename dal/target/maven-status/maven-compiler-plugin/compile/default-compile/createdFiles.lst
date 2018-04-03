@@ -5,6 +5,7 @@ com/volunteer/demo/DTO/ImageDTO.class
 com/volunteer/demo/DTO/ActivityDTO.class
 com/volunteer/demo/mapper/YcGroupActivityMapper.class
 com/volunteer/demo/mapper/YcActivityMapper.class
+com/volunteer/demo/DTO/ActivityGroupLeaderDTO.class
 com/volunteer/demo/DO/YcUserGroup.class
 com/volunteer/demo/DO/YcActivity.class
 com/volunteer/demo/mapper/YcGroupApplyMapper.class

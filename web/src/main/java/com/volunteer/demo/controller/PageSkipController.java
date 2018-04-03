@@ -11,6 +11,7 @@ package com.volunteer.demo.controller;
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.enums.ActivityEnum;
 import com.volunteer.demo.enums.ActivityTypeEnum;
 import com.volunteer.demo.form.CountForm;
 import com.volunteer.demo.manager.ActivityManager;
@@ -151,6 +152,8 @@ public class PageSkipController {
         }
         MyActivityHtmlVO htmlVO = activityManager.getHtmlVO(user.getUserId(),Long.parseLong(groupId));
         model.addAttribute("htmlVO",htmlVO);
+        model.addAttribute("activityStatus", ActivityEnum.values());
+        model.addAttribute("count",activityManager.countGroupActivity(Long.parseLong(groupId)));
         return "myActivityList";
     }
 
