@@ -46,12 +46,15 @@ function menum(){
         "              </ul>\n" +
         "            </li>\n" +
         "            <li>\n" +
-        "              <a href=\"/loginOut.json\" >\n" +
-        "            <span>退出登录\n" +
-        "            </span>\n" +
-        "              </a>\n" +
-        "            </li>\n" +
-        "          </ul>"
+        "            <a href=\"\" class=\"sf-with-ul\"><span>帐号管理 ▾</span></a>\n" +
+        "              <ul class=\"sub-menu\" id=\"myGroupList\">\n" +
+        "                <li>\n" +
+        "                  <a href=\"loginOut.json\"><span>退出登录</span></a>\n" +
+        "                </li>\n" +
+        "                <li>\n" +
+        "                  <a href=\"updatePassword.html\"><span>修改密码</span></a>\n" +
+        "                </li>\n" +
+        "              </ul></li>"
     $("#primary-nav").html(s);
 }
 

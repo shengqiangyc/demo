@@ -125,6 +125,16 @@ public interface GroupManager {
      */
     int countSelectedGroupMembers(GroupMembersForm form);
 
+    /**
+     * 通过groupId查出团队信息
+     */
+    UpdateGroupHtmlVO getUpdateGroupInfo(Long groupId,Long userId);
+
+    /**
+     * 修改团队信息
+     */
+    int updateGroupInfo(UpdateGroupForm form);
+
 
 
 }

@@ -99,11 +99,14 @@ function checkGroupName(){
         tip.html("×团队名不能超过15个字符");
         tip.css("color","Red");
     }
+    var data = {
+        groupName : groupName
+    }
     $.ajax({
         url:'/group/checkGroup.json',
         type: 'POST',
         contentType: 'application/json;charset=utf-8',
-        data: groupName,
+        data: JSON.stringify(data),
         dataType:'text',
         success:function(data){
             if(data === "团队名已存在") {

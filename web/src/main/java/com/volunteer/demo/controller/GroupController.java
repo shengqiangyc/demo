@@ -21,6 +21,7 @@ import com.volunteer.demo.session.SessionHelper;
 import com.volunteer.demo.vo.ApplyInfoVO;
 import com.volunteer.demo.vo.GroupListVO;
 import com.volunteer.demo.vo.GroupMemberVO;
+import com.volunteer.demo.vo.UpdateGroupHtmlVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -97,13 +98,13 @@ public class GroupController {
 
     /**
      * 团队名校验
-     * @param groupName
+     * @param form
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "/checkGroup.json",method = RequestMethod.POST)
-    public String checkUser(@RequestBody String groupName){
-        Integer groupNum = groupManager.checkGroup(groupName);
+    public String checkUser(@RequestBody GroupForm form){
+        Integer groupNum = groupManager.checkGroup(form.getGroupName());
         if(groupNum > 0){
             return ResultCode.GROUP_EXISTS;
         } else {
@@ -230,6 +231,30 @@ public class GroupController {
     public String updateApplyStatus(@RequestBody UpdateApplyDTO dto){
         Integer result = groupManager.updateApply(dto);
         if(result > 0){
+            return ResultCode.SUCCESS;
+        } else {
+            return ResultCode.FAIL;
+        }
+    }
+
+    /**
+     * 修改团队页获取团队详情
+     */
+    @RequestMapping(value = "/getGroupDetail.json",method = RequestMethod.GET)
+    @ResponseBody
+    public UpdateGroupHtmlVO updateGroupDetail(String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        return groupManager.getUpdateGroupInfo(Long.parseLong(groupId),user.getUserId());
+    }
+
+    /**
+     * 修改团队信息
+     */
+    @RequestMapping(value = "/updateGroupInfo.json",method = RequestMethod.POST)
+    @ResponseBody
+    public String updateGroup(@RequestBody UpdateGroupForm form){
+        Integer result = groupManager.updateGroupInfo(form);
+        if (result > 0){
             return ResultCode.SUCCESS;
         } else {
             return ResultCode.FAIL;

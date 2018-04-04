@@ -413,5 +413,34 @@ public class GroupManagerImpl implements GroupManager{
         return (result-1)/8+1;
     }
 
+    @Override
+    public UpdateGroupHtmlVO getUpdateGroupInfo(Long groupId,Long userId) {
+        UpdateGroupHtmlVO groupHtmlVO = new UpdateGroupHtmlVO();
+        YcGroup group = ycGroupMapper.selectByPrimaryKey(groupId);
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setUserId(userId);
+        dto.setGroupId(groupId);
+        YcUserGroup userGroup = userGroupMapper.getYcUserGroup(dto);
+        if(group != null){
+            groupHtmlVO.setDescription(group.getGroupIntroduction());
+            groupHtmlVO.setGroupId(groupId);
+            groupHtmlVO.setGroupRequirement(group.getGroupRequirement());
+            groupHtmlVO.setDescription(group.getGroupIntroduction());
+            groupHtmlVO.setStatus(group.getGroupStatus());
+            groupHtmlVO.setRole(userGroup.getGroupRole());
+        }
+        return groupHtmlVO;
+    }
+
+    @Override
+    public int updateGroupInfo(UpdateGroupForm form) {
+        UpdateGroupDTO dto = new UpdateGroupDTO();
+        dto.setDescription(form.getDescription());
+        dto.setGroupId(form.getGroupId());
+        dto.setRequire(form.getRequire());
+        dto.setStatus(form.getStatus());
+        return ycGroupMapper.updateGroupInfo(dto);
+    }
+
 
 }

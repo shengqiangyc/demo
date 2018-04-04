@@ -25,6 +25,8 @@ com/volunteer/demo/manager/GroupManager.class
 com/volunteer/demo/vo/UrlVO.class
 com/volunteer/demo/enums/ActivityEnum.class
 com/volunteer/demo/enums/RecordStatusEnum.class
+com/volunteer/demo/form/UpdateGroupForm.class
+com/volunteer/demo/vo/UpdateGroupHtmlVO.class
 com/volunteer/demo/form/CreateGroupForm.class
 com/volunteer/demo/manager/impl/ImageManagerImpl.class
 com/volunteer/demo/form/LoginForm.class

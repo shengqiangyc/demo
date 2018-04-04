@@ -11,6 +11,7 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/GroupManager.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/ActivityListForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/ActivityListVO.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UpdateGroupForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/SexEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ActivityEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/UserManager.java
@@ -51,4 +52,5 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/GroupActivityForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/SessionHelper.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/UserVO.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/UpdateGroupHtmlVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/LoginForm.java

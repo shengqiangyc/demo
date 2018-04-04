@@ -121,6 +121,14 @@
     </if>
   </select>
 
+  <update id="updateGroupInfo" parameterType="com.volunteer.demo.DTO.UpdateGroupDTO">
+    update yc_group
+    set group_requirement = #{require},
+        group_introduction = #{description},
+        group_status = #{status}
+    where group_id = #{groupId}
+  </update>
+
 
 
 

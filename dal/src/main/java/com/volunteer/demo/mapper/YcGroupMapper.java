@@ -3,6 +3,7 @@ package com.volunteer.demo.mapper;
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DTO.GroupDTO;
 import com.volunteer.demo.DTO.PageDTO;
+import com.volunteer.demo.DTO.UpdateGroupDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -87,6 +88,12 @@ public interface YcGroupMapper {
      * 获取分页结果的团队数量
      */
     Integer countGroupByName(@Param(value = "groupName") String groupName);
+
+    /**
+     * 修改团队信息
+     */
+    int updateGroupInfo(UpdateGroupDTO dto);
+
 
 
 

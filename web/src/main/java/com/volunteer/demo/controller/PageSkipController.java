@@ -192,6 +192,19 @@ public class PageSkipController {
         return "activityDetails";
     }
 
+    /**
+     * 修改团队页面
+     */
+    @RequestMapping(value = "/updateGroup.html",method = RequestMethod.GET)
+    public String updateGroup(Model model,String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if (user == null){
+            return "login";
+        }
+        model.addAttribute("updateVO",groupManager.getUpdateGroupInfo(Long.parseLong(groupId),user.getUserId()));
+        return "updateGroup";
+    }
+
 
 
 

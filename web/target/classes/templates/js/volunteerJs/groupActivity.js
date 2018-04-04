@@ -104,7 +104,8 @@ function updateStatus(activityId,type){
         var leader = $("#leader").val();
         var data = {
             status: status,
-            leader: leader
+            leaderId: leader,
+            groupId : $("#groupId").val()
         }
         $.ajax({
             url: '/activity/countGroupActivityByParam.json',
