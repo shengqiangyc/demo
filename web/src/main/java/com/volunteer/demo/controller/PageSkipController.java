@@ -205,6 +205,20 @@ public class PageSkipController {
         return "updateGroup";
     }
 
+    /**
+     * 修改密码页面
+     */
+    @RequestMapping(value = "/updatePassword.html",method = RequestMethod.GET)
+    public String updatePassword(Model model,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if (user == null){
+            return "login";
+        }
+        model.addAttribute("user",user);
+        return "updatePassword";
+    }
+
+
 
 
 

@@ -65,6 +65,7 @@
             <input type="hidden" id="groupId" th:value="${group.groupId}">
             <input type="hidden" id="userApplyStatus" th:value="${group.applyRecord}">
             <input type="hidden" id="groupCountStatus" th:value="${group.countUserGroup}">
+            <input type="hidden" id="statusInt" th:value="${group.statusInt}">
             <li><strong>团队队名：</strong><span style="color: #3c9ccd" th:text="${group.groupName}"></span></li>
             <li><strong>团队人数：</strong><span th:text="${group.groupCount}"></span></li>
             <li><strong>招募状态：</strong><span th:text="${group.status}"></span></li>

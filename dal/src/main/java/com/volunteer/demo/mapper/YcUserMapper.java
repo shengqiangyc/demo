@@ -71,4 +71,9 @@ public interface YcUserMapper {
      * 判断用户名是否存在
      */
     int checkUserName(String userName);
+
+    /**
+     * 修改密码
+     */
+    int updatePassword(YcUser user);
 }

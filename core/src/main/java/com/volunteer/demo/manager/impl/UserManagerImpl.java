@@ -10,20 +10,25 @@ package com.volunteer.demo.manager.impl;
 
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcGroupApply;
+import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.UserDTO;
 import com.volunteer.demo.common.DateUtils;
 import com.volunteer.demo.enums.ApplyStatusEnum;
 import com.volunteer.demo.enums.GroupStatusEnum;
+import com.volunteer.demo.form.RegisterForm;
+import com.volunteer.demo.form.UpdatePasswordForm;
 import com.volunteer.demo.form.UserForm;
 import com.volunteer.demo.manager.UserManager;
 import com.volunteer.demo.mapper.YcGroupApplyMapper;
 import com.volunteer.demo.mapper.YcGroupMapper;
 import com.volunteer.demo.mapper.YcUserGroupMapper;
+import com.volunteer.demo.mapper.YcUserMapper;
 import com.volunteer.demo.vo.MyApplyListVO;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +45,8 @@ public class UserManagerImpl implements UserManager{
     private YcUserGroupMapper userGroupMapper;
     @Autowired
     private YcGroupMapper ycGroupMapper;
+    @Autowired
+    private YcUserMapper userMapper;
     @Autowired
     private YcGroupApplyMapper applyMapper;
 
@@ -92,5 +99,25 @@ public class UserManagerImpl implements UserManager{
     @Override
     public int cancelApply(Long applyId) {
         return applyMapper.cancelApply(applyId);
+    }
+
+    @Override
+    public int updatePassword(UpdatePasswordForm form) {
+        if (StringUtils.isEmpty(form.getNewPassword())){
+            return  0;
+        }
+        if (form.getUserId() == null){
+            return 0;
+        }
+        YcUser user = new YcUser();
+        user.setUserId(form.getUserId());
+        user.setUserPassword(form.getNewPassword());
+        int result = userMapper.updatePassword(user);
+        return result;
+    }
+
+    @Override
+    public YcUser getYcUser(Long userId) {
+        return userMapper.selectByPrimaryKey(userId);
     }
 }

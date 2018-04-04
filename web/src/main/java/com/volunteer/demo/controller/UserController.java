@@ -13,6 +13,7 @@ import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.UserDTO;
 import com.volunteer.demo.common.ResultCode;
 import com.volunteer.demo.form.ApplyIdForm;
+import com.volunteer.demo.form.UpdatePasswordForm;
 import com.volunteer.demo.manager.UserManager;
 import com.volunteer.demo.session.SessionHelper;
 import com.volunteer.demo.vo.MyApplyListVO;
@@ -77,4 +78,29 @@ public class UserController {
             return ResultCode.FAIL;
         }
     }
+
+    /**
+     * 修改密码
+     */
+    @RequestMapping(value="/updatePassword.json",method = RequestMethod.POST)
+    @ResponseBody
+    public String updatePassword(@RequestBody UpdatePasswordForm form) {
+        YcUser user = userManager.getYcUser(form.getUserId());
+        if (user != null){
+            if (!user.getUserPassword().equals(form.getOldPassword())){
+                return ResultCode.LOGIN_FAIOL;
+            }
+            Integer result = userManager.updatePassword(form);
+            if (result > 0) {
+                return ResultCode.SUCCESS;
+            } else {
+                return ResultCode.FAIL;
+            }
+        }
+         return ResultCode.FAIL;
+    }
+
+
+
+
 }

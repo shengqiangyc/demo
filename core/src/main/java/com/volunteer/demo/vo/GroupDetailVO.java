@@ -23,6 +23,7 @@ public class GroupDetailVO {
     private Long groupId;
     private Integer groupCount;
     private String status;
+    private Integer statusInt;
     private String city;
     private String groupLeader;
     private String groupQq;

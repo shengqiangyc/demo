@@ -3,6 +3,7 @@ com/volunteer/demo/vo/ActivityListVO.class
 com/volunteer/demo/form/UserGroupMapForm.class
 com/volunteer/demo/enums/GroupRoleEnum.class
 com/volunteer/demo/vo/GroupActivityVO.class
+com/volunteer/demo/form/UpdatePasswordForm.class
 com/volunteer/demo/form/UserForm.class
 com/volunteer/demo/vo/ApplyListHtmlVO.class
 com/volunteer/demo/form/PageForm.class

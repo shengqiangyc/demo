@@ -105,6 +105,7 @@ public class GroupManagerImpl implements GroupManager{
        detailVO.setRequire(group.getGroupRequirement());
        detailVO.setCreateTime(DateUtils.convertDateToYMDHMS(group.getCreateTime()));
        detailVO.setImage(group.getGroupImage());
+       detailVO.setStatusInt(group.getGroupStatus());
        YcUser user = userMapper.selectByPrimaryKey(group.getGroupLeader());
        if(user != null){
            detailVO.setGroupLeader(user.getUserName());

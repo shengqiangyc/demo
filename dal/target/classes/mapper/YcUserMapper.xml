@@ -114,4 +114,10 @@
     where user_name = #{userName}
   </select>
 
+  <update id="updatePassword" parameterType="com.volunteer.demo.DO.YcUser">
+    update yc_user
+    set user_password = #{userPassword}
+    where user_id = #{userId}
+  </update>
+
 </mapper>

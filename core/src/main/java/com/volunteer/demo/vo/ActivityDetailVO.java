@@ -24,6 +24,7 @@ public class ActivityDetailVO {
     private Long groupId;
     private String groupName;
     private String status;
+    private Integer statusInt;
     private String activityType;
     private String leaderName;
     private String city;

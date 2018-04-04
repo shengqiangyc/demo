@@ -147,6 +147,7 @@ public class ActivityManagerImpl implements ActivityManager{
         activityDetailVO.setDescription(activity.getActivityIntroduction());
         activityDetailVO.setStatus(ActivityEnum.getMsgByCode(activity.getActivityStatus()));
         activityDetailVO.setGroupId(activity.getActivityGroup());
+        activityDetailVO.setStatusInt(activity.getActivityStatus());
         activityDetailVO.setImage(activity.getActivityImage());
         //获取项目负责人名称
         if (activity.getActivityLeader() != null){

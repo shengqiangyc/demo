@@ -6,10 +6,13 @@ function checkLogin(){
 
 function checkApply(){
     var userApplyStatus = $("#userApplyStatus").val();
+    var status = $("#statusInt").val();
     if(confirm('你确定申请加入此团队吗')){
         if(userApplyStatus === "1"){
             alert("你已经申请过加入团队了，请勿重复申请！");
-        } else {
+        } else if (status === "2"){
+            alert("该团队不可申请加入");
+        } else{
             applyToGroup();
         }
     }

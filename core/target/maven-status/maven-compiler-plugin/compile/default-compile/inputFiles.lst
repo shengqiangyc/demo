@@ -28,6 +28,7 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ActivityTypeEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UserNameForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/MyApplyListVO.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UpdatePasswordForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/UUIDUtils.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/CreateGroupVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/IndexActivityVO.java

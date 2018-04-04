@@ -9,7 +9,10 @@
 package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcGroup;
+import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.DTO.UserDTO;
+import com.volunteer.demo.form.RegisterForm;
+import com.volunteer.demo.form.UpdatePasswordForm;
 import com.volunteer.demo.form.UserForm;
 import com.volunteer.demo.vo.MyApplyListVO;
 
@@ -43,4 +46,14 @@ public interface UserManager {
      * 取消申请
      */
     int cancelApply(Long applyId);
+
+    /**
+     * 修改密码
+     */
+    int updatePassword(UpdatePasswordForm form);
+
+    /**
+     * 通过userId获取对象
+     */
+    YcUser getYcUser(Long userId);
 }
