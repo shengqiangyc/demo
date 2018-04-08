@@ -1,5 +1,6 @@
 com/volunteer/demo/enums/SexEnum.class
 com/volunteer/demo/vo/ActivityListVO.class
+com/volunteer/demo/redis/RedisConfig.class
 com/volunteer/demo/form/UserGroupMapForm.class
 com/volunteer/demo/enums/GroupRoleEnum.class
 com/volunteer/demo/vo/GroupActivityVO.class
@@ -13,6 +14,8 @@ com/volunteer/demo/manager/UserManager.class
 com/volunteer/demo/vo/GroupMemberVO.class
 com/volunteer/demo/session/SessionHelper.class
 com/volunteer/demo/vo/GroupDetailVO.class
+com/volunteer/demo/redis/RedisCacheTemplate.class
+com/volunteer/demo/redis/RedisProperties.class
 com/volunteer/demo/vo/GroupVolunteersVO.class
 com/volunteer/demo/form/UserNameForm.class
 com/volunteer/demo/form/ActivityListForm.class

@@ -10,6 +10,9 @@ package com.volunteer.demo.session;
 
 import com.volunteer.demo.DO.YcUser;
 import com.volunteer.demo.form.LoginForm;
+import com.volunteer.demo.redis.RedisCacheTemplate;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Component;
 
@@ -29,16 +32,21 @@ public class SessionHelper {
     private static final String VOLUNTEER_SESSION_ID="sessionId";
     private static final String REQUEST_ATTR_SESSION = "JSESSIONID";
 
+    @Autowired
+    private RedisCacheTemplate redisCacheTemplate;
+
     /**
      * 生成sessionId
      */
-    public static String generSession() {
+    public String generSession() {
         String sessionId = UUIDUtils.generateUUID();
         Cookie cookie = new Cookie(VOLUNTEER_SESSION_ID, sessionId);
         cookie.setPath("/");
         cookie.setMaxAge(60*60);
         NetWorkUtil.getRequest().setAttribute(REQUEST_ATTR_SESSION, sessionId);
         NetWorkUtil.getResonse().addCookie(cookie);
+        //将sessionId保存到redis
+        redisCacheTemplate.setString("sessionId",sessionId,3600);
         return sessionId;
     }
 
@@ -71,6 +79,7 @@ public class SessionHelper {
         String cookieName = "sessionId";
         String sessionId = "";
         Cookie cookies[] = request.getCookies();
+        //先从cookie中找sessionId
         if (cookies != null) {
             for (int i = 0; i < cookies.length; i++) {
                 Cookie cookie = cookies[i];
@@ -78,8 +87,16 @@ public class SessionHelper {
                     sessionId = cookie.getValue();
                 }
             }
+            if (!StringUtils.isBlank(sessionId)){
+                return getUserBySessionId(sessionId);
+            }
         }
-        return getUserBySessionId(sessionId);
+        //若cookie中未找到sessionId，则再从redis中找
+        sessionId = redisCacheTemplate.getString("sessionId");
+        if (!StringUtils.isBlank(sessionId)){
+            return getUserBySessionId(sessionId);
+        }
+        return null;
     }
 
     /**
@@ -90,6 +107,7 @@ public class SessionHelper {
         cookie.setPath("/");
         cookie.setMaxAge(0);
         NetWorkUtil.getResonse().addCookie(cookie);
+        redisCacheTemplate.delString("sessionId");
         }
     }
 

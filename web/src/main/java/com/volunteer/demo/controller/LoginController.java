@@ -46,7 +46,7 @@ public class LoginController {
     public String login(@RequestBody LoginForm form){
         String userName = form.getUserName();
         YcUser user = loginManager.getUserByUserName(userName);
-        String sessionId = SessionHelper.generSession();
+        String sessionId = sessionHelper.generSession();
         sessionHelper.setUser(user,sessionId);
         return ResultCode.LOGIN_SUCCESS;
     }

@@ -13,6 +13,7 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/ActivityListVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UpdateGroupForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/SexEnum.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/redis/RedisConfig.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ActivityEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/UserManager.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/RegisterManager.java
@@ -21,6 +22,7 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupDetailVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UserGroupMapForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ApplyStatusEnum.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/redis/RedisProperties.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/NetWorkUtil.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/CountForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/ApplyEntryGroupForm.java
@@ -37,6 +39,7 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/manager/ImageManager.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/GroupActivityVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UpdateActivityStatusForm.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/redis/RedisCacheTemplate.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/RegisterForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/ApplyIdForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/CreateActivityForm.java
