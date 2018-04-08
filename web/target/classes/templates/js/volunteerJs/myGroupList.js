@@ -49,7 +49,7 @@ function menum(){
         "            <a href=\"\" class=\"sf-with-ul\"><span>帐号管理 ▾</span></a>\n" +
         "              <ul class=\"sub-menu\" id=\"myGroupList\">\n" +
         "                <li>\n" +
-        "                  <a href=\"loginOut.json\"><span>退出登录</span></a>\n" +
+        "                  <a href=\"loginOut.json\"><span>登录/退出登录</span></a>\n" +
         "                </li>\n" +
         "                <li>\n" +
         "                  <a href=\"updatePassword.html\"><span>修改密码</span></a>\n" +

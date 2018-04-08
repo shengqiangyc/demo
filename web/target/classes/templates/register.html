@@ -3,24 +3,60 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>GuoGe'Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Volunteer
+    </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <!--For Asyncslider-->
-    <script type="text/javascript" src="js/commonJs/jquery.min.js"></script>
-    <script src="js/volunteerJs/Register.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--For images carousel-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <!--For Portfolio-->
+    <script src="js/commonJs/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/commonJs/jquery.quicksand.js"></script>
+    <script type="text/javascript" src="js/commonJs/setting.js"></script>
+    <!--For Menu-->
+    <script type='text/javascript' src='js/commonJs/superfish3d36.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='js/commonJs/jquery.custom5152.js?ver=1.0'></script>
+    <script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
+    <!--For prettyPhoto-->
+    <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
+    <script src="js/commonJs/jquery.prettyPhoto.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="css/jquery.pagination.css" type="text/css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/commonJs/jquery.pagination.min.js"></script>
+    <script src="js/volunteerJs/myGroupList.js"></script>
+    <script src="js/volunteerJs/Register.js"></script>
+
+
+
 </head>
-<body id="loginBody">
+<body>
 <!-- Header Start-->
+<div class="header-wrapper1">
+    <div id="header">
+        <a href="index.html" id="logo">
+            <img src="images/logo7.png" alt="" /></a>
+        <a href="index.html" id="logo2">
+          <span>志愿者工作站
+          </span>
+        </a>
+        <!-- Top Menu Start-->
+        <div id="primary-nav">
+            <!-- END #primary-nav -->
+        </div>
+    </div>
+    <div class="title">
+        <span style="font-size: 20px">用户注册</span>
+    </div>
+</div>
 <!-- Middle Part Start-->
-<div id = "registerDemo">
-    <div id="login">
-        <span style="font-size: 23px;font-family: 'Kaiti SC';margin-left: 140px">用户注册</span>
-        <hr width="55%" align="center" style="margin-left: -8px">
+<div id="middle-wrapper">
+    <!-- Left Section Start-->
+    <div id="login" style="margin-top: -10px">
         <input type="hidden" style="color: red" id="test">
         <ul class="registerUl" style="margin-top: 20px">
-           <strong style="font-size: 15px">用户名:</strong>
+            <strong style="font-size: 15px">用户名:</strong>
             <input type="text"  style="margin-left: 21px" id="userName" onblur="checkUser()"/>
             <span style="margin-left: 10px" id="userTip">*长度不得超过10个字符</span>
         </ul>
@@ -28,7 +64,7 @@
             <strong style="font-size: 15px">密码:</strong>
             <input type="password" id="password" style="margin-top: 15px;margin-left: 36px"/>
             <span style="margin-left: 10px" id="passwordTip">*密码不要过于简单</span>
-       </ul>
+        </ul>
         <ul class="registerUl">
             <strong style="font-size: 15px">确认密码:</strong>
             <input type="password" id="rePassword" style="margin-top: 15px;margin-left: 5px" onblur="checkRePassword()"/>
@@ -68,26 +104,54 @@
         </ul>
         <ul class="registerUl">
             <div style="margin-top: 15px">
-            <strong style="font-size: 15px">用户简介:</strong>
+                <strong style="font-size: 15px">用户简介:</strong>
             </div>
             <textarea rows="5" id="introduction" cols="57" onblur="checkIntro()"></textarea>
             <span style="margin-left: 10px" id="introductionTip">*简单描述你的性格和特长（100字以内）</span>
         </ul>
 
-    <ul>
         <ul>
-    <input type="button" value="提交" class="registerButton" onclick="uploadImage()" >
+            <ul>
+                <input type="button" value="提交" class="registerButton" onclick="uploadImage()" >
+            </ul>
+            <ul>
+                <input type="button" value="返回登录" onclick="window.location.href='login.html'" class="registerButton" >
+            </ul>
         </ul>
-        <ul>
-        <input type="button" value="返回登录" onclick="window.location.href='login.html'" class="registerButton" >
-        </ul>
-    </ul>
     </div>
     <!-- Right Section Start-->
-
+    <div class="rightsec">    <h3>联系我们</h3>
+        <div class="contact">
+            <div class="cont-detail">
+                <img src="images/address1.png" alt="" /> <strong>地址</strong>杭州市余杭区
+            </div>
+            <div class="cont-detail">
+                <img src="images/phone1.png" alt="" width="14" height="18" /> <strong style="margin-left: -2px">手机号</strong>
+                <a href="#">13771397394</a>
+            </div>
+            <div class="cont-detail">
+                <img src="images/mail1.png" alt="" width="15" height="12" /> <strong>邮箱</strong>
+                <a href="#">1055494598@qq.com</a>
+            </div>
+        </div>
+        <h3>更多</h3>
+        <ul class="touch">
+            <li>
+                <a href="#">
+                    <img src="images/facebook.png" alt="" /> </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/twitter.png" alt="" border="0" /></a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/rss.png" alt="" border="0" /></a>
+            </li>
+        </ul>
+    </div>
 </div>
 <!-- Footer Part Start-->
-
 <div style="display:none">
     <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>
 </div>
