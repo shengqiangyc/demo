@@ -21,8 +21,12 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Autowired
     private RedisProperties redisProperties;
 
+    /**
+     * jedis相关配置
+     */
     @Bean
     public JedisPool redisPoolFactory() {
+        //从yml文件中读取redis的配置
         String host = redisProperties.getHost();
         int port = redisProperties.getPort();
         String password = redisProperties.getPassword();

@@ -19,7 +19,7 @@ import com.volunteer.demo.vo.MyApplyListVO;
 import java.util.List;
 
 /**
- * Description: ${TODO}
+ * Description: 用户相关
  * author: shengqiang (shengqiang@maihaoche.com)
  * date: 2018/3/24下午9:23
  * sinceV1.0

@@ -1,5 +1,6 @@
 $(document).ready(function() {
     getGroupList(1);
+    //加载分页器
     $("#pagination1").pagination({
         currentPage: 1,
         totalPage: $("#groupCount").val(),
@@ -9,21 +10,7 @@ $(document).ready(function() {
     });
 });
 
-function getGroupListByName(){
-    getGroupList(1);
-    var pageSize;
-    var searchParam = $("#select").val();
-    getCountByName(searchParam);
-    pageSize = $("#groupCountByName").val();
-    $("#pagination1").pagination({
-        currentPage: 1,
-        totalPage: pageSize,
-        callback: function (current) {
-            getGroupList(current);
-        }
-    });
-}
-
+//获取分页后的结果
 function getGroupList(current){
     var s = "<h3>全部团队</h3>";
     s += "<span>未找到结果</span>"
@@ -40,6 +27,7 @@ function getGroupList(current){
         data: JSON.stringify(data),
         dataType: 'json',
         success: function (data) {
+            //将返回的数据与html页面拼接起来
            var s="";
             s+="<h3>全部团队</h3>";
            for(var i in data) {
@@ -54,6 +42,7 @@ function getGroupList(current){
     })
 }
 
+//获取条件搜索后的页数
 function getCountByName(){
     getGroupList(1);
     var pageSize;

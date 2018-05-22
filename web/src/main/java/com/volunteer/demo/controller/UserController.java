@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Description: ${TODO}
+ * Description: 用户接口
  * author: shengqiang (shengqiang@maihaoche.com)
  * date: 2018/3/24下午9:39
  * sinceV1.0

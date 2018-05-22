@@ -69,7 +69,12 @@ public class ImageManagerImpl implements ImageManager,InitializingBean {
         return uploadFile(bytes, ".jpg");
     }
 
-
+    /**
+     * 七牛上传文件
+     * @param bytes
+     * @param extension 指定后缀
+     * @return
+     */
     @Override
     public String uploadFile(byte[] bytes, String extension) {
         if (bytes == null) {
@@ -88,6 +93,7 @@ public class ImageManagerImpl implements ImageManager,InitializingBean {
         }
         return "";
     }
+
 
 
 
