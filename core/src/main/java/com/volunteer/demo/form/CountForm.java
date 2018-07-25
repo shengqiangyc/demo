@@ -12,6 +12,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * Description: ${TODO}
  * author: shengqiang (shengqiang@maihaoche.com)
@@ -19,8 +21,10 @@ import lombok.NoArgsConstructor;
  * sinceV1.0
  */
 @Data
-@AllArgsConstructor
-public class CountForm {
+public class CountForm implements Serializable{
+
+
+    private static final long serialVersionUID = -295627509692750009L;
 
     private Integer count;
 

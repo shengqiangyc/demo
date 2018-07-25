@@ -135,7 +135,8 @@ public class PageSkipController {
         if(user == null){
             return "login";
         }
-        CountForm form = new CountForm(userManager.getApplyCount(user.getUserId()));
+        CountForm form = new CountForm();
+        form.setCount(userManager.getApplyCount(user.getUserId()));
         model.addAttribute("count",form);
         model.addAttribute("user",user);
         return "myApplyList";

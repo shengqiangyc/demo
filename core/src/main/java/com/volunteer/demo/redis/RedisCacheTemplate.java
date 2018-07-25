@@ -59,5 +59,5 @@ public class RedisCacheTemplate {
         jedis.del(key);
         jedis.close();
         return true;
-    }
+}
 }
