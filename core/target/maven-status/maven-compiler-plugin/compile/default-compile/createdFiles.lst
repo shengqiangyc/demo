@@ -26,6 +26,7 @@ com/volunteer/demo/manager/impl/UserManagerImpl.class
 com/volunteer/demo/form/CreateActivityForm.class
 com/volunteer/demo/enums/ActivityTypeEnum.class
 com/volunteer/demo/manager/GroupManager.class
+com/volunteer/demo/dubbo/TestImpl.class
 com/volunteer/demo/vo/UrlVO.class
 com/volunteer/demo/enums/ActivityEnum.class
 com/volunteer/demo/enums/RecordStatusEnum.class
@@ -42,6 +43,7 @@ com/volunteer/demo/vo/MyActivityHtmlVO.class
 com/volunteer/demo/enums/GroupStatusEnum.class
 com/volunteer/demo/form/ApplyEntryGroupForm.class
 com/volunteer/demo/form/RegisterForm.class
+com/volunteer/demo/testDemo.class
 com/volunteer/demo/vo/GroupListVO.class
 com/volunteer/demo/form/ApplyIdForm.class
 com/volunteer/demo/vo/CreateGroupVO.class

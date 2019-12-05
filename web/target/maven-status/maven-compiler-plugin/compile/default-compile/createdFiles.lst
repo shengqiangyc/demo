@@ -5,4 +5,5 @@ com/volunteer/demo/controller/RegisterController.class
 com/volunteer/demo/controller/HelloController.class
 com/volunteer/demo/controller/UserController.class
 com/volunteer/demo/controller/PageSkipController.class
+com/volunteer/demo/Swagger.class
 com/volunteer/demo/WebApplication.class

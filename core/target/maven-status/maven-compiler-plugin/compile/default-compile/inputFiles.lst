@@ -30,6 +30,7 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/enums/ActivityTypeEnum.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UserNameForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/MyApplyListVO.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/dubbo/TestImpl.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/UpdatePasswordForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/UUIDUtils.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/CreateGroupVO.java
@@ -56,5 +57,6 @@
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/GroupActivityForm.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/session/SessionHelper.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/UserVO.java
+/Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/testDemo.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/vo/UpdateGroupHtmlVO.java
 /Users/shengqiang/demo1/core/src/main/java/com/volunteer/demo/form/LoginForm.java
