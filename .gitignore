@@ -103,4 +103,5 @@ core/target/generated-sources/
 dal/src/test/
 dal/target/generated-sources/
 web/src/test/
+**/target/
 web/target/generated-sources/
