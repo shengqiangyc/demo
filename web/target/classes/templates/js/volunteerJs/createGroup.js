@@ -34,7 +34,6 @@ function createGroup (){
         alert(qqTip.html());
     }else {
         var form = new FormData();
-        form.enctype="multipart/form-data";
         form.append("file", files);
         $.ajax({
             url: "/group/uploadGroupImage.json",
@@ -100,11 +99,14 @@ function checkGroupName(){
         tip.html("×团队名不能超过15个字符");
         tip.css("color","Red");
     }
+    var data = {
+        groupName : groupName
+    }
     $.ajax({
         url:'/group/checkGroup.json',
         type: 'POST',
         contentType: 'application/json;charset=utf-8',
-        data: groupName,
+        data: JSON.stringify(data),
         dataType:'text',
         success:function(data){
             if(data === "团队名已存在") {

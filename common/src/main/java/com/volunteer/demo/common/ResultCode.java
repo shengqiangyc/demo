@@ -14,7 +14,8 @@ package com.volunteer.demo.common; /**
  * sinceV1.0
  */
 public class ResultCode {
-
+    public static final String SUCCESS = "成功";
+    public static final String FAIL = "失败";
     public static final String LOGIN_SUCCESS = "登录成功";
     public static final String LOGIN_FAIL = "登录失败";
     public static final String LOGIN_FAIOL = "密码错误";

@@ -79,4 +79,70 @@
     where user_id = #{userId}
   </select>
 
+  <select id="getMyGroupList" parameterType="java.lang.Long" resultType="java.lang.Long">
+    select group_id
+    from yc_user_group
+    where user_id = #{userId}
+  </select>
+
+  <select id="getGroupMembers" parameterType="com.volunteer.demo.DTO.GroupMembersDTO" resultType="java.lang.Long">
+    select user.user_id
+    from yc_user_group,yc_user user
+    where yc_user_group.user_id = user.user_id
+    and group_id = #{groupId}
+    <if test="userName != null and userName != ''">
+    and user.user_name like CONCAT(CONCAT('%',#{userName}),'%')
+    </if>
+    <if test="role != null and role != 0">
+      and group_role = #{role}
+    </if>
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="getYcUserGroup" parameterType="com.volunteer.demo.DTO.UserGroupDTO" resultMap="BaseResultMap">
+    select * from yc_user_group
+    where user_id = #{userId} and group_id = #{groupId}
+  </select>
+
+  <delete id="deleteOne" parameterType="com.volunteer.demo.DTO.UserGroupDTO">
+    delete from yc_user_group
+    where user_id = #{userId} and group_id = #{groupId}
+  </delete>
+
+  <update id="setAdmin" parameterType="com.volunteer.demo.DTO.UserGroupDTO">
+    update yc_user_group
+    set group_role = 2
+    where user_id = #{userId} and group_id = #{groupId}
+  </update>
+
+  <update id="cancelAdmin" parameterType="com.volunteer.demo.DTO.UserGroupDTO">
+    update yc_user_group
+    set group_role = 1
+    where user_id = #{userId} and group_id = #{groupId}
+  </update>
+
+  <delete id="deleteAllMembers" parameterType="java.lang.Long">
+    delete from yc_user_group
+    where group_id = #{groupId}
+  </delete>
+
+  <select id="countGroupMembers" parameterType="com.volunteer.demo.DTO.GroupMembersDTO" resultType="java.lang.Integer">
+    select count(*)
+    from yc_user_group,yc_user user
+    where yc_user_group.user_id = user.user_id
+    and group_id = #{groupId}
+    <if test="userName != null and userName != ''">
+      and user.user_name like CONCAT(CONCAT('%',#{userName}),'%')
+    </if>
+    <if test="role != null and role != 0">
+      and group_role = #{role}
+    </if>
+    </select>
+
+  <select id="getCreateGroupMembers" parameterType="com.volunteer.demo.DTO.GroupMembersDTO" resultType="java.lang.Long">
+    select user_id
+    from yc_user_group
+    where group_id = #{groupId}
+  </select>
+
 </mapper>

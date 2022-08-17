@@ -12,6 +12,7 @@ import com.volunteer.demo.DTO.ImageDTO;
 import com.volunteer.demo.DTO.RegisterDTO;
 import com.volunteer.demo.common.ResultCode;
 import com.volunteer.demo.form.RegisterForm;
+import com.volunteer.demo.form.UserNameForm;
 import com.volunteer.demo.manager.ImageManager;
 import com.volunteer.demo.manager.RegisterManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,8 +66,8 @@ public class RegisterController {
 
     @ResponseBody
     @RequestMapping(value = "/checkUser.json",method = RequestMethod.POST)
-    public String checkUser(@RequestBody String userName){
-        Integer userNum = registerManager.checkUser(userName);
+    public String checkUser(@RequestBody UserNameForm form){
+        Integer userNum = registerManager.checkUser(form.getUserName());
         if(userNum > 0){
             return ResultCode.USER_REGISTED;
         } else {

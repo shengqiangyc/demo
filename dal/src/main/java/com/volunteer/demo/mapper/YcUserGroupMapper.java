@@ -1,6 +1,7 @@
 package com.volunteer.demo.mapper;
 
 import com.volunteer.demo.DO.YcUserGroup;
+import com.volunteer.demo.DTO.GroupMembersDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -61,4 +62,49 @@ public interface YcUserGroupMapper {
      * 判断用户团队是否达到三个
      */
     int countUserGroup(Long userId);
+
+    /**
+     * 获取用户所有团队Id
+     */
+    List<Long> getMyGroupList(Long userId);
+
+    /**
+     * 获取团队下的所有用户id
+     */
+    List<Long> getGroupMembers(GroupMembersDTO dto);
+
+    /**
+     * 获取用户和团队的关系
+     */
+    YcUserGroup getYcUserGroup(UserGroupDTO dto);
+
+    /**
+     * 开除一名成员
+     */
+    int deleteOne(UserGroupDTO dto);
+
+    /**
+     * 将一位成员设为管理员
+     */
+    int setAdmin(UserGroupDTO dto);
+
+    /**
+     * 取消管理员
+     */
+    int cancelAdmin(UserGroupDTO dto);
+
+    /**
+     * 删除该团队下所有成员的映射关系
+     */
+    int deleteAllMembers(Long groupId);
+
+    /**
+     * 获取团队管理页面条件搜索后的成员数量
+     */
+    int countGroupMembers(GroupMembersDTO dto);
+
+    /**
+     * 获取团队下用户id
+     */
+    List<Long> getCreateGroupMembers(GroupMembersDTO dto);
 }

@@ -1,6 +1,9 @@
 package com.volunteer.demo.mapper;
 
 import com.volunteer.demo.DO.YcGroupApply;
+import com.volunteer.demo.DTO.GroupMembersDTO;
+import com.volunteer.demo.DTO.UpdateApplyDTO;
+import com.volunteer.demo.DTO.UserDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -54,4 +57,32 @@ public interface YcGroupApplyMapper {
      * 查看用户是否重复申请
      */
     Integer countUserApply(Long userId);
+
+    /**
+     * 获取指定团队的待审核申请列表
+     */
+    List<YcGroupApply> getGroupApply(GroupMembersDTO dto);
+
+    Integer countApplyByGroup(Long groupId);
+
+    /**
+     * 修改入队申请状态
+     */
+    int updateApply(UpdateApplyDTO dto);
+
+    /**
+     * 获取指定用户的所有申请列表
+     */
+    List<YcGroupApply> myApplyList(UserDTO dto);
+
+    /**
+     * 获取用户的所有申请数量
+     */
+    Integer getApplyCount(Long userId);
+
+    /**
+     * 取消申请
+     */
+    int cancelApply(Long applyId);
+
 }

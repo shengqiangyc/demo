@@ -35,11 +35,11 @@
     </selectKey>
     insert into yc_activity (activity_name, activity_introduction, 
       activity_group, activity_city, activity_status, 
-      activity_type, create_time, activity_leader, 
+      activity_type,  activity_leader,
       activity_image)
     values (#{activityName,jdbcType=VARCHAR}, #{activityIntroduction,jdbcType=VARCHAR}, 
       #{activityGroup,jdbcType=BIGINT}, #{activityCity,jdbcType=VARCHAR}, #{activityStatus,jdbcType=INTEGER}, 
-      #{activityType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{activityLeader,jdbcType=BIGINT}, 
+      #{activityType,jdbcType=INTEGER}, #{activityLeader,jdbcType=BIGINT},
       #{activityImage,jdbcType=VARCHAR})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.volunteer.demo.DO.YcActivity">
@@ -81,6 +81,78 @@
 
   <select id="selectIndexActivity" resultMap="BaseResultMap">
     select * from yc_activity
+    order by create_time desc
     limit 0,9
+
   </select>
+
+  <select id="selectAllActivity" parameterType="com.volunteer.demo.DTO.ActivityDTO" resultMap="BaseResultMap">
+    select * from yc_activity
+    where activity_status not in (3)
+    <if test="activityName != null and activityName != ''">
+      and activity_name like CONCAT(CONCAT('%',#{activityName}),'%')
+    </if>
+    <if test="type != null and type != 0">
+      and activity_type = #{type}
+    </if>
+    order by create_time desc
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="countActivity" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_status not in (3)
+  </select>
+
+  <select id="countSelectActivity" parameterType="com.volunteer.demo.DTO.ActivityDTO" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_status not in (3)
+    <if test="activityName != null and activityName != ''">
+      and activity_name like CONCAT(CONCAT('%',#{activityName}),'%')
+    </if>
+    <if test="type != null and type != 0">
+      and activity_type = #{type}
+    </if>
+  </select>
+
+  <select id="getGroupActivity" resultType="com.volunteer.demo.DO.YcActivity" parameterType="com.volunteer.demo.DTO.ActivityGroupLeaderDTO">
+    select * from yc_activity
+    where activity_group = #{groupId}
+    <if test="leaderId != null and leaderId != 0">
+      and activity_leader = #{leaderId}
+    </if>
+    <if test="status != null and status != -1">
+      and activity_status = #{status}
+    </if>
+    order by create_time desc
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="countGroupActivity" parameterType="java.lang.Long" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_group = #{groupId}
+  </select>
+
+  <select id="countSelectedGroupActivity" parameterType="com.volunteer.demo.DTO.ActivityGroupLeaderDTO" resultType="java.lang.Integer">
+    select count(*) from yc_activity
+    where activity_group = #{groupId}
+    <if test="leaderId != null and leaderId != 0">
+      and activity_leader = #{leaderId}
+    </if>
+    <if test="status != null and status != -1">
+      and activity_status = #{status}
+    </if>
+  </select>
+
+  <update id="startActivity" parameterType="java.lang.Long">
+    update yc_activity
+    set activity_status = 1
+    where activity_id = #{activityId}
+  </update>
+
+  <update id="endActivity" parameterType="java.lang.Long">
+    update yc_activity
+    set activity_status = 2
+    where activity_id = #{activityId}
+  </update>
 </mapper>

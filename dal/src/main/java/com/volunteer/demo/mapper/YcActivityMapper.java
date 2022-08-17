@@ -1,6 +1,8 @@
 package com.volunteer.demo.mapper;
 
 import com.volunteer.demo.DO.YcActivity;
+import com.volunteer.demo.DTO.ActivityDTO;
+import com.volunteer.demo.DTO.ActivityGroupLeaderDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -50,4 +52,36 @@ public interface YcActivityMapper {
     int updateByPrimaryKey(YcActivity record);
 
     List<YcActivity> selectIndexActivity();
+
+    List<YcActivity> selectAllActivity(ActivityDTO dto);
+
+    int countActivity();
+
+    int countSelectActivity(ActivityDTO dto);
+
+    /**
+     * 获取对应团队的项目
+     */
+    List<YcActivity> getGroupActivity(ActivityGroupLeaderDTO dto);
+
+    /**
+     * 获取团队下的项目数量
+     */
+    int countGroupActivity(Long groupId);
+
+    /**
+     * 获取条件搜索后的项目数量
+     */
+    int countSelectedGroupActivity(ActivityGroupLeaderDTO dto);
+
+    /**
+     * 开始项目
+     */
+    int startActivity(Long activityId);
+
+    /**
+     * 结束项目
+     */
+    int endActivity(Long activityId);
+
 }

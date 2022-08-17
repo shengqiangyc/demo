@@ -1,8 +1,13 @@
 package com.volunteer.demo.mapper;
 
 import com.volunteer.demo.DO.YcGroup;
+import com.volunteer.demo.DTO.GroupDTO;
+import com.volunteer.demo.DTO.PageDTO;
+import com.volunteer.demo.DTO.UpdateGroupDTO;
 import com.volunteer.demo.DTO.UserGroupDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.data.domain.jaxb.SpringDataJaxb;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -63,6 +68,35 @@ public interface YcGroupMapper {
      * 通过name获取对象
      */
     YcGroup getGroup(String groupName);
+
+    /**
+     * 分页显示所有团队
+     */
+    List<YcGroup> getGroupListByPage(GroupDTO dto);
+
+    /**
+     * 得到所有团队的数量
+     */
+    Integer countGroupList();
+
+    /**
+     * 解散团队
+     */
+    Integer disbandGroup(Long groupId);
+
+    /**
+     * 获取分页结果的团队数量
+     */
+    Integer countGroupByName(@Param(value = "groupName") String groupName);
+
+    /**
+     * 修改团队信息
+     */
+    int updateGroupInfo(UpdateGroupDTO dto);
+
+
+
+
 
 
 }

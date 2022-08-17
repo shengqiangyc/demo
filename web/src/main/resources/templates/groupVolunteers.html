@@ -1,25 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!--suppress ALL -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-    <title>GuoGe'BlogÍÆ¼ö
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Volunteer
     </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--For images carousel-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/commonJs2/jquery.min.js"></script>
     <!--For Portfolio-->
-<script src="js/jquery.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/jquery.quicksand.js"></script>
-<script type="text/javascript" src="js/setting.js"></script>
+<script src="js/commonJs/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/commonJs/jquery.quicksand.js"></script>
+<script type="text/javascript" src="js/commonJs/setting.js"></script>
     <!--For Menu-->
-<script type='text/javascript' src='js/superfish3d36.js?ver=3.3.1'></script>
-<script type='text/javascript' src='js/jquery.custom5152.js?ver=1.0'></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type='text/javascript' src='js/commonJs/superfish3d36.js?ver=3.3.1'></script>
+<script type='text/javascript' src='js/commonJs/jquery.custom5152.js?ver=1.0'></script>
+<script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
     <!--For prettyPhoto-->
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
-<script src="js/jquery.prettyPhoto.js" type="text/javascript" ></script>
+<script src="js/commonJs/jquery.prettyPhoto.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="css/jquery.pagination.css" type="text/css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/commonJs/jquery.pagination.min.js"></script>
+    <script src="js/volunteerJs/myGroupList.js"></script>
+    <script src="js/volunteerJs/groupVolunteer.js"></script>
   </head>
   <body>
     <!-- Header Start-->
@@ -29,130 +36,87 @@
           <img src="images/logo7.png" alt="" /></a>
         </a>
         <a href="index.html" id="logo2">
-          <span>Ö¾Ô¸Õß¹¤×÷Õ¾
+          <span>å¿—æ„¿è€…å·¥ä½œç«™
           </span>
         </a>
         <!-- Top Menu Start-->
         <div id="primary-nav">
-          <ul id="menu-primary-menu" class="sf-menu">
-            <li>
-              <a href="index.html">
-              <span>Ê×Ò³
-              </span></a>
-            </li>
-            <li>
-              <a href="" class="sf-with-ul">Ö¾Ô¸ÕßÖ®¼Ò</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="groupList.html">
-                <span>Ö¾Ô¸ÕßÍÅ¶Ó
-                </span></a>
-                </li>
-                <li>
-                  <a href="activityList.html">
-                <span>Ö¾Ô¸ÕßÏîÄ¿
-                </span></a>
-                </li>
-                <li>
-                  <a href="myApplyList.html">
-                <span>ÎÒµÄÈë¶ÓÉêÇë
-                </span></a>
-                </li>
-                <li>
-                  <a href="createGroup.html">
-                <span>ÉêÇë´´½¨ÍÅ¶Ó
-                </span></a>
-                </li>
-              </ul>
-            <li>
-              <a href="">ÎÒµÄÍÅ¶Ó</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="groupVolunteers.html"><span>ÍÅ¶Ó1</span></a>
-                </li>
-                <li>
-                  <a href="groupVolunteers.html"><span>ÍÅ¶Ó2</span></a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="login.html" >
-            <span>ÍË³öµÇÂ¼
-            </span>
-              </a>
-            </li>
-          </ul>
           <!-- END #primary-nav -->
         </div>
       </div>  
       <div class="title">
-        <span>ÍÅ¶Ó¹ÜÀí
+        <span>å›¢é˜Ÿç®¡ç†
         </span>
       </div>
     </div>
     <!-- Middle Part Start-->
     <div id="middle-wrapper">  
       <!-- Left Section Start-->  
-      <div class="portleft">    <h3>²Ëµ¥ÁÐ±í</h3>
+      <div class="portleft">    <h3>èœå•åˆ—è¡¨</h3>
         <ul class="caidan">
           <li>
             <span>&rarr;
             </span>
-            <a href="groupVolunteers.html" style="color: #729700">ÍÅ¶Ó³ÉÔ±</a>
+            <a th:href="@{/groupVolunteers.html(groupId=${membersVO.groupId})}" style="color: #729700">å›¢é˜Ÿæˆå‘˜</a>
           </li>
           <li>
           <span>&rarr;
           </span>
-            <a href="myActivityList.html" >ÍÅ¶ÓÏîÄ¿</a>
+            <a th:href="@{/myActivityList.html(groupId=${membersVO.groupId})}" >å›¢é˜Ÿé¡¹ç›®</a>
           </li>
           <li>
           <span>&rarr;
           </span>
-            <a href="applyList.html" >Èë¶ÓÉêÇë</a>
+            <a th:href="@{/applyList.html(groupId=${membersVO.groupId})}" >å…¥é˜Ÿç”³è¯·</a>
+          </li>
+          <li>
+          <span>&rarr;
+          </span>
+            <a th:href="@{/updateGroup.html(groupId=${membersVO.groupId})}">å›¢é˜Ÿä¿®æ”¹</a>
           </li>
         </ul>
       </div>  
       <!-- Right Section Start-->  
-      <div class="portright">    <h3>ÍÅ¶Ó³ÉÔ±
-        <a href="groupDetails.html" style="color: gray;font-size: 13px;margin-left: 20px">²é¿´ÍÅ¶ÓÏêÇé</a>
-        <a href="" style="color: grey;font-size: 13px;float: right;margin-right: 20px">½âÉ¢ÍÅ¶Ó</a>
+      <div class="portright" th:switch="${membersVO.role}">    <h3>å›¢é˜Ÿæˆå‘˜
+        <input type="text" id="select" style="width: 120px;height: 8px;margin-left: 20px;font-size: 12px" placeholder="è¯·è¾“å…¥ç”¨æˆ·å">
+        <select style="margin-left: 15px;width: 100px" id="role">
+          <option value="">è¯·é€‰æ‹©è§’è‰²</option>
+          <option value="3">åˆ›å»ºè€…</option>
+          <option value="2">ç®¡ç†å‘˜</option>
+          <option value="1">æ™®é€šæˆå‘˜</option>
+        </select>
+        <input type="button" value="æœç´¢" style="margin-left: 15px;width: 50px;" onclick="getCountByParam()">
+        <a onclick="disband()" th:case="3" style="color: grey;font-size: 13px;float: right">è§£æ•£å›¢é˜Ÿ</a>
+        <a onclick="exitGroup()" th:case="2" style="color: grey;font-size: 13px;float: right">é€€å‡ºå›¢é˜Ÿ</a>
+        <a onclick="exitGroup()" th:case="1" style="color: grey;font-size: 13px;float: right">é€€å‡ºå›¢é˜Ÿ</a>
+        <input type="hidden" id="groupId" th:value="${membersVO.groupId}">
+        <input type="hidden" id="count" th:value="${membersVO.count}">
+        <input type="hidden" id="userRole" th:value="${membersVO.role}">
+        <input type="hidden" id="userId" th:value="${membersVO.userId}">
+        <input type="hidden" id="countSelected">
       </h3>
-        <table class="teamTable">
+        <div>
+        <table class="teamTable" id="groupMembers">
           <tr>
-            <th>Í·Ïñ</th>
-            <th style="width: 40px">ÐÕÃû</th>
-            <th style="width: 40px">ÐÔ±ð</th>
-            <th style="width: 40px">ÄêÁä</th>
-            <th style="width: 90px">ËùÔÚµØ</th>
-            <th style="width: 60px">½ÇÉ«</th>
-            <th>Èë¶ÓÊ±¼ä</th>
-            <th>²Ù×÷</th>
-          </tr>
-          <tr>
-            <td><img src="images/touxiang2.jpeg" style="width: 70px;height: 50px"></td>
-            <td>Ê¥Ç¹</td>
-            <td>ÄÐ</td>
-            <td>18</td>
-            <td>½­ËÕÎÞÎý</td>
-            <td>ÆÕÍ¨³ÉÔ±</td>
-            <td>2018Äê2ÔÂ7ÈÕ</td>
-            <td><input type="button" value="¿ª³ý³ÉÔ±">
-                <input type="button" value="ÉýÎª¹ÜÀí" style="margin-left: 10px;"></td>
-          </tr>
-          <tr>
-            <td><img src="images/touxiang.jpeg" style="width: 70px;height: 50px"></td>
-            <td>ÕÅÈý</td>
-            <td>ÄÐ</td>
-            <td>19</td>
-            <td>Õã½­º¼ÖÝ</td>
-            <td>ÆÕÍ¨³ÉÔ±</td>
-            <td>2018Äê2ÔÂ7ÈÕ</td>
-            <td><input type="button" value="¿ª³ý³ÉÔ±">
-              <input type="button" value="ÉýÎª¹ÜÀí" style="margin-left: 10px"></td>
+            <th>å¤´åƒ</th>
+            <th style="width: 40px">å§“å</th>
+            <th style="width: 40px">æ€§åˆ«</th>
+            <th style="width: 40px">çœŸå®žå§“å</th>
+            <th style="width: 90px">æ‰€åœ¨åœ°</th>
+            <th style="width: 60px">è§’è‰²</th>
+            <th>å…¥é˜Ÿæ—¶é—´</th>
+            <th>æ“ä½œ</th>
           </tr>
         </table>
+        </div>
+        <div class="box" style="float: right;margin-right: 10px;margin-top: 15px">
+          <div id="pagination1" class="page fl"></div>
+          <div class="info fl">
+          </div>
+        </div>
       </div>
     </div>
+
     <!-- Footer Part Start-->
     <div style="display:none">
 <script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script>

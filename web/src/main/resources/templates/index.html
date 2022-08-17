@@ -4,26 +4,27 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>GuoGe'Blog</title>    
+    <title>Volunteer</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />    
     <link href='http://fonts.googleapis.com/blackcss?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
     <!--For images carousel-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.carousel.js"></script>    
+<script type="text/javascript" src="js/commonJs2/jquery.min.js"></script>
+<script type="text/javascript" src="js/commonJs/jquery.carousel.js"></script>
     <!--For Slider-->
-<script type='text/javascript' src='js/superfish3d36.js?ver=3.3.1'></script>
-<script type='text/javascript' src='js/jquery.custom5152.js?ver=1.0'></script>    
-    <!--For prettyPhoto-->    
+<script type='text/javascript' src='js/commonJs/superfish3d36.js?ver=3.3.1'></script>
+<script type='text/javascript' src='js/commonJs/jquery.custom5152.js?ver=1.0'></script>
+    <!--For prettyPhoto-->
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
-<script src="js/jquery.prettyPhoto.js" type="text/javascript" ></script>    
+<script src="js/commonJs/jquery.prettyPhoto.js" type="text/javascript" ></script>
     <!--For Asyncslider-->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>    
+<script type="text/javascript" src="js/commonJs/jquery.min.js"></script>
+<script type="text/javascript" src="js/commonJs/superfish.js"></script>
+<script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
     <!--For FlexSlider -->    
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/commonJs/jquery.flexslider-min.js"></script>
       <script src="js/volunteerJs/group.js"></script>
+    <script src="js/volunteerJs/myGroupList.js"></script>
   </head>  
   <body>    
     <!-- Header Start-->
@@ -38,54 +39,7 @@
         </a>
         <!-- Top Menu Start-->
         <div id="primary-nav">
-          <ul id="menu-primary-menu" class="sf-menu">
-            <li>
-              <a href="index.html">
-              <span>首页
-              </span></a>
-            </li>
-            <li>
-              <a href="" class="sf-with-ul">志愿者之家</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="groupList.html">
-                <span>志愿者团队
-                </span></a>
-                </li>
-                <li>
-                  <a href="activityList.html">
-                <span>志愿者项目
-                </span></a>
-                </li>
-                <li>
-                  <a href="myApplyList.html">
-                <span>我的入队申请
-                </span></a>
-                </li>
-                <li>
-                  <a href="createGroup.html">
-                <span>申请创建团队
-                </span></a>
-                </li>
-              </ul>
-            <li>
-              <a href="">我的团队</a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="groupVolunteers.html"><span>团队1</span></a>
-                </li>
-                <li>
-                  <a href="groupVolunteers.html"><span>团队2</span></a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="/loginOut.json" >
-            <span>退出登录
-            </span>
-              </a>
-            </li>
-          </ul>
+
           <!-- END #primary-nav -->
         </div>
       </div>
@@ -97,30 +51,30 @@
             <li style="background:#e0eef0;">
               <div>
                 <div class="banner-video" style="display:block; height: 400px; width: 600px; margin: 0px 0px 0 0;">
-                  <iframe src="images/zhiyuanzhetd.jpg" width="600" height="400" frameborder="0" >
+                  <iframe src="images/志愿者图片.jpg" width="600" height="400" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
                   </iframe>
                 </div>
-                <div class="description flex-caption"style="width:480px;margin:-30px 0px 0 0;">
-                  <h1 >                      
-                    <span class="orange">志愿者组织
-                    </span><br />中国青年志愿者协会</h1>
-                  <p>中国青年志愿者协会成立于1994年12月5日，是由志愿从事社会公益事业与社会保障事业的各界青年组成的全国性社会团体，是中国共产主义青年团中央指导下的，由依法成立的省、自治区、直辖市青年志愿者组织和全国性的专业、行业青年志愿者组织和个人自愿结成的全国性的非营利性社会组织，是全国青联团体会员，联合国国际志愿服务协调委员会（CCIVS）联席会员组织。
-                  </p>                  
-
-                </div>              
+                <div class="description flex-caption" style="margin-top: -30px;">   <h1>
+                    <span class="orange">优秀志愿者
+                    </span><br />钱强</h1>
+                  <p>钱强，男，汉族，共青团员，现就读于太原理工大学矿业工程学院XX级测绘工程专业，现为太原理工大学学生会常委、青年志愿者中心负责人，中国扶贫基金会“善行100·爱心包裹温暖行动”项目山西地区高校负责人。他曾被评为“校优秀志愿者”、“校优秀共青团干部”、“三下乡社会实践优秀志愿者”、“太原中博会优秀志愿者”、“太原能博会优秀志愿者”、“太原铁路局春运优秀志愿者”、“中国扶贫基金会优秀志愿者”等荣誉称号。
+                  </p>
+                </div>
               </div>            
             </li>              
             <li style="background:#f3f3f3;">              
               <div>                
-                <div class="banner-video" style="display:block; height: 400px; width: 600px; margin: 0px 0px 0 0;">                  
-                  <iframe src="images/志愿者图片.jpg" width="600" height="400" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-                  </iframe>                
-                </div>                
-                <div class="description flex-caption" style="margin-top: -30px;">   <h1>                      
-                    <span class="orange">优秀志愿者
-                    </span><br />钱强</h1>
-                  <p>钱强，男，汉族，共青团员，现就读于太原理工大学矿业工程学院XX级测绘工程专业，现为太原理工大学学生会常委、青年志愿者中心负责人，中国扶贫基金会“善行100·爱心包裹温暖行动”项目山西地区高校负责人。他曾被评为“校优秀志愿者”、“校优秀共青团干部”、“三下乡社会实践优秀志愿者”、“太原中博会优秀志愿者”、“太原能博会优秀志愿者”、“太原铁路局春运优秀志愿者”、“中国扶贫基金会优秀志愿者”等荣誉称号。
-                  </p>                  
+
+                <div class="banner-video" style="display:block; height: 400px; width: 600px; margin: 0px 0px 0 0;">
+                  <iframe src="images/zhiyuanzhetd.jpg" width="600" height="400" frameborder="0" >
+                  </iframe>
+                </div>
+                <div class="description flex-caption"style="width:480px;margin:-30px 0px 0 0;">
+                  <h1 >
+                    <span class="orange">志愿者组织
+                    </span><br />中国青年志愿者协会</h1>
+                  <p>中国青年志愿者协会成立于1994年12月5日，是由志愿从事社会公益事业与社会保障事业的各界青年组成的全国性社会团体，是中国共产主义青年团中央指导下的，由依法成立的省、自治区、直辖市青年志愿者组织和全国性的专业、行业青年志愿者组织和个人自愿结成的全国性的非营利性社会组织，是全国青联团体会员，联合国国际志愿服务协调委员会（CCIVS）联席会员组织。
+                  </p>
 
                 </div>
                 </div>            
@@ -131,7 +85,7 @@
                   <iframe src="images/志愿者组织.png" width="600" height="400" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
                   </iframe>                
                 </div>                
-                <div class="description flex-caption" style="margin-top: -30px;">   <h1>                      
+                <div class="description flex-caption" style="margin-top: -30px;">   <h1>
                     <span class="orange">优秀志愿者团队
                     </span><br />  枣阳论坛志愿者服务队</h1>
                     </h1>
@@ -157,11 +111,13 @@
         <div id="my-carousel-2" class="carousel module gallery clearfix">
           <ul class="imgSize" >
             <li th:each="activity:${activityList}">
-              <a href="activityDetails.html">
+              <a th:href="@{/activityDetails.html(activityId=${activity.activityId})}" title="点击查看详情">
+                <input type="hidden" id="activityId" th:value="${activity.activityId}">
                 <img th:src="${activity.activityImage}" alt="" border="0"/>
                 <span th:text="${activity.activityName}"></span>
-                <span style="color:green;" th:text="${activity.status}"></span></a>
+                <span style="color:green;" th:text="${activity.type}"></span></a>
             </li>
+            <li>
           </ul>
         </div>      
       </div>
@@ -171,7 +127,9 @@
         <h3 class="green" style="color: black">志愿团队</h3>
         <div class="blogPost" th:each="group:${groupList}">
           <div class="thumb-img">
+            <a th:href="@{/groupDetail.json(groupId=${group.groupId})}" title="点击查看详情">
               <img width="80" height="70" th:src="${group.image}" alt="" border="0" />
+            </a>
           </div>
           <div class="post-cont">
             <p>

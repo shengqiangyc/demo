@@ -16,6 +16,7 @@ package com.volunteer.demo.enums;
  */
 public enum ActivityEnum {
 
+    NOT_STARTED(0,"未开始"),
     ACTIVITY_LIVE(1, "进行中"),
     ACTIVITY_END(2,"已结束");
     private Integer code;

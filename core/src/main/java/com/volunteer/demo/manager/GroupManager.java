@@ -9,11 +9,13 @@
 package com.volunteer.demo.manager;
 
 import com.volunteer.demo.DO.YcGroup;
-import com.volunteer.demo.form.ApplyEntryGroupForm;
-import com.volunteer.demo.form.CreateGroupForm;
-import com.volunteer.demo.form.UserGroupMapForm;
-import com.volunteer.demo.vo.GroupDetailVO;
-import com.volunteer.demo.vo.IndexGroupVO;
+import com.volunteer.demo.DO.YcGroupApply;
+import com.volunteer.demo.DO.YcUser;
+import com.volunteer.demo.DTO.PageDTO;
+import com.volunteer.demo.DTO.UpdateApplyDTO;
+import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.form.*;
+import com.volunteer.demo.vo.*;
 
 import java.util.List;
 
@@ -61,6 +63,78 @@ public interface GroupManager {
      * 判断用户团队是否达到三个
      */
     int checkGroupCount(Long userId);
+
+    /**
+     * 分页获取所有团队列表
+     */
+    List<GroupListVO> getGroupListByPage(GroupForm form);
+
+    /**
+     * 获取所有团队数量
+     */
+    Integer countGroup();
+
+    /**
+     * 获取查询后的团队数量
+     */
+    Integer countGroupByName(String groupName);
+
+
+    /**
+     * 分页获取团队下的所有用户
+     */
+    List<GroupMemberVO> getGroupMembers(GroupMembersForm form);
+
+    /**
+     * 团队成员管理页面相关参数
+     */
+    GroupVolunteersVO getGroupVolunteerVO(UserGroupDTO dto);
+
+    /**
+     * 改变用户角色或从团队中移除一名用户
+     */
+    int updateUserRole(UserGroupMapForm form);
+
+    /**
+     * 解散团队
+     */
+    int disbandGroup(GroupForm form);
+
+    /**
+     * 团队入队申请页面相关参数
+     */
+    ApplyListHtmlVO getApplyList(UserGroupDTO dto);
+
+    /**
+     * 查看团队的待审核申请列表
+     */
+    List<ApplyInfoVO> getApplyInfoVO(GroupMembersForm form);
+
+    /**
+     * 对入队申请的操作
+     */
+    int updateApply(UpdateApplyDTO dto);
+
+    /**
+     * 获取团队下所有成员的信息（创建项目时用到）
+     */
+    List<UserVO> getUserVOs(Long groupId);
+
+    /**
+     * 获取团队管理界面分页后的成员数量
+     */
+    int countSelectedGroupMembers(GroupMembersForm form);
+
+    /**
+     * 通过groupId查出团队信息
+     */
+    UpdateGroupHtmlVO getUpdateGroupInfo(Long groupId,Long userId);
+
+    /**
+     * 修改团队信息
+     */
+    int updateGroupInfo(UpdateGroupForm form);
+
 
 
 }

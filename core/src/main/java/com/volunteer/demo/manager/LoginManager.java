@@ -11,7 +11,7 @@ package com.volunteer.demo.manager;
 import com.volunteer.demo.DO.YcUser;
 
 /**
- * Description: ${TODO}
+ * Description: 登录相关
  * author: shengqiang (shengqiang@maihaoche.com)
  * date: 2018/2/26下午3:37
  * sinceV1.0
@@ -19,4 +19,5 @@ import com.volunteer.demo.DO.YcUser;
 public interface LoginManager {
 
     YcUser getUserByUserName(String userName);
+
 }

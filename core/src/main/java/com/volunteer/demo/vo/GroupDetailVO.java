@@ -23,6 +23,7 @@ public class GroupDetailVO {
     private Long groupId;
     private Integer groupCount;
     private String status;
+    private Integer statusInt;
     private String city;
     private String groupLeader;
     private String groupQq;
@@ -34,5 +35,6 @@ public class GroupDetailVO {
     private Integer applyRecord;
     //用户的团队是否达到三个
     private Integer countUserGroup;
+    private String createTime;
 
 }

@@ -84,6 +84,7 @@
 
   <select id="getIndexGroup" resultMap="BaseResultMap">
     select * from yc_group
+    where group_status in (1,2)
     order by create_time desc
     limit 0,3
   </select>
@@ -92,6 +93,42 @@
     select * from yc_group
     where group_name = #{groupName}
   </select>
+
+  <select id="getGroupListByPage" parameterType="com.volunteer.demo.DTO.GroupDTO" resultMap="BaseResultMap">
+    select * from yc_group
+    where group_status in (1,2)
+    <if test="groupName != null and groupName != ''">
+     and group_name like CONCAT(CONCAT('%',#{groupName}),'%')
+    </if>
+    order by create_time desc
+    limit #{start},#{pageSize}
+  </select>
+
+  <select id="countGroupList" resultType="java.lang.Integer">
+    select count(*) from yc_group
+  </select>
+
+  <update id="disbandGroup" parameterType="java.lang.Long">
+    update yc_group
+    set group_status = 3
+    where group_id = #{groupId}
+  </update>
+
+  <select id="countGroupByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) from yc_group
+    <if test="groupName != null and groupName != ''">
+      where group_name like CONCAT(CONCAT('%',#{groupName}),'%')
+    </if>
+  </select>
+
+  <update id="updateGroupInfo" parameterType="com.volunteer.demo.DTO.UpdateGroupDTO">
+    update yc_group
+    set group_requirement = #{require},
+        group_introduction = #{description},
+        group_status = #{status}
+    where group_id = #{groupId}
+  </update>
+
 
 
 

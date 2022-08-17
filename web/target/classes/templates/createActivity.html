@@ -1,25 +1,30 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
+<!--suppress ALL -->
 <html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
-    <title>GuoGe'BlogÍÆ¼ö
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Volunteer
     </title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <!--For images carousel-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/commonJs2/jquery.min.js"></script>
     <!--For Portfolio-->
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/jquery.quicksand.js"></script>
-    <script type="text/javascript" src="js/setting.js"></script>
+    <script src="js/commonJs/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/commonJs/jquery.quicksand.js"></script>
+    <script type="text/javascript" src="js/commonJs/setting.js"></script>
     <!--For Menu-->
-    <script type='text/javascript' src='js/superfish3d36.js?ver=3.3.1'></script>
-    <script type='text/javascript' src='js/jquery.custom5152.js?ver=1.0'></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type='text/javascript' src='js/commonJs/superfish3d36.js?ver=3.3.1'></script>
+    <script type='text/javascript' src='js/commonJs/jquery.custom5152.js?ver=1.0'></script>
+    <script type="text/javascript" src="js/commonJs/jquery.easing.1.3.js"></script>
     <!--For prettyPhoto-->
     <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet"  />
-    <script src="js/jquery.prettyPhoto.js" type="text/javascript" ></script>
+    <script src="js/commonJs/jquery.prettyPhoto.js" type="text/javascript" ></script>
+    <script src="js/volunteerJs/myGroupList.js"></script>
+    <script src="js/volunteerJs/createActivity.js"></script>
+
 </head>
 <body>
 <!-- Header Start-->
@@ -28,116 +33,78 @@
         <a href="index.html" id="logo">
             <img src="images/logo7.png" alt="" /></a>
         <a href="index.html" id="logo2">
-          <span>Ö¾Ô¸Õß¹¤×÷Õ¾
+          <span>å¿—æ„¿è€…å·¥ä½œç«™
           </span>
         </a>
         <!-- Top Menu Start-->
         <div id="primary-nav">
-            <ul id="menu-primary-menu" class="sf-menu">
-                <li>
-                    <a href="index.html">
-              <span>Ê×Ò³
-              </span></a>
-                </li>
-                <li>
-                    <a href="" class="sf-with-ul">Ö¾Ô¸ÕßÖ®¼Ò</a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="groupList.html">
-                <span>Ö¾Ô¸ÕßÍÅ¶Ó
-                </span></a>
-                        </li>
-                        <li>
-                            <a href="activityList.html">
-                <span>Ö¾Ô¸ÕßÏîÄ¿
-                </span></a>
-                        </li>
-                        <li>
-                            <a href="myApplyList.html">
-                <span>ÎÒµÄÈë¶ÓÉêÇë
-                </span></a>
-                        </li>
-                        <li>
-                            <a href="createGroup.html">
-                <span>ÉêÇë´´½¨ÍÅ¶Ó
-                </span></a>
-                        </li>
-                    </ul>
-                <li>
-                    <a href="">ÎÒµÄÍÅ¶Ó</a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="groupVolunteers.html"><span>ÍÅ¶Ó1</span></a>
-                        </li>
-                        <li>
-                            <a href="groupVolunteers.html"><span>ÍÅ¶Ó2</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="login.html" >
-            <span>ÍË³öµÇÂ¼
-            </span>
-                    </a>
-                </li>
-            </ul>
             <!-- END #primary-nav -->
         </div>
     </div>
     <div class="title">
-    <span style="font-size: 20px;">´´½¨ÏîÄ¿</span>
+    <span style="font-size: 20px;">åˆ›å»ºé¡¹ç›®</span>
 </div>
 </div>
 <!-- Middle Part Start-->
 <div id = "groupDemo">
     <div id="login">
+        <input type="hidden" th:value="${group}" id="groupId">
         <ul class="registerUl" style="margin-top: 20px">
-           <strong>ÏîÄ¿Ãû:</strong>
-            <input type="text"  style="margin-left: 21px" onclick="clickMessage()" onblur="blurMessage()"/>
-            <span style="margin-left: 10px">*³¤¶È²»µÃ³¬¹ý10¸ö×Ö·û</span>
+           <strong>é¡¹ç›®å:</strong>
+            <input type="text"  style="margin-left: 21px" id="activityName" onblur="checkName()"/>
+            <span style="margin-left: 10px" id="nameTip">*é•¿åº¦ä¸å¾—è¶…è¿‡10ä¸ªå­—ç¬¦</span>
+        </ul>
+        <ul class="registerUl" style="margin-top: 20px">
+            <strong>é¡¹ç›®åˆ†ç±»:</strong>
+            <select style="margin-left: 10px;width: 100px" id="activityType">
+                <option value="0">è¯·é€‰æ‹©</option>
+                <option th:each="t : ${activityTypes}" th:value="${t.code}" th:text="${t.msg}"></option>
+            </select>
         </ul>
         <ul class="registerUl">
-            <strong>ËùÔÚ³ÇÊÐ:</strong>
-            <input type="text"  style="margin-top: 15px;margin-left: 5px"/>
-            <span style="margin-left: 10px">*ÏîÄ¿ËùÔÚµÄ³ÇÊÐ</span>
+            <strong>æ‰€åœ¨åŸŽå¸‚:</strong>
+            <input type="text"  style="margin-top: 15px;margin-left: 5px" id="city" onblur="checkCity()"/>
+            <span style="margin-left: 10px" id="cityTip">*é¡¹ç›®æ‰€åœ¨çš„åŸŽå¸‚</span>
        </ul>
         <ul class="registerUl">
-            <strong>¸ºÔðÈË:</strong>
-            <input type="text"  style="margin-top: 15px;margin-left: 22px"/>
-            <span style="margin-left: 10px">*ÏîÄ¿¸ºÔðÈË</span>
+            <strong>è´Ÿè´£äºº:</strong>
+            <select style="margin-left: 26px;margin-top:16px;width: 100px" id="activityLeader">
+                <option value = "0">è¯·é€‰æ‹©</option>
+                <option th:each="u : ${groupMembers}" th:value="${u.userId}" th:text="${u.userName}"></option>
+            </select>
         </ul>
         <ul class="registerUl">
-            <strong>ÉÏ´«ÕÕÆ¬:</strong>
-            <input type="file" style="margin-top: 15px;margin-left: 5px">
-            <span style="margin-left: 10px">*¸ñÊ½Îªjpg,png,jpeg</span>
+            <strong>ä¸Šä¼ ç…§ç‰‡:</strong>
+            <input type="file" style="margin-top: 15px;margin-left: 5px" id="image" onblur="checkImage()">
+            <span style="margin-left: 10px" id="pictureTip">*æ ¼å¼ä¸ºjpg,png,jpeg</span>
         </ul>
         <ul class="registerUl">
             <div style="margin-top: 15px">
-                <strong>ÏîÄ¿ÃèÊö:</strong>
+                <strong>é¡¹ç›®æè¿°:</strong>
             </div>
-            <textarea rows="4" cols="58"></textarea>
-            <span style="margin-left: 10px">*¶ÔÏîÄ¿½øÐÐ¼òµ¥ÃèÊö</span>
+            <textarea rows="4" cols="58" id="description" onblur="checkIntro()"></textarea>
+            <span style="margin-left: 10px" id="descriptionTip">*å¯¹é¡¹ç›®è¿›è¡Œç®€å•æè¿°</span>
         </ul>
 
     <ul>
-    <input type="button" value="Ìá½»" class="registerButton" >
+    <input type="button" value="æäº¤" class="registerButton" onclick="uploadImage()">
     </ul>
     </div>
-    <div class="rightsec">    <h3>ÁªÏµÎÒÃÇ</h3>
+    <div class="rightsec">    <h3>è”ç³»æˆ‘ä»¬</h3>
         <div class="contact">
             <div class="cont-detail">
-                <img src="images/address1.png" alt="" /> <strong>µØÖ·</strong>º¼ÖÝÊÐÓàº¼Çø
+                <img src="images/address1.png" alt="" /> <strong>åœ°å€</strong>æ­å·žå¸‚ä½™æ­åŒº
             </div>
             <div class="cont-detail">
-                <img src="images/phone1.png" alt="" width="14" height="18" /> <strong style="margin-left: -2px">ÊÖ»úºÅ</strong>
+                <img src="images/phone1.png" alt="" width="14" height="18" /> <strong style="margin-left: -2px">æ‰‹æœºå·</strong>
                 <a href="#">13771397394</a>
             </div>
             <div class="cont-detail">
-                <img src="images/mail1.png" alt="" width="15" height="12" /> <strong>ÓÊÏä</strong>
+                <img src="images/mail1.png" alt="" width="15" height="12" /> <strong>é‚®ç®±</strong>
                 <a href="#">1055494598@qq.com</a>
             </div>
         </div>
-        <h3>¸ü¶à</h3>
+        <h3>æ›´å¤š</h3>
         <ul class="touch">
             <li>
                 <a href="#">

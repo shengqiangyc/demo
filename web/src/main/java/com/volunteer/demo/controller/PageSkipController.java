@@ -10,10 +10,16 @@ package com.volunteer.demo.controller;
 
 import com.volunteer.demo.DO.YcGroup;
 import com.volunteer.demo.DO.YcUser;
+import com.volunteer.demo.DTO.UserGroupDTO;
+import com.volunteer.demo.enums.ActivityEnum;
+import com.volunteer.demo.enums.ActivityTypeEnum;
+import com.volunteer.demo.form.CountForm;
 import com.volunteer.demo.manager.ActivityManager;
 import com.volunteer.demo.manager.GroupManager;
+import com.volunteer.demo.manager.UserManager;
 import com.volunteer.demo.session.SessionHelper;
 import com.volunteer.demo.vo.CreateGroupVO;
+import com.volunteer.demo.vo.MyActivityHtmlVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +46,8 @@ public class PageSkipController {
     private SessionHelper sessionHelper;
     @Autowired
     private GroupManager groupManager;
+    @Autowired
+    private UserManager userManager;
 
     @RequestMapping(value = "/index.html")
     public String showIndex(Model model){
@@ -77,6 +85,138 @@ public class PageSkipController {
         groupVO.setCountGroup(groupManager.checkGroupCount(user.getUserId()));
         model.addAttribute("groupCount",groupVO);
         return "createGroup";
+    }
+
+    @RequestMapping(value = "/groupList.html")
+    public String groupList(Model model){
+        Integer countGroup = groupManager.countGroup();
+        model.addAttribute("groupCount",countGroup);
+        return "groupList";
+    }
+
+    /**
+     * 跳转团队成员页
+     */
+    @RequestMapping(value = "/groupVolunteers.html",method = RequestMethod.GET)
+    public String groupList(Model model,String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setUserId(user.getUserId());
+        dto.setGroupId(Long.parseLong(groupId));
+        model.addAttribute("membersVO",groupManager.getGroupVolunteerVO(dto));
+        return "groupVolunteers";
+    }
+
+    /**
+     * 跳转入队申请页
+     */
+    @RequestMapping(value = "applyList.html",method = RequestMethod.GET)
+    public String applyList(Model model,String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        UserGroupDTO dto = new UserGroupDTO();
+        dto.setUserId(user.getUserId());
+        dto.setGroupId(Long.parseLong(groupId));
+        model.addAttribute("applyList",groupManager.getApplyList(dto));
+        return "applyList";
+    }
+
+    /**
+     * 当前用户入队申请
+     */
+    @RequestMapping(value = "myApplyList.html",method = RequestMethod.GET)
+    public String myApplyList(HttpServletRequest request,Model model){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        CountForm form = new CountForm();
+        form.setCount(userManager.getApplyCount(user.getUserId()));
+        model.addAttribute("count",form);
+        model.addAttribute("user",user);
+        return "myApplyList";
+    }
+
+    /**
+     * 团队项目页面
+     */
+    @RequestMapping(value = "myActivityList.html",method = RequestMethod.GET)
+    public String myActivityList(HttpServletRequest request,Model model,String groupId){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        MyActivityHtmlVO htmlVO = activityManager.getHtmlVO(user.getUserId(),Long.parseLong(groupId));
+        model.addAttribute("htmlVO",htmlVO);
+        model.addAttribute("activityStatus", ActivityEnum.values());
+        model.addAttribute("count",activityManager.countGroupActivity(Long.parseLong(groupId)));
+        return "myActivityList";
+    }
+
+    /**
+     * 创建项目页面
+     */
+    @RequestMapping(value = "createActivity.html",method = RequestMethod.GET)
+    public String createActivity(HttpServletRequest request,Model model,String groupId){
+        YcUser user = sessionHelper.getUser(request);
+        if(user == null){
+            return "login";
+        }
+        model.addAttribute("group",groupId);
+        model.addAttribute("activityTypes", ActivityTypeEnum.values());
+        model.addAttribute("groupMembers",groupManager.getUserVOs(Long.parseLong(groupId)));
+        return "createActivity";
+    }
+
+    /**
+     * 项目列表页
+     */
+    @RequestMapping(value = "/activityList.html")
+    public String activityList(Model model){
+        Integer countActivity = activityManager.countActivity();
+        model.addAttribute("activityTypes",ActivityTypeEnum.values());
+        model.addAttribute("activityCount",countActivity);
+        return "activityList";
+    }
+
+    /**
+     * 项目详情页
+     */
+    @RequestMapping(value = "/activityDetails.html",method = RequestMethod.GET)
+    public String activityDetail(Model model, String activityId){
+        model.addAttribute("activity",activityManager.getActivityDetail(Long.parseLong(activityId)));
+        return "activityDetails";
+    }
+
+    /**
+     * 修改团队页面
+     */
+    @RequestMapping(value = "/updateGroup.html",method = RequestMethod.GET)
+    public String updateGroup(Model model,String groupId,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if (user == null){
+            return "login";
+        }
+        model.addAttribute("updateVO",groupManager.getUpdateGroupInfo(Long.parseLong(groupId),user.getUserId()));
+        return "updateGroup";
+    }
+
+    /**
+     * 修改密码页面
+     */
+    @RequestMapping(value = "/updatePassword.html",method = RequestMethod.GET)
+    public String updatePassword(Model model,HttpServletRequest request){
+        YcUser user = sessionHelper.getUser(request);
+        if (user == null){
+            return "login";
+        }
+        model.addAttribute("user",user);
+        return "updatePassword";
     }
 
 

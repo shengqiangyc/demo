@@ -13,7 +13,7 @@ table{border-collapse:collapse; border-spacing:0}
 
 /** Base Body Styles **/
 body{background:url(../images/body-bg.jpg); color:#57595d; font:12px tahoma,arial,Helvetica,"Trebuchet MS",sans-serif}
-#loginBody{background:url(../images/background2.jpg); color:#57595d; font:12px tahoma,arial,Helvetica,"Trebuchet MS",sans-serif}
+#loginBody{background:url(../images/background2.jpg);background-size: 110% 200%; color:#57595d; font:12px tahoma,arial,Helvetica,"Trebuchet MS",sans-serif}
 h1, h2, h3, h4, h5, h6{font-weight:bold; font-family:'Droid Sans',sans-serif;  color:#434853;  text-shadow:0px 1px 0px #fff; letter-spacing:-0.5px}
 h1{font-size:30px}
 h2{font-size:24px}
@@ -536,7 +536,7 @@ ol li ol.childlist .comment-des{ float:right; width:85%}
 
 /* ---------------- Portfolio ------------------------ */
 .portleft{float:left; width:220px; margin-right:28px;  font-family:tahoma,sans-serif; margin-bottom: 220px;}
-.portright{float:left; width:712px}
+.portright{float:left; width:712px;height: 960px}
 
 .portfolio_container{position:relative}
 .portfolio_contain{margin:9px 0 0 -7px; padding:0px; width:738px; float:left}
@@ -578,7 +578,7 @@ li.main a{display:block; float:left;   color:#434853; font-family:'Droid Sans',s
 li.main a span{  color:#84878C;  display:block; font-family:tahoma,Arial; font-size:12px; font-weight:normal; line-height:22px}
 li.main a:hover{color:#779E00}
 .groupDetail{margin-top: 0px;float: left;margin-left: 25px}
-.groupDetail li{margin-top: 20px;list-style-type: none}
+.groupDetail li{margin-top: 16px;list-style-type: none}
 .groupDetail li strong{font-size: 14px;}
 .groupDetail li span{font-size: 14px;color: #729700}
 .teamTable{font-family: verdana,arial,sans-serif;
