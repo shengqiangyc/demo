@@ -32,5 +32,10 @@ mybatis:
 server:
   port: 8083
 
+#logging
+logging:
+  # 日志文件路径
+  path: /root/volunteer/
+
 
 

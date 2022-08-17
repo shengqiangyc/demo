@@ -19,14 +19,15 @@ public class BubbleSort {
     public static void main(String[] args){
         int a[] = {1,3,6,7,8,10,4,20,11,50,38,43,44,9,5};
         for (int i = 0;i < a.length - 1;i++){
-            for (int j = a.length - 1 ;j > i ;j --){
-                if (a[j] > a[j - 1]){
-                    int temp = a[j - 1];
-                    a[j - 1] = a[j];
+            for (int j = i ;j < a.length - 1 ;j ++){
+                if (a[j] > a[j + 1]){
+                    int temp = a[j + 1];
+                    a[j + 1] = a[j];
                     a[j] = temp;
                 }
             }
         }
+        String b = "abcde";
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
 

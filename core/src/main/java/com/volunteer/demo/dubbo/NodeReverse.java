@@ -44,7 +44,6 @@ public class NodeReverse {
             pre = head;
             head = next;
         }
-
     }
 
     private void doubleReverse(Node head){
@@ -59,7 +58,5 @@ public class NodeReverse {
             b.next = a;
             head = a;
         }
-
-
     }
 }

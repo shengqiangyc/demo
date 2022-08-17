@@ -38,7 +38,7 @@ public class QuickSort {
             a[low] = base;
             qSort(a, begin, low - 1);
             qSort(a, low + 1, end);
-            }
+        }
     }
 
     public static void main(String[] args){

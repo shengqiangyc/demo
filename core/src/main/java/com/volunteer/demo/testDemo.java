@@ -22,7 +22,10 @@ import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.function.BiConsumer;
 
 /**
  * Description: ${TODO}
@@ -84,8 +87,33 @@ public class testDemo {
         }
     }
     public static void main(String[] args){
-        double d1=-0.5;
-        System.out.println("Ceil d1="+Math.ceil(d1));
-        System.out.println("floor d1="+Math.floor(d1));
+        WmsMassLossVO result = new WmsMassLossVO();
+        Set<Long> entrySet = new HashSet<>();//入库质损
+        Set<Long> storeSet = new HashSet<>();//在库质
+        BiConsumer<Set<Long>, Set<Long>> addData = (entrySet1, storeSet1) -> {
+            //单独的添加
+            result.setEntryLossCount(result.getEntryLossCount() + entrySet1.size());
+            result.setDeliveryLossCount(result.getDeliveryLossCount() + storeSet1.size());
+            //交集
+            Set<Long> tempSet = new HashSet<>();
+            tempSet.clear();
+            tempSet.addAll(entrySet1);
+            tempSet.retainAll(storeSet1);
+            result.setEntryAndDeliveryCount(result.getEntryAndDeliveryCount() + tempSet.size());
+            //并集
+            tempSet.clear();
+            tempSet.addAll(entrySet1);
+            tempSet.addAll(storeSet1);
+            result.setTotalCount(result.getTotalCount() + tempSet.size());
+        };
+        entrySet.add(1L);
+        storeSet.add(2L);
+        addData.accept(entrySet,storeSet);
+        System.out.println(result.toString());
+
+
+
+
+
     }
 }
