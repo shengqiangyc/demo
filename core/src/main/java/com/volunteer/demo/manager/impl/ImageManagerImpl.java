@@ -31,8 +31,8 @@ public class ImageManagerImpl implements ImageManager,InitializingBean {
      * 七牛图片 密钥 图片地址
      */
     public final static String IMG_PREFIX = "https://img.maihaoche.com/";
-    private final static String ACCESS_KEY = "BzDkpyEeUNKVhvJn5spXnnwzQXYBnS034DXkbP3U";
-    private final static String SECRET_KEY = "tZBXqnjKq4SpTyGtH_W2yQJh_mfBJCpsf1aKDk2P";
+    private final static String ACCESS_KEY = "";
+    private final static String SECRET_KEY = "";
     private final static String PUBLIC_BUCKET = "maihaoche";
 
     private Auth publicBucketAuth;
